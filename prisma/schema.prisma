@@ -5,6 +5,7 @@
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 // prisma/schema.prisma
+
 generator client {
   provider = "prisma-client-js"
 }
@@ -23,8 +24,9 @@ model User {
   createdAt        DateTime  @default(now())
   updatedAt        DateTime  @updatedAt
   twoFactorEnabled Boolean   @default(false)
-  Session          Session[]
-  Account          Account[]
+
+  sessions Session[]
+  accounts Account[]
 
   @@unique([email])
   @@map("user")
