@@ -4,6 +4,8 @@
 import { useRouter } from "next/navigation";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
+import { FcGoogle } from "react-icons/fc";
+import { toast } from "sonner";
 import { z } from "zod";
 
 import LoginSchema from "@/helpers/zod/login-schema";
@@ -23,6 +25,7 @@ import {
   FormMessage,
 } from "../ui/form";
 import { Input } from "../ui/input";
+import SocialButton from "./social-button";
 
 const SignIn = () => {
   const router = useRouter();
@@ -65,11 +68,12 @@ const SignIn = () => {
           },
           onError: (ctx) => {
             setError(ctx.error.message);
+            toast.error(ctx.error.message);
           },
         }
       );
     } catch (error) {
-      console.error(error);
+      toast.error(error?.message ?? "Something went wrong");
       setError("Something went wrong");
     }
   };
@@ -125,6 +129,9 @@ const SignIn = () => {
           <Button disabled={loading} type="submit" className="w-full">
             Login
           </Button>
+          <div className="flex justify-between">
+            <SocialButton provider="google" icon={<FcGoogle />} label="" />
+          </div>
         </form>
       </Form>
     </CardWrapper>

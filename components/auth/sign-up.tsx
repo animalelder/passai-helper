@@ -4,6 +4,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { FcGoogle } from "react-icons/fc";
+import { toast } from "sonner";
 import { z } from "zod";
 
 import { SignupSchema } from "@/helpers/zod/signup-schema";
@@ -67,11 +68,12 @@ const SignUp = () => {
           },
           onError: (ctx) => {
             setError(ctx.error.message);
+            toast.error(ctx.error.message);
           },
         }
       );
     } catch (error) {
-      console.error(error);
+      toast.error(error?.message ?? "Something went wrong");
       setError("Something went wrong");
     }
   };

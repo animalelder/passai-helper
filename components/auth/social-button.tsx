@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { toast } from "sonner";
 
 import { signIn } from "@/lib/auth-client";
 import { useAuthState } from "@/hooks/use-auth-state";
@@ -36,11 +37,14 @@ const SocialButton: React.FC<SocialButtonProps> = ({
           onSuccess: () => {
             setSuccess("You are logged in successfully");
           },
-          onError: (ctx) => setError(ctx.error.message),
+          onError: (ctx) => {
+            setError(ctx.error.message);
+            toast.error(ctx.error.message);
+          },
         }
       );
-    } catch (error: unknown) {
-      console.error("error", error);
+    } catch (error) {
+      toast.error(error?.message ?? "Something went wrong");
       setError("Something went wrong");
     }
   };
