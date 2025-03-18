@@ -1,0 +1,18 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[tailwindcss]": {
+    "tailwindCSS.hovers": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}

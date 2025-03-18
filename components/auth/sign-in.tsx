@@ -1,16 +1,19 @@
 // components/auth/sign-in.tsx
-'use client';
-import LoginSchema from '@/helpers/zod/login-schema';
-import { useAuthState } from '@/hooks/use-auth-state';
-import { signIn } from '@/lib/auth-client';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useRouter } from 'next/navigation';
-import { useForm } from 'react-hook-form';
-import { z } from 'zod';
-import CardWrapper from '../card-wrapper';
-import FormError from '../form-error';
-import { FormSuccess } from '../form-success';
-import { Button } from '../ui/button';
+"use client";
+
+import { useRouter } from "next/navigation";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+
+import LoginSchema from "@/helpers/zod/login-schema";
+import { signIn } from "@/lib/auth-client";
+import { useAuthState } from "@/hooks/use-auth-state";
+
+import CardWrapper from "../card-wrapper";
+import FormError from "../form-error";
+import { FormSuccess } from "../form-success";
+import { Button } from "../ui/button";
 import {
   Form,
   FormControl,
@@ -18,8 +21,8 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from '../ui/form';
-import { Input } from '../ui/input';
+} from "../ui/form";
+import { Input } from "../ui/input";
 
 const SignIn = () => {
   const router = useRouter();
@@ -36,8 +39,8 @@ const SignIn = () => {
   const form = useForm<z.infer<typeof LoginSchema>>({
     resolver: zodResolver(LoginSchema),
     defaultValues: {
-      email: '',
-      password: '',
+      email: "",
+      password: "",
     },
   });
 
@@ -57,8 +60,8 @@ const SignIn = () => {
             setLoading(true);
           },
           onSuccess: () => {
-            setSuccess('LoggedIn successfully');
-            router.replace('/');
+            setSuccess("LoggedIn successfully");
+            router.replace("/");
           },
           onError: (ctx) => {
             setError(ctx.error.message);
@@ -67,7 +70,7 @@ const SignIn = () => {
       );
     } catch (error) {
       console.error(error);
-      setError('Something went wrong');
+      setError("Something went wrong");
     }
   };
 

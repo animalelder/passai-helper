@@ -1,5 +1,6 @@
-import Link from 'next/link';
-import React from 'react';
+import React from "react";
+import Link from "next/link";
+
 import {
   Card,
   CardContent,
@@ -7,7 +8,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from './ui/card';
+} from "./ui/card";
 
 interface CardWrapperType {
   children: React.ReactNode;
@@ -23,13 +24,13 @@ const CardWrapper = ({
   children,
   cardTitle,
   cardDescription,
-  cardFooterLinkTitle = 'Learn More', // Default value
-  cardFooterDescription = '',
+  cardFooterLinkTitle = "Learn More", // Default value
+  cardFooterDescription = "",
   cardFooterLink,
-  className = '',
+  className = "",
 }: CardWrapperType) => {
   return (
-    <Card className={`w-[400px] relative ${className} border-2 shadow-md`}>
+    <Card className={`relative w-[400px] ${className} border-2 shadow-md`}>
       <CardHeader>
         <CardTitle>{cardTitle}</CardTitle>
         <CardDescription>{cardDescription}</CardDescription>
@@ -40,7 +41,7 @@ const CardWrapper = ({
           {cardFooterDescription && <span>{cardFooterDescription}</span>}
           <Link
             href={cardFooterLink}
-            className="underline text-blue-500 hover:text-blue-700"
+            className="text-blue-500 underline hover:text-blue-700"
           >
             {cardFooterLinkTitle}
           </Link>

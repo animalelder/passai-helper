@@ -1,16 +1,19 @@
 // components/auth/sign-up.tsx
-'use client';
-import { SignupSchema } from '@/helpers/zod/signup-schema';
-import { useAuthState } from '@/hooks/use-auth-state';
-import { signUp } from '@/lib/auth-client';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useForm } from 'react-hook-form';
-import { FcGoogle } from 'react-icons/fc';
-import { z } from 'zod';
-import CardWrapper from '../card-wrapper';
-import FormError from '../form-error';
-import { FormSuccess } from '../form-success';
-import { Button } from '../ui/button';
+"use client";
+
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { FcGoogle } from "react-icons/fc";
+import { z } from "zod";
+
+import { SignupSchema } from "@/helpers/zod/signup-schema";
+import { signUp } from "@/lib/auth-client";
+import { useAuthState } from "@/hooks/use-auth-state";
+
+import CardWrapper from "../card-wrapper";
+import FormError from "../form-error";
+import { FormSuccess } from "../form-success";
+import { Button } from "../ui/button";
 import {
   Form,
   FormControl,
@@ -18,9 +21,9 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from '../ui/form';
-import { Input } from '../ui/input';
-import SocialButton from './social-button';
+} from "../ui/form";
+import { Input } from "../ui/input";
+import SocialButton from "./social-button";
 
 const SignUp = () => {
   const {
@@ -36,9 +39,9 @@ const SignUp = () => {
   const form = useForm<z.infer<typeof SignupSchema>>({
     resolver: zodResolver(SignupSchema),
     defaultValues: {
-      name: '',
-      email: '',
-      password: '',
+      name: "",
+      email: "",
+      password: "",
     },
   });
 
@@ -49,7 +52,7 @@ const SignUp = () => {
           name: values.name,
           email: values.email,
           password: values.password,
-          callbackURL: '/dashboard',
+          callbackURL: "/dashboard",
         },
         {
           onResponse: () => {
@@ -60,7 +63,7 @@ const SignUp = () => {
             setLoading(true);
           },
           onSuccess: () => {
-            setSuccess('Verification link has been sent to your mail');
+            setSuccess("Verification link has been sent to your mail");
           },
           onError: (ctx) => {
             setError(ctx.error.message);
@@ -69,7 +72,7 @@ const SignUp = () => {
       );
     } catch (error) {
       console.error(error);
-      setError('Something went wrong');
+      setError("Something went wrong");
     }
   };
 

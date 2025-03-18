@@ -1,5 +1,5 @@
 // app/components/form-error.tsx
-import { AiFillExclamationCircle } from 'react-icons/ai';
+import { AiFillExclamationCircle } from "react-icons/ai";
 
 type FormErrorProps = {
   message?: string;
@@ -8,8 +8,8 @@ type FormErrorProps = {
 const FormError = ({ message }: FormErrorProps) => {
   if (!message) return null;
   return (
-    <div className="bg-destructive/15 p-3 rounded-md flex items-center gap-x-2 text-sm text-destructive">
-      <AiFillExclamationCircle className="w-4 h-4" />
+    <div className="bg-destructive/15 text-destructive flex items-center gap-x-2 rounded-md p-3 text-sm">
+      <AiFillExclamationCircle className="h-4 w-4" />
       {message}
     </div>
   );

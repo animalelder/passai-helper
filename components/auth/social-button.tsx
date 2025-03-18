@@ -1,11 +1,14 @@
-'use client';
-import { useAuthState } from '@/hooks/use-auth-state';
-import { signIn } from '@/lib/auth-client';
-import React from 'react';
-import { Button } from '../ui/button';
+"use client";
+
+import React from "react";
+
+import { signIn } from "@/lib/auth-client";
+import { useAuthState } from "@/hooks/use-auth-state";
+
+import { Button } from "../ui/button";
 
 interface SocialButtonProps {
-  provider: 'google' | 'github';
+  provider: "google" | "github";
   icon: React.ReactNode;
   label: string;
   callbackURL?: string;
@@ -15,7 +18,7 @@ const SocialButton: React.FC<SocialButtonProps> = ({
   provider,
   icon,
   label,
-  callbackURL = '/dashboard',
+  callbackURL = "/dashboard",
 }) => {
   const { setError, setSuccess, loading, setLoading, resetState } =
     useAuthState();
@@ -31,14 +34,14 @@ const SocialButton: React.FC<SocialButtonProps> = ({
             setLoading(true);
           },
           onSuccess: () => {
-            setSuccess('You are logged in successfully');
+            setSuccess("You are logged in successfully");
           },
           onError: (ctx) => setError(ctx.error.message),
         }
       );
     } catch (error: unknown) {
-      console.error('error', error);
-      setError('Something went wrong');
+      console.error("error", error);
+      setError("Something went wrong");
     }
   };
 

@@ -1,13 +1,13 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 export const useAuthState = () => {
-  const [error, setError] = useState('');
-  const [success, setSuccess] = useState('');
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
   const [loading, setLoading] = useState(false);
 
   const resetState = () => {
-    setError('');
-    setSuccess('');
+    setError("");
+    setSuccess("");
     setLoading(false);
   };
 
