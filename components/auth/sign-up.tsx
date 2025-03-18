@@ -49,7 +49,7 @@ const SignUp = () => {
           name: values.name,
           email: values.email,
           password: values.password,
-          callbackURL: '/',
+          callbackURL: '/dashboard',
         },
         {
           onResponse: () => {
@@ -93,7 +93,7 @@ const SignUp = () => {
                   <Input
                     disabled={loading}
                     type="text"
-                    placeholder="john"
+                    placeholder="Lisa Stevenson"
                     {...field}
                   />
                 </FormControl>
@@ -111,7 +111,7 @@ const SignUp = () => {
                   <Input
                     disabled={loading}
                     type="email"
-                    placeholder="example@gmail.com"
+                    placeholder="motherof3@gmail.com"
                     {...field}
                   />
                 </FormControl>

@@ -15,7 +15,7 @@ const SocialButton: React.FC<SocialButtonProps> = ({
   provider,
   icon,
   label,
-  callbackURL = '/',
+  callbackURL = '/dashboard',
 }) => {
   const { setError, setSuccess, loading, setLoading, resetState } =
     useAuthState();
@@ -37,7 +37,7 @@ const SocialButton: React.FC<SocialButtonProps> = ({
         }
       );
     } catch (error: unknown) {
-      console.error(error);
+      console.error('error', error);
       setError('Something went wrong');
     }
   };

@@ -2,6 +2,7 @@
 import prisma from '@/db';
 import { betterAuth } from 'better-auth';
 import { prismaAdapter } from 'better-auth/adapters/prisma';
+import { nextCookies } from 'better-auth/next-js';
 
 export const auth = betterAuth({
   appName: 'passai-parent-helper',
@@ -13,6 +14,7 @@ export const auth = betterAuth({
     autoSignIn: true,
     minPasswordLength: 8,
     maxPasswordLength: 20,
+    requireEmailVerification: false,
   },
   socialProviders: {
     google: {
@@ -20,4 +22,5 @@ export const auth = betterAuth({
       clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
     },
   },
+  plugins: [nextCookies()],
 });
