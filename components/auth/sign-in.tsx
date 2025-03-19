@@ -8,7 +8,7 @@ import { FcGoogle } from "react-icons/fc";
 import { toast } from "sonner";
 import { z } from "zod";
 
-import LoginSchema from "@/helpers/zod/login-schema";
+import SigninSchema from "@/helpers/zod/signin-schema";
 import { signIn } from "@/lib/auth-client";
 import { useAuthState } from "@/hooks/use-auth-state";
 
@@ -32,15 +32,15 @@ const SignIn = () => {
   const { error, success, loading, setSuccess, setError, setLoading, resetState } =
     useAuthState();
 
-  const form = useForm<z.infer<typeof LoginSchema>>({
-    resolver: zodResolver(LoginSchema),
+  const form = useForm<z.infer<typeof SigninSchema>>({
+    resolver: zodResolver(SigninSchema),
     defaultValues: {
       email: "",
       password: "",
     },
   });
 
-  const onSubmit = async (values: z.infer<typeof LoginSchema>) => {
+  const onSubmit = async (values: z.infer<typeof SigninSchema>) => {
     try {
       await signIn.email(
         {

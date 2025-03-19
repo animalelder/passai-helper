@@ -10,6 +10,10 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true
   },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
   "[tailwindcss]": {
     "tailwindCSS.hovers": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"

@@ -18,6 +18,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "PASS.ai: The Parent Helper",
   description: "Overwhelmed? Pass it to your AI assistant.",
+  metadataBase: new URL("https://passai-helper.vercel.app"),
 };
 
 export default function RootLayout({
@@ -29,7 +30,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
-        <Toaster />
+        <Toaster
+          richColors
+          closeButton
+        />
       </body>
     </html>
   );
