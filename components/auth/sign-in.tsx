@@ -29,15 +29,8 @@ import SocialButton from "./social-button";
 
 const SignIn = () => {
   const router = useRouter();
-  const {
-    error,
-    success,
-    loading,
-    setSuccess,
-    setError,
-    setLoading,
-    resetState,
-  } = useAuthState();
+  const { error, success, loading, setSuccess, setError, setLoading, resetState } =
+    useAuthState();
 
   const form = useForm<z.infer<typeof LoginSchema>>({
     resolver: zodResolver(LoginSchema),
@@ -87,7 +80,10 @@ const SignIn = () => {
       cardFooterLinkTitle="Sign up"
     >
       <Form {...form}>
-        <form className="space-y-4" onSubmit={form.handleSubmit(onSubmit)}>
+        <form
+          className="space-y-4"
+          onSubmit={form.handleSubmit(onSubmit)}
+        >
           <FormField
             control={form.control}
             name="email"
@@ -126,11 +122,19 @@ const SignIn = () => {
           />
           <FormError message={error} />
           <FormSuccess message={success} />
-          <Button disabled={loading} type="submit" className="w-full">
+          <Button
+            disabled={loading}
+            type="submit"
+            className="w-full"
+          >
             Login
           </Button>
           <div className="flex justify-between">
-            <SocialButton provider="google" icon={<FcGoogle />} label="" />
+            <SocialButton
+              provider="google"
+              icon={<FcGoogle />}
+              label=""
+            />
           </div>
         </form>
       </Form>

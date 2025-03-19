@@ -21,8 +21,7 @@ const SocialButton: React.FC<SocialButtonProps> = ({
   label,
   callbackURL = "/dashboard",
 }) => {
-  const { setError, setSuccess, loading, setLoading, resetState } =
-    useAuthState();
+  const { setError, setSuccess, loading, setLoading, resetState } = useAuthState();
 
   const handleSignIn = async () => {
     try {

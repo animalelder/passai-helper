@@ -27,15 +27,8 @@ import { Input } from "../ui/input";
 import SocialButton from "./social-button";
 
 const SignUp = () => {
-  const {
-    error,
-    success,
-    loading,
-    setLoading,
-    setError,
-    setSuccess,
-    resetState,
-  } = useAuthState();
+  const { error, success, loading, setLoading, setError, setSuccess, resetState } =
+    useAuthState();
 
   const form = useForm<z.infer<typeof SignupSchema>>({
     resolver: zodResolver(SignupSchema),
@@ -87,7 +80,10 @@ const SignUp = () => {
       cardFooterLinkTitle="Signin"
     >
       <Form {...form}>
-        <form className="space-y-4" onSubmit={form.handleSubmit(onSubmit)}>
+        <form
+          className="space-y-4"
+          onSubmit={form.handleSubmit(onSubmit)}
+        >
           <FormField
             control={form.control}
             name="name"
@@ -144,11 +140,19 @@ const SignUp = () => {
           />
           <FormError message={error} />
           <FormSuccess message={success} />
-          <Button disabled={loading} type="submit" className="w-full">
+          <Button
+            disabled={loading}
+            type="submit"
+            className="w-full"
+          >
             Submit
           </Button>
           <div className="flex justify-between">
-            <SocialButton provider="google" icon={<FcGoogle />} label="" />
+            <SocialButton
+              provider="google"
+              icon={<FcGoogle />}
+              label=""
+            />
           </div>
         </form>
       </Form>
