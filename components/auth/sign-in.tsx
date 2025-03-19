@@ -57,7 +57,7 @@ const SignIn = () => {
           },
           onSuccess: () => {
             setSuccess("LoggedIn successfully");
-            router.replace("/");
+            router.replace("/dashboard");
           },
           onError: (ctx) => {
             setError(ctx.error.message);
