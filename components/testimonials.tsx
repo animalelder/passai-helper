@@ -63,7 +63,7 @@ export default function Testimonials() {
               <blockquote className="grid h-full grid-rows-[1fr_auto] gap-6">
                 <p className="text-xl font-medium">
                   PASS.ai is really extraordinary and very practical, no need to
-                  break your own heart. This is a real gold mine.
+                  break your own heart. This is a real gold mine for sure.
                 </p>
 
                 <div className="grid grid-cols-[auto_1fr] items-center gap-3">
