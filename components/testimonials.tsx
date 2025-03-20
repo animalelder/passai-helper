@@ -51,7 +51,7 @@ export default function Testimonials() {
                   <div>
                     <cite className="text-sm font-medium">Shekinah Tshiokufila</cite>
                     <span className="text-muted-foreground block text-sm">
-                      Parent in Ontario, Canada
+                      Parent in Ontario
                     </span>
                   </div>
                 </div>
