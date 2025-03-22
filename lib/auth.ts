@@ -1,4 +1,11 @@
 // auth.ts
+// This is the authentication configuration file that sets up the better-auth library
+// We use the Prisma database adapter and plugins such as the Next.js cookies plugin.
+// The cookies work for server actions
+// We currently have email and password authentication enabled with Google OAuth.
+// The email verification is disabled for now.
+// The auth object is exported to be used in the API routes.
+
 import prisma from "@/db";
 import { betterAuth } from "better-auth";
 import { prismaAdapter } from "better-auth/adapters/prisma";

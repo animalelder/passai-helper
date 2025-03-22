@@ -1,3 +1,7 @@
+// hooks/use-mobile.ts
+// Usage: const isMobile = useIsMobile();
+// This returns a boolean value that can be used to to conditionally render mobile-specific elements.
+
 import * as React from "react";
 
 const MOBILE_BREAKPOINT = 768;

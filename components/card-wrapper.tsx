@@ -1,3 +1,16 @@
+// components/card-wrapper.tsx
+// This component is a wrapper for the Card component. It accepts the following props:
+// - children: React.ReactNode
+// - cardTitle: string
+// - cardDescription: string
+// - cardFooterLinkTitle: string
+// - cardFooterDescription: string
+// - cardFooterLink: string
+// - className: string
+// It returns a Card component with the children, cardTitle, cardDescription, and cardFooterLinkTitle props.
+// If the cardFooterLink prop is provided, it also returns a CardFooter component with the cardFooterDescription and cardFooterLinkTitle props.
+// The CardFooter component contains a Link component that links to the cardFooterLink prop.
+
 import React from "react";
 import Link from "next/link";
 

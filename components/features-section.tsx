@@ -1,3 +1,6 @@
+// components/features-section.tsx
+// This component is used in the placeholder landing page
+
 import Image from "next/image";
 import { Activity, DraftingCompass, Mail, Zap } from "lucide-react";
 

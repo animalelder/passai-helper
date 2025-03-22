@@ -1,3 +1,7 @@
+// component name: HeroHeader
+// Component description: HeroHeader component is a header component for the hero section of the website.
+// It contains the navigation bar, logo, and buttons for sign in, sign up, and get started.
+// It also contains a mobile menu for small screens.
 "use client";
 
 import React from "react";
