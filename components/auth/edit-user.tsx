@@ -22,7 +22,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
 export default function EditUserDialog() {
-  const { data, isPending } = useSession();
+  const { data } = useSession();
   const [name, setName] = useState<string>();
   const router = useRouter();
   const [image, setImage] = useState<File | null>(null);
@@ -30,6 +30,7 @@ export default function EditUserDialog() {
   const [open, setOpen] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
+  // TODO: Add image upload capabilities
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {

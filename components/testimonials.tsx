@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 
@@ -18,12 +20,12 @@ export default function Testimonials() {
         <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-4 lg:grid-rows-2">
           <Card className="grid grid-rows-[auto_1fr] gap-8 sm:col-span-2 sm:p-6 lg:row-span-2">
             <CardHeader>
-              <img
+              <Image
                 className="h-6 w-fit dark:invert"
                 src="/nike.svg"
                 alt="Nike Logo"
                 height="24"
-                width="auto"
+                width="70"
               />
             </CardHeader>
             <CardContent>
@@ -39,7 +41,7 @@ export default function Testimonials() {
                 <div className="grid grid-cols-[auto_1fr] items-center gap-3">
                   <Avatar className="size-12">
                     <AvatarImage
-                      src="https://tailus.io/images/reviews/shekinah.webp"
+                      src="/joshua.png"
                       alt="Shekinah Tshiokufila"
                       height="400"
                       width="400"
@@ -69,7 +71,7 @@ export default function Testimonials() {
                 <div className="grid grid-cols-[auto_1fr] items-center gap-3">
                   <Avatar className="size-12">
                     <AvatarImage
-                      src="https://tailus.io/images/reviews/jonathan.webp"
+                      src="/nora.png"
                       alt="Jonathan Yombo"
                       height="400"
                       width="400"
@@ -98,7 +100,7 @@ export default function Testimonials() {
                 <div className="grid [grid-template-columns:auto_1fr] items-center gap-3">
                   <Avatar className="size-12">
                     <AvatarImage
-                      src="/yucel.webp"
+                      src="/yucel.png"
                       alt="Yucel Faruksahan"
                       height="400"
                       width="400"

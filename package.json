@@ -5,6 +5,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
+    "dev:debug-client": "next dev --inspect",
+    "dev:debug-server": "cross-env NODE_OPTIONS='--inspect' next dev",
     "build": "prisma generate && next build",
     "start": "next start",
     "lint": "next lint",
@@ -25,6 +27,7 @@
     "better-auth": "^1.2.4",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "cross-env": "^7.0.3",
     "lucide-react": "^0.483.0",
     "motion": "^12.5.0",
     "next": "15.2",

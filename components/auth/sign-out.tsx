@@ -14,7 +14,7 @@ const SignOut = () => {
     return (
       <Button
         onClick={() => {
-          router.push("/");
+          router.push("/signin");
         }}
       >
         Login
@@ -28,7 +28,7 @@ const SignOut = () => {
         await signOut({
           fetchOptions: {
             onSuccess: () => {
-              router.push("/signin");
+              router.push("/");
             },
           },
         });

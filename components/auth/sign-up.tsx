@@ -26,6 +26,7 @@ import {
 import { Input } from "../ui/input";
 import SocialButton from "./social-button";
 
+// TODO: set up Zod resolver for form errors
 const SignUp = () => {
   const { error, success, loading, setLoading, setError, setSuccess, resetState } =
     useAuthState();
@@ -57,7 +58,8 @@ const SignUp = () => {
             setLoading(true);
           },
           onSuccess: () => {
-            setSuccess("Verification link has been sent to your mail");
+            // TODO: Set up email verification
+            setSuccess("Verification link has been sent to your email");
           },
           onError: (ctx) => {
             setError(ctx.error.message);
@@ -94,7 +96,7 @@ const SignUp = () => {
                   <Input
                     disabled={loading}
                     type="text"
-                    placeholder="Lisa Stevenson"
+                    placeholder="Ashley Vee"
                     {...field}
                   />
                 </FormControl>
@@ -112,7 +114,7 @@ const SignUp = () => {
                   <Input
                     disabled={loading}
                     type="email"
-                    placeholder="motherof3@gmail.com"
+                    placeholder="mother.of.3@gmail.com"
                     {...field}
                   />
                 </FormControl>
