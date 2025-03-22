@@ -7,7 +7,7 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="grid min-h-screen w-screen items-center justify-center">
+    <div className="to flex min-h-screen w-screen items-start justify-center bg-emerald-700 bg-gradient-to-br from-amber-50">
       {children}
     </div>
   );

@@ -74,7 +74,7 @@ const Home: NextPage = () => {
               className="absolute inset-0 -z-20"
             >
               <Image
-                src="/night-background_ni3vqb.jpg"
+                src="/night-background.jpg"
                 alt="background"
                 className="absolute inset-x-0 top-56 -z-20 hidden lg:top-32 dark:block"
                 width="3276"

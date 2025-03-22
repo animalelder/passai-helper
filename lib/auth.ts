@@ -10,12 +10,18 @@ import prisma from "@/db";
 import { betterAuth } from "better-auth";
 import { prismaAdapter } from "better-auth/adapters/prisma";
 import { nextCookies } from "better-auth/next-js";
+import { admin, oAuthProxy, openAPI } from "better-auth/plugins";
 
 export const auth = betterAuth({
   appName: "passai-parent-helper",
   database: prismaAdapter(prisma, {
     provider: "postgresql",
   }),
+  account: {
+    accountLinking: {
+      trustedProviders: ["google"],
+    },
+  },
   emailAndPassword: {
     enabled: true,
     autoSignIn: true,
@@ -25,9 +31,16 @@ export const auth = betterAuth({
   },
   socialProviders: {
     google: {
-      clientId: process.env.GOOGLE_CLIENT_ID as string,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
+      clientId: process.env.GOOGLE_CLIENT_ID || ("" as string),
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET || ("" as string),
     },
   },
-  plugins: [nextCookies()],
+  plugins: [
+    admin({
+      adminUserIds: ["BNrwpk5g53yma8A0KPOvJmfImOU46i15"],
+    }),
+    oAuthProxy(),
+    openAPI(),
+    nextCookies(),
+  ],
 });

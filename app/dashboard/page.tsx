@@ -6,19 +6,24 @@ import { auth } from "@/lib/auth";
 import SignOut from "@/components/auth/sign-out";
 
 const DashboardPage: NextPage = async () => {
-  const session = auth.api.getSession({ headers: await headers() });
+  const session = await auth.api.getSession({ headers: await headers() });
+
   if (!session) {
     throw redirect("/signin");
   }
+  const user = session.user;
 
   return (
-    <main className="flex flex-1 flex-col items-start justify-center p-4">
-      <div>
+    <main className="flex min-h-screen flex-col items-start justify-evenly bg-white p-4">
+      <h1 className="text-4xl">Dashboard for {user.name}</h1>
+      <div className="mt-4">
         <SignOut />
       </div>
-      <h1 className="text-4xl">`Dashboard`</h1>
-      <pre>${JSON.parse(JSON.stringify(session))}</pre>
-      <p className="mt-4">This is the dashboard page</p>
+
+      <p className="mt-4">
+        This is the dashboard page assigned to{" "}
+        <span className="font-mono text-lg">{user.email}</span>
+      </p>
     </main>
   );
 };

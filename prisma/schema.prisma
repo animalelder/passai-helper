@@ -16,17 +16,22 @@ datasource db {
 }
 
 model User {
-  id               String    @id @default(cuid())
+  id               String   @id @default(cuid())
   name             String
   email            String
-  emailVerified    Boolean   @default(false)
+  emailVerified    Boolean  @default(false)
   image            String?
-  createdAt        DateTime  @default(now())
-  updatedAt        DateTime  @updatedAt
-  twoFactorEnabled Boolean   @default(false)
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+  twoFactorEnabled Boolean  @default(false)
 
   sessions Session[]
   accounts Account[]
+
+  role       String?
+  banned     Boolean?
+  banReason  String?
+  banExpires DateTime?
 
   @@unique([email])
   @@map("user")
@@ -42,6 +47,8 @@ model Session {
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  impersonatedBy String?
 
   @@map("session")
 }

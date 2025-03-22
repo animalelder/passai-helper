@@ -14,7 +14,7 @@ const SignOut = () => {
     return (
       <Button
         onClick={() => {
-          router.push("/signin");
+          router.push("/");
         }}
       >
         Login
