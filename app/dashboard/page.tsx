@@ -2,10 +2,10 @@ import type { NextPage } from "next";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 
-import SignOut from "@/components/auth/sign-out";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { auth } from "@/lib/auth";
 import type { Session } from "@/lib/auth-types";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import SignOut from "@/components/auth/sign-out";
 
 // TODO: So much to be done here, it is just a placeholder for now
 
