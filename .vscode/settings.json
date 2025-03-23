@@ -16,7 +16,8 @@
   },
   "[typescriptreact]": {
     "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "editor.formatOnType": false
   },
   "[tailwindcss]": {
     "tailwindCSS.hovers": true,

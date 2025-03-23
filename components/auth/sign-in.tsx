@@ -2,6 +2,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { FcGoogle } from "react-icons/fc";
@@ -9,8 +10,8 @@ import { toast } from "sonner";
 import { z } from "zod";
 
 import SigninSchema from "@/helpers/zod/signin-schema";
-import { signIn } from "@/lib/auth-client";
 import { useAuthState } from "@/hooks/use-auth-state";
+import { signIn } from "@/lib/auth-client";
 
 import CardWrapper from "../card-wrapper";
 import FormError from "../form-error";
@@ -26,6 +27,8 @@ import {
 } from "../ui/form";
 import { Input } from "../ui/input";
 import SocialButton from "./social-button";
+
+// TODO: Add mobile-friendly input method/type for form fields
 
 const SignIn = () => {
   const router = useRouter();

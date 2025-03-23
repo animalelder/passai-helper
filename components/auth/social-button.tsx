@@ -1,10 +1,11 @@
 "use client";
 
 import React from "react";
+
 import { toast } from "sonner";
 
-import { signIn } from "@/lib/auth-client";
 import { useAuthState } from "@/hooks/use-auth-state";
+import { signIn } from "@/lib/auth-client";
 
 import { Button } from "../ui/button";
 

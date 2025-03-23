@@ -1,5 +1,6 @@
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+
 import { storybookTest } from "@storybook/experimental-addon-test/vitest-plugin";
 import { defineConfig } from "vitest/config";
 

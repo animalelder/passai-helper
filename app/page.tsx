@@ -1,15 +1,16 @@
 import { NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
+
 import { ArrowRight, ChevronRight } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
 import FeaturesSection from "@/components/features-section";
 import { HeroHeader } from "@/components/hero5-header";
 import { AnimatedGroup } from "@/components/motion-primitives/animated-group";
 import { TextEffect } from "@/components/motion-primitives/text-effect";
 import Pricing from "@/components/pricing";
 import Testimonials from "@/components/testimonials";
+import { Button } from "@/components/ui/button";
 
 const transitionVariants = {
   item: {

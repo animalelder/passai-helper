@@ -8,8 +8,8 @@ import { toast } from "sonner";
 import { z } from "zod";
 
 import { SignupSchema } from "@/helpers/zod/signup-schema";
-import { signUp } from "@/lib/auth-client";
 import { useAuthState } from "@/hooks/use-auth-state";
+import { signUp } from "@/lib/auth-client";
 
 import CardWrapper from "../card-wrapper";
 import FormError from "../form-error";
@@ -27,6 +27,8 @@ import { Input } from "../ui/input";
 import SocialButton from "./social-button";
 
 // TODO: set up Zod resolver for form errors
+// TODO: Add mobile-friendly input method/type for form fields
+
 const SignUp = () => {
   const { error, success, loading, setLoading, setError, setSuccess, resetState } =
     useAuthState();
