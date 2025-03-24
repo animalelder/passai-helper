@@ -11,6 +11,7 @@ import { prismaAdapter } from "better-auth/adapters/prisma";
 import { nextCookies } from "better-auth/next-js";
 import { admin, oAuthProxy, openAPI } from "better-auth/plugins";
 
+import { sendEmail } from "@/actions/send-email";
 import prisma from "@/db";
 
 export const auth = betterAuth({
@@ -28,7 +29,25 @@ export const auth = betterAuth({
     autoSignIn: true,
     minPasswordLength: 8,
     maxPasswordLength: 20,
-    requireEmailVerification: false,
+    requireEmailVerification: true,
+      sendResetPassword: async ({ user, url, token }, request) => {
+      await sendEmail({
+        to: user.email,
+        subject: "Reset your password",
+        text: `Click the link to reset your password: ${url}`,
+      });
+    },
+  },
+  emailVerification: {
+    sendOnSignUp: true,
+    autoSignInAfterVerification: true,
+    sendVerificationEmail: async ({ user, url }) => {
+      await sendEmail({
+        to: user.email,
+        subject: "Verify your email address",
+        text: `Click the link to verify your email:${url}`,
+      });
+    },
   },
   socialProviders: {
     google: {
