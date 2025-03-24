@@ -1,11 +1,10 @@
 {
-  "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.detectIndentation": true,
   "editor.formatOnType": false, // required
   "editor.formatOnPaste": true, // optional
   "editor.formatOnSave": true, // optional
   "editor.formatOnSaveMode": "file", // required to format on save
-  "vs-code-prettier-eslint.prettierLast": true, // set as "true" to run 'prettier' last not first
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
   },

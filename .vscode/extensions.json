@@ -6,8 +6,8 @@
     "mgmcdermott.vscode-language-babel",
     "gruntfuggly.todo-tree",
     "mattpocock.ts-error-translator",
-    "rvest.vs-code-prettier-eslint",
     "AvneeshAgarwal.react-nextjs-snippets",
-    "aaron-bond.better-comments"
+    "aaron-bond.better-comments",
+    "Prisma.prisma"
   ]
 }
