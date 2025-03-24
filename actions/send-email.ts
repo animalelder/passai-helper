@@ -1,5 +1,7 @@
 "use server";
+
 import nodemailer from "nodemailer";
+
 export async function sendEmail({
   to,
   subject,
@@ -18,7 +20,7 @@ export async function sendEmail({
 
   try {
     const html = `
-      <h1 style="color: #333; text-align: center; font-size: 24px; margin-top: 30px; margin-bottom: 10px;">30 Mighty Men - Clean Program</h1>
+      <h1 style="color: #333; text-align: center; font-size: 24px; margin-top: 30px; margin-bottom: 10px;">PASS.ai: Account Notification</h1>
       <p style="color: #666; font-size: 16px; line-height: 1.5; margin: 10px;">${text}</p>
     `;
     const transporter = nodemailer.createTransport({
@@ -30,7 +32,7 @@ export async function sendEmail({
     });
 
     const info = await transporter.sendMail({
-      from: "Clean Program <aarondantley@gmail.com>",
+      from: "PASS.ai <tca11.team4@gmail.com>",
       to: message.to,
       subject: message.subject,
       html: html,

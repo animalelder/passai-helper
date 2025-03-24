@@ -60,6 +60,7 @@
     "@storybook/test": "^8.6.8",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^22",
+    "@types/nodemailer": "^6.4.17",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@typescript-eslint/parser": "^8.27.0",
