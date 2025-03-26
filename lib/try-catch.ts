@@ -1,32 +1,89 @@
-// lib/try-catch.ts
-// This file contains a utility function that wraps a promise in a try-catch block and returns a result object with
-// a discriminated union. The result can be either a success object with the data or a failure object with the error.
+type Success<T> = [data: T, error: null];
+type Failure<E> = [data: null, error: E | Error];
+type Result<T, E> = Success<T> | Failure<E>;
 
-// Types for the result object with discriminated union
-// This is the success result type with a data field and an error field set to null.
-type Success<T> = {
-  data: T;
-  error: null;
+type TryCatchResult<T, E> =
+  T extends Promise<infer U> ? Promise<Result<U, E>> : Result<T, E>;
+
+type TryCatchFunc<E_ extends Error = never> = <T, E extends Error = E_>(
+  fn?: T | (() => T),
+  operationName?: string
+) => TryCatchResult<T, E>;
+
+type TryCatch<
+  F extends TryCatchFunc = TryCatchFunc,
+  E_ extends Error = never,
+> = F & {
+  sync: <T, E extends Error = E_>(
+    fn: () => T,
+    operationName?: string
+  ) => Result<T, E>;
+  async: <T, E extends Error = E_>(
+    fn: Promise<T> | (() => Promise<T>),
+    operationName?: string
+  ) => Promise<Result<T, E>>;
+  errors: <E extends Error>() => TryCatch<TryCatchFunc<E | E_>, E | E_>;
 };
 
-// This is the failure result type with a data field set to null and an error field with the error type E.
-type Failure<E> = {
-  data: null;
-  error: E;
-};
-
-// This is the result type with a discriminated union that can be either a success or a failure.
-type Result<T, E = Error> = Success<T> | Failure<E>;
-
-// Main wrapper function
-// This async function takes a promise and wraps it in a try-catch block.
-export async function tryCatch<T, E = Error>(
-  promise: Promise<T>
-): Promise<Result<T, E>> {
+/**
+ * tryCatch - Error handling that can be synchronous or asynchronous
+ * based on the input function.
+ *
+ * @param fn Function to execute, Promise or value.
+ * @param operationName Optional name for context.
+ * @returns A Result, or a Promise resolving to a Result, depending on fn.
+ */
+export const tryCatch: TryCatch = <T, E extends Error = never>(
+  fn?: T | (() => T),
+  operationName?: string
+) => {
   try {
-    const data = await promise;
-    return { data, error: null };
-  } catch (error) {
-    return { data: null, error: error as E };
+    const result = typeof fn === "function" ? (fn as () => T)() : fn;
+
+    if (result instanceof Promise)
+      return tryCatchAsync(result, operationName) as TryCatchResult<T, E>;
+
+    return [result, null] as TryCatchResult<T, E>;
+  } catch (rawError) {
+    return handleError(rawError, operationName) as TryCatchResult<T, E>;
   }
+};
+
+export const tryCatchSync: TryCatch["sync"] = (fn, operationName) => {
+  try {
+    const result = fn();
+    return [result, null] as const;
+  } catch (rawError) {
+    return handleError(rawError, operationName);
+  }
+};
+
+export const tryCatchAsync: TryCatch["async"] = async (fn, operationName) => {
+  try {
+    const promise = typeof fn === "function" ? fn() : fn;
+    const result = await promise;
+    return [result, null] as const;
+  } catch (rawError) {
+    return handleError(rawError, operationName);
+  }
+};
+
+export const tryCatchErrors = <E extends Error>() =>
+  tryCatch as TryCatch<TryCatchFunc<E>, E>;
+
+tryCatch.sync = tryCatchSync;
+tryCatch.async = tryCatchAsync;
+tryCatch.errors = tryCatchErrors;
+
+function handleError(rawError: unknown, operationName?: string) {
+  const processedError =
+    rawError instanceof Error
+      ? rawError
+      : new Error(String(rawError), { cause: rawError });
+
+  if (operationName) {
+    processedError.message = `Operation "${operationName}" failed: ${processedError.message}`;
+  }
+
+  return [null, processedError] as Failure<typeof processedError>;
 }
