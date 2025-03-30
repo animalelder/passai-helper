@@ -1,26 +1,59 @@
 import { NextPage } from "next";
+import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 
 const Home: NextPage = () => {
   return (
     <>
       <div className="flex min-h-screen w-screen flex-col">
-        <header className="flex items-center justify-between bg-[#E8F3EE] px-[1.875rem] text-black">
+        <nav className="flex h-[82px] items-center justify-between bg-[#E8F3EE] px-[1.875rem] text-black md:h-[92px]">
           <div>Logo</div>
-          <div>Hamburger</div>
-        </header>
-        <main>
+          <div className="hidden gap-2 md:inline-flex">
+            <Link
+              className="px-2"
+              href="#"
+            >
+              What is PASS.ai?
+            </Link>
+            <Link
+              className="px-2"
+              href="#"
+            >
+              Pricing
+            </Link>
+            <Link
+              className="px-2"
+              href="#"
+            >
+              About Us
+            </Link>
+          </div>
+          <div className="md:hidden">Hamburger</div>
+          <Link href="/signin">
+            <Button
+              variant="secondary"
+              size="lg"
+              className="text-xl font-bold"
+            >
+              Sign In
+            </Button>
+          </Link>
+        </nav>
+        <main className="flex flex-col">
           {/* Container 1*/}
-          <div className="bg-[#E8F3EE] p-6 text-black">
-            <h1>Overwhelmed with School Communication</h1>
+          <section className="bg-card min-h-[599px] p-6">
+            <h1 className="font-heading text-6xl text-neutral-600">
+              Overwhelmed with School Communication
+            </h1>
             <p>PASS it to your AI Agent</p>
             <img
               src=""
               alt="guy walking"
             />
             <Button> Learn more</Button>
-          </div>
+          </section>
 
           {/* Container 2 */}
           <div className="bg-secondary p-6 text-black">
@@ -29,8 +62,8 @@ const Home: NextPage = () => {
           </div>
 
           {/* Container 3 */}
-          <div className="gap-4 bg-[#FFF] p-6 text-black">
-            <div>
+          <div className="flex flex-col items-center justify-start gap-5 bg-[#FFF] p-6 text-center text-black lg:flex-row lg:items-start lg:justify-center">
+            <Card className="h-[256px] w-[299px] text-base">
               <p>icon</p>
               <h1>Busy Parents</h1>
               <p>
@@ -38,16 +71,16 @@ const Home: NextPage = () => {
                 Parents are overwhelmed by the complexity and fragmentation of
                 managing their children’s school-related activities and schedules.
               </p>
-            </div>
+            </Card>
 
-            <div>
+            <Card className="h-[256px] w-[299px]">
               <p>icon</p>
               <h1>School Admins</h1>
               <p>
                 School admins are overwhelmed by the workload; tracking incidents,
                 managing communication and ensuring security.
               </p>
-            </div>
+            </Card>
           </div>
 
           {/* Container 4 */}
