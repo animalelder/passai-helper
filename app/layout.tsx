@@ -7,24 +7,13 @@ import { Toaster } from "@/components/ui/sonner";
 import "./globals.css";
 
 const openSans = Open_Sans({
-  variable: "--font-open-sans",
   subsets: ["latin"],
-  display: "swap",
-  style: ["normal", "italic"],
-  weight: ["400", "500", "600", "700"],
-  fallback: ["sans-serif"],
-  preload: true,
-  adjustFontFallback: true,
+  variable: "--font-open-sans",
 });
 
 const inter = Inter({
-  variable: "--font-inter",
   subsets: ["latin"],
-  display: "swap",
-  style: ["normal", "italic"],
-  weight: ["400", "500", "600", "700"],
-  fallback: ["sans-serif"],
-  preload: true,
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
