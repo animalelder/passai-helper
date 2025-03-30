@@ -43,7 +43,7 @@ const Home: NextPage = () => {
       <main className="flex flex-col">
         {/* Container 1*/}
         <section className="bg-card">
-          <div className="flex min-h-[599px] max-w-[1152px] flex-col items-center justify-between gap-24 py-[96px] md:flex-row lg:px-24">
+          <div className="mx-auto flex min-h-[599px] max-w-[1152px] flex-col items-center justify-between gap-24 py-[96px] md:flex-row">
             <div className="font-heading text-6xl font-semibold text-neutral-600">
               <h1 className="">Overwhelmed with</h1>
               <h1 className="text-orange-900">School Communication</h1>
@@ -60,30 +60,45 @@ const Home: NextPage = () => {
         </section>
 
         {/* Container 2 */}
-        <div className="bg-white p-6 text-center">
-          <h1 className="font-heading text-4xl text-[#759EAB]">
-            {" "}
-            Manage your children’s schedules and activities in one place
+        <div className="mx-auto max-w-[542px] bg-white text-center">
+          <h1 className="font-heading text-2xl font-bold text-[#759EAB] lg:text-3xl">
+            Manage your children&apos;s schedules and activities in one place
           </h1>
-          <p>Who is PASS.ai suitable for?</p>
+          <h2 className="text-secondary text-xl font-bold lg:text-2xl">
+            Who is PASS.ai suitable for?
+          </h2>
         </div>
 
         {/* Container 3 */}
-        <div className="flex flex-col items-center justify-start gap-5 bg-[#FFF] p-6 text-center text-black lg:flex-row lg:items-start lg:justify-center">
-          <Card className="h-[256px] w-[299px] text-base">
-            <p>icon</p>
-            <h1>Busy Parents</h1>
-            <p>
+        <div className="m-6 flex flex-col items-center justify-start gap-5 bg-[#FFF] text-center text-black lg:flex-row lg:items-start lg:justify-center lg:gap-80">
+          <Card className="flex h-[256px] w-[299px] flex-col items-center justify-center text-base shadow-md">
+            <img
+              src="landing/people-icon.png"
+              width="65"
+              height="56"
+              alt="parents"
+            />
+            <h1 className="font-heading text-3xl font-bold text-neutral-600">
+              Busy Parents
+            </h1>
+            <p className="mx-4 text-base font-normal text-neutral-800">
               {" "}
               Parents are overwhelmed by the complexity and fragmentation of managing
               their children’s school-related activities and schedules.
             </p>
           </Card>
 
-          <Card className="h-[256px] w-[299px]">
-            <p>icon</p>
-            <h1>School Admins</h1>
-            <p>
+          <Card className="flex h-[256px] w-[299px] flex-col items-center justify-center shadow-md">
+            <img
+              src="landing/people-icon.png"
+              width="65"
+              height="56"
+              alt="parents"
+            />
+            <h1 className="font-heading text-3xl font-bold text-neutral-600">
+              School Admins
+            </h1>
+            <p className="mx-4 text-base font-normal text-neutral-800">
               School admins are overwhelmed by the workload; tracking incidents,
               managing communication and ensuring security.
             </p>
@@ -91,15 +106,17 @@ const Home: NextPage = () => {
         </div>
 
         {/* Container 4 */}
-        <div className="gap-4 bg-[#FFF] p-6 text-black">
+        <div className="m-6 flex flex-col items-center justify-center gap-4 lg:flex-row">
           <img
-            src="landing/setup-wizard.png"
-            alt="guy @ standing"
+            src="landing/email-guy.png"
+            alt="guy standing"
           />
 
-          <div className="gap-3">
-            <h1>How does PASS.ai help me</h1>
-            <ul className="list-disc pl-5">
+          <div className="space-y-3">
+            <h1 className="font-heading text-xl font-bold text-neutral-800 lg:text-3xl">
+              How does PASS.ai help me
+            </h1>
+            <ul className="list-disc self-stretch pl-5 text-base font-normal text-neutral-800">
               <li>Stay organized effortlessly</li>
               <li>Never miss important updates</li>
               <li>No more scheduling conflicts</li>
@@ -107,17 +124,17 @@ const Home: NextPage = () => {
               <li>Reduced stress and improved work-life balance</li>
             </ul>
 
-            <Button>Learn more</Button>
+            <Button
+              size="lg"
+              className="h-14 text-xl font-bold"
+            >
+              Learn more
+            </Button>
           </div>
         </div>
 
         {/* Container 5 */}
-        <div className="gap-4 bg-[#0e2f1e] p-6 text-white">
-          <img
-            src="landing/email-illustration.svg"
-            alt="guy @ standing"
-          />
-
+        <div className="m-6 gap-4">
           <div className="gap-3">
             <h1>
               How we have helped parents and school administrations manage their
@@ -159,7 +176,7 @@ const Home: NextPage = () => {
         </div>
 
         {/* Container 6 */}
-        <div className="bg-[#FFF] p-6 text-black">
+        <div className="m-6 bg-[#FFF] text-black">
           <img
             src="landing/setup-wizard.png"
             alt="girl board"
@@ -180,7 +197,7 @@ const Home: NextPage = () => {
         </div>
 
         {/* Container 7 */}
-        <div className="bg-[#FFF] p-6 text-black">
+        <div className="m-6 bg-[#FFF] text-black">
           <img
             src="landing/testimonial-ashley.png"
             alt="mom with child"
