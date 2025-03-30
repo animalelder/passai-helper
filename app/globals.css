@@ -39,7 +39,6 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
-  --light-blue: oklch(from #c4dbd1 l c h);
 }
 
 .dark {
@@ -75,6 +74,17 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(0.269 0 0);
   --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme {
+  --color-lightblue: oklch(from #c4dbd1 l c h);
+  --color-darkblue: oklch(from #3d545b l c h);
+  --color-offwhite: oklch(from #f7f1e1 l c h);
+  --color-alert-100: oklch(from #fdebe9 l c h);
+  --color-darkblue-101: oklch(from #93c6d6 l c h);
+  --color-darkblue-102: oklch(from #759eab l c h);
+  --color-darkblue-106: oklch(from #0b1316 l c h);
+  --color-neutral-lgrey: oklch(from #89939e l c h);
 }
 
 @theme inline {
