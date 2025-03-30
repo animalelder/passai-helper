@@ -7,7 +7,7 @@ import { Card } from "@/components/ui/card";
 const Home: NextPage = () => {
   return (
     <div className="flex min-h-screen basis-full flex-col">
-      <nav className="inline-flex h-[82px] grow basis-full items-center justify-between bg-sky-600 px-[32px] md:h-[92px]">
+      <nav className="bg-light-blue inline-flex h-[82px] grow basis-full items-center justify-between px-[32px] py-2 md:h-[92px]">
         <span>Logo</span>
         <span className="hidden gap-2 md:inline-flex">
           <Link
