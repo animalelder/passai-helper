@@ -4,7 +4,7 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev --turbopack --experimental-https",
     "dev:debug-client": "next dev --inspect",
     "dev:debug-server": "cross-env NODE_OPTIONS='--inspect' next dev",
     "build": "prisma generate && next build",

@@ -23,7 +23,7 @@ const Home: NextPage = () => {
           </div>
 
           {/* Container 2 */}
-          <div className="bg-[#FFF] p-6 text-black">
+          <div className="bg-secondary p-6 text-black">
             <h1> Manage your children’s schedules and activities in one place</h1>
             <p>Who is PASS.ai suitable for?</p>
           </div>

@@ -1,6 +1,9 @@
 {
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.detectIndentation": true,
+  "editor.quickSuggestions": {
+    "strings": "on"
+  },
   "editor.formatOnType": false, // required
   "editor.formatOnPaste": true, // optional
   "editor.formatOnSave": true, // optional
@@ -9,6 +12,28 @@
     "source.fixAll.eslint": "explicit",
     "source.addMissingImports.ts": "explicit"
   },
+  "tailwindCSS.experimental.configFile": "app/globals.css",
+  "tailwindCSS.classFunctions": [
+    "cva",
+    "cn",
+    "clsx",
+    "classNames",
+    "classnames",
+    "twMerge"
+  ],
+  "tailwindCSS.includeLanguages": {
+    "plaintext": "html",
+    "javascript": "javascriptreact",
+    "typescript": "typescriptreact"
+  },
+  "tailwindCSS.experimental.classRegex": [
+    ["cva\\(([^)]*)\\)", "'([^']*)'", "cva"],
+    ["cn\\(([^)]*)\\)", "'([^']*)'", "cn"],
+    ["clsx\\(([^)]*)\\)", "'([^']*)'", "clsx"],
+    ["classNames\\(([^)]*)\\)", "'([^']*)'", "classNames"],
+    ["classnames\\(([^)]*)\\)", "'([^']*)'", "classnames"],
+    ["twMerge\\(([^)]*)\\)", "'([^']*)'", "twMerge"]
+  ],
 
   "[javascriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
