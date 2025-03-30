@@ -23,7 +23,11 @@ function Marker({
       style={{ "--offset": `${offset}px`, top } as React.CSSProperties}
       className="absolute left-[calc(50%+var(--offset))] size-[38px] drop-shadow-[0_3px_1px_rgba(0,0,0,.15)]"
     >
-      <svg fill="none" viewBox="0 0 38 38" className="absolute size-full">
+      <svg
+        fill="none"
+        viewBox="0 0 38 38"
+        className="absolute size-full"
+      >
         <path
           d="M29.607 5.193c5.858 5.857 5.858 15.355 0 21.213l-9.9 9.9-.707.706-.708-.708-9.899-9.898c-5.857-5.858-5.857-15.356 0-21.213 5.858-5.858 15.356-5.858 21.214 0Z"
           className="fill-black/5 dark:fill-white/5"
@@ -36,7 +40,7 @@ function Marker({
       <img
         alt=""
         src={src}
-        className="absolute left-[7px] top-[4px] size-6 rounded-full"
+        className="absolute top-[4px] left-[7px] size-6 rounded-full"
       />
     </motion.div>
   );
@@ -44,7 +48,10 @@ function Marker({
 
 export function Map() {
   return (
-    <div aria-hidden="true" className="relative size-full">
+    <div
+      aria-hidden="true"
+      className="relative size-full"
+    >
       <div className="absolute inset-0 bg-[url(https://res.cloudinary.com/eldoraui/image/upload/v1734021299/map_pcqdwb.png)] bg-[length:530px_430px] bg-[center_-75px] bg-no-repeat [mask-image:linear-gradient(to_bottom,black_50%,transparent)]" />
       <div className="absolute inset-0">
         <Marker
