@@ -81,10 +81,12 @@
   --color-darkblue: oklch(from #3d545b l c h);
   --color-offwhite: oklch(from #f7f1e1 l c h);
   --color-alert-100: oklch(from #fdebe9 l c h);
+  --color-alert-104: oklch(from #963a1d l c h);
   --color-darkblue-101: oklch(from #93c6d6 l c h);
   --color-darkblue-102: oklch(from #759eab l c h);
   --color-darkblue-106: oklch(from #0b1316 l c h);
   --color-neutral-lgrey: oklch(from #89939e l c h);
+  --color-neutral-dgrey: oklch(from #4d4d4d l c h);
 }
 
 @theme inline {
