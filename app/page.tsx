@@ -43,7 +43,7 @@ const Home: NextPage = () => {
         <Link href="/signin">
           <Button
             variant="secondary"
-            className="px-4 py-5 text-xl font-bold"
+            className="cursor-pointer px-4 py-5 text-xl font-bold"
           >
             Sign In
           </Button>
@@ -52,26 +52,28 @@ const Home: NextPage = () => {
       <main className="flex flex-col gap-20">
         {/* Container 1 Overwhelmed? */}
         <section className="bg-card">
-          <div className="mx-auto flex min-h-[599px] max-w-[1152px] flex-col items-center justify-between gap-x-24 gap-y-6 py-[96px] md:flex-row">
-            <div className="font-heading space-y-5 -tracking-tighter lg:tracking-normal">
-              <h1 className="text-darkblue text-4xl font-semibold lg:text-6xl">
+          <div className="mx-auto flex min-h-[599px] max-w-[1152px] min-w-fit flex-col items-center justify-center gap-y-6 px-4 py-[96px] md:gap-x-14 md:px-6 lg:flex-row xl:justify-between xl:gap-x-24 xl:px-36">
+            <div className="font-heading space-y-5 -tracking-tighter xl:tracking-normal">
+              <h1 className="text-darkblue text-4xl font-semibold md:text-5xl xl:text-7xl">
                 Overwhelmed with
                 <span className="text-alert-104 block">School</span>
                 <span className="text-alert-104 block">Communication</span>
               </h1>
 
-              <p className="text-darkblue-102 font-bold lg:text-2xl">
+              <p className="text-darkblue-102 font-bold xl:text-2xl">
                 PASS it to your AI Agent
               </p>
-              <Button className="lg:h-14 lg:p-4">
-                <span className="font-heading font-bold md:text-xl">Learn more</span>
+              <Button className="p-2 md:h-12 md:p-3 xl:h-14 xl:p-4">
+                <span className="font-heading cursor-pointer font-bold md:text-xl">
+                  Learn more
+                </span>
               </Button>
             </div>
             <Image
               src="/landing/man-walking.svg"
               width={481}
               height={407}
-              className="h-[229px] w-[271px] md:h-[407px] md:w-[481px]"
+              className="h-[229px] w-[271px] md:h-auto md:w-[300px] xl:h-[407px] xl:w-[481px]"
               priority
               quality={90}
               alt="guy walking"
@@ -81,16 +83,16 @@ const Home: NextPage = () => {
 
         {/* Container 2 Manage your children  */}
         <section className="mx-auto max-w-[542px] space-y-2 bg-white text-center">
-          <h1 className="font-heading text-darkblue-102 text-2xl font-bold lg:text-[32px]">
+          <h1 className="font-heading text-darkblue-102 text-2xl font-bold xl:text-[32px]">
             Manage your children&apos;s schedules and activities in one place
           </h1>
-          <h2 className="text-secondary font-heading lg:text-2xlxl text-xl font-extrabold">
+          <h2 className="text-secondary font-heading xl:text-2xlxl text-xl font-extrabold">
             Who is PASS.ai suitable for?
           </h2>
         </section>
 
         {/* Container 3 Busy Parents and School Admins  */}
-        <section className="m-6 flex flex-col items-center justify-start gap-5 gap-y-8 bg-[#FFF] text-center text-black lg:flex-row lg:items-start lg:justify-center lg:gap-80">
+        <section className="m-6 flex flex-col items-center justify-start gap-5 gap-y-8 bg-[#FFF] text-center xl:flex-row xl:items-start xl:justify-center xl:gap-80">
           <Card className="shadow-landcard flex h-[256px] w-[299px] flex-col items-center justify-center text-base">
             <Image
               src="/landing/people-icon.png"
@@ -98,10 +100,10 @@ const Home: NextPage = () => {
               height="56"
               alt="parents icon"
             />
-            <h1 className="font-heading text-3xl font-bold text-neutral-600">
+            <h1 className="font-heading text-neutral-dgrey text-3xl font-bold">
               Busy Parents
             </h1>
-            <p className="mx-4 text-base font-normal text-neutral-800">
+            <p className="text-black-200 mx-4 text-base font-normal">
               {" "}
               Parents are overwhelmed by the complexity and fragmentation of managing
               their children’s school-related activities and schedules.
@@ -115,10 +117,10 @@ const Home: NextPage = () => {
               height="56"
               alt="admins icon"
             />
-            <h1 className="font-heading text-3xl font-bold text-neutral-600">
+            <h1 className="font-heading text-neutral-dgrey text-3xl font-bold">
               School Admins
             </h1>
-            <p className="mx-4 text-base font-normal text-neutral-800">
+            <p className="text-black-200 mx-4 text-base font-normal">
               School admins are overwhelmed by the workload; tracking incidents,
               managing communication and ensuring security.
             </p>
@@ -126,7 +128,7 @@ const Home: NextPage = () => {
         </section>
 
         {/* Container 4 How does PASSai help me*/}
-        <section className="m-6 flex flex-col items-center justify-center gap-4 lg:flex-row">
+        <section className="m-6 flex flex-col items-center justify-center gap-4 xl:flex-row">
           <Image
             src="/landing/email-guy.png"
             width="454"
@@ -136,10 +138,10 @@ const Home: NextPage = () => {
           />
 
           <div className="space-y-3">
-            <h1 className="font-heading text-xl font-bold text-neutral-800 lg:text-3xl">
+            <h1 className="font-heading text-xl font-bold text-neutral-800 xl:text-3xl">
               How does PASS.ai help me
             </h1>
-            <ul className="font-heading list-disc self-stretch pl-5 text-sm text-neutral-800 lg:text-base">
+            <ul className="font-heading list-disc self-stretch pl-5 text-sm text-neutral-800 xl:text-base">
               <li>Stay organized effortlessly</li>
               <li>Never miss important updates</li>
               <li>No more scheduling conflicts</li>
@@ -147,18 +149,20 @@ const Home: NextPage = () => {
               <li>Reduced stress and improved work-life balance</li>
             </ul>
 
-            <Button className="h-14 text-lg font-bold">Learn more</Button>
+            <Button className="cursor-pointer py-3 text-lg font-bold lg:py-5 xl:h-14">
+              <Link href="#">Learn more</Link>
+            </Button>
           </div>
         </section>
 
         {/* Container 5 Connect all your child's school apps */}
-        <section className="bg-darkblue font-heading text-offwhite flex flex-col items-center justify-center gap-4 py-7 max-sm:px-4 lg:flex-row lg:justify-between lg:px-40">
-          <div className="font-heading text-alert-100 h-full max-w-[540px] basis-1/2 gap-3">
-            <h1 className="text-2xl font-bold text-neutral-200 lg:text-4xl">
+        <section className="bg-darkblue font-heading text-offwhite flex flex-col items-center justify-center gap-4 py-7 max-sm:px-4 xl:flex-row xl:justify-between xl:px-40">
+          <div className="font-heading text-alert-100 h-full max-w-[540px] basis-1/2 gap-3 space-y-2 md:space-y-4 lg:space-y-6">
+            <h1 className="text-2xl font-bold text-neutral-200 lg:text-3xl xl:text-4xl">
               How we have helped parents and school administrations manage their
               communication
             </h1>
-            <p className="font-semibold">
+            <p className="text-base font-semibold md:text-lg lg:text-xl">
               We reached here with our hard work and dedication
             </p>
           </div>
@@ -220,7 +224,7 @@ const Home: NextPage = () => {
         </section>
 
         {/* Container 6  How have we helped parents and school admins  */}
-        <section className="m-6 flex max-h-fit flex-col items-center justify-center space-x-3 lg:flex-row">
+        <section className="m-6 flex max-h-fit flex-col items-center justify-center space-x-3 xl:flex-row">
           <Image
             src="/landing/setup-wizard.png"
             width={456}
@@ -228,7 +232,7 @@ const Home: NextPage = () => {
             alt="girl board"
           />
           <div className="flex max-w-[600px] flex-col items-start gap-4 space-y-3.5 py-4">
-            <h1 className="font-heading text-3xl font-bold text-neutral-800 lg:text-4xl">
+            <h1 className="font-heading text-3xl font-bold text-neutral-800 xl:text-4xl">
               Connect all your child&apos;s school apps and let our AI agent do the
               rest
             </h1>
@@ -238,12 +242,19 @@ const Home: NextPage = () => {
               <li>Donec quis erat at libero ultrices mollis.</li>
               <li>In hac habitasse platea dictumst.</li>
             </ol>
-            <Button className="font-bold lg:px-5">Sign up now</Button>
+            <Link
+              href="/signup"
+              className="cursor-pointer"
+            >
+              <Button className="cursor-pointer py-3 text-lg font-bold lg:py-5 xl:h-14">
+                Sign up now
+              </Button>
+            </Link>
           </div>
         </section>
 
         {/* Container 7  Ashley Vee Testimonial */}
-        <section className="bg-offwhite flex min-h-[438px] flex-col items-center justify-center gap-x-4 p-6 px-4 py-8 lg:flex-row lg:px-36 lg:py-8">
+        <section className="bg-offwhite flex min-h-[438px] flex-col items-center justify-center gap-x-16 p-6 px-4 py-8 xl:flex-row xl:px-36 xl:py-8">
           <Image
             src="/landing/testimonial-ashley.png"
             width={358}
@@ -251,26 +262,24 @@ const Home: NextPage = () => {
             alt="mom with child"
           />
 
-          <div className="flex min-h-[288px] max-w-[748px] flex-col items-start justify-center gap-4">
+          <div className="flex min-h-[288px] max-w-[748px] flex-col items-start justify-center gap-4 px-4">
             <Image
               src="/landing/quote.svg"
               width={98}
               height={81}
               alt="quote icon"
-              className="md:-mt-20"
+              className="py-2 max-lg:block lg:-mt-20"
             />
-            <p className="font-normal text-slate-950">
+            <p className="xl:text-black-200 text-grey-204 font-sans">
               Maecenas dignissim justo eget nulla rutrum molestie. Maecenas lobortis
               sem dui, vel rutrum risus tincidunt ullamcorper. Proin eu enim metus.
               Vivamus sed libero ornare, tristique quam in, gravida enim. Nullam ut
               molestie arcu, at hendrerit elit.
             </p>
             <p className="text-darkblue-101 font-heading text-2xl font-bold">
-              {" "}
               Ashley Vee
             </p>
-            <p className="font-heading text-neutral-lgrey font-semibold">
-              {" "}
+            <p className="font-heading text-neutral-lgrey -mt-3.5 mb-2 font-semibold">
               Graphic Designer
             </p>
 
@@ -283,20 +292,20 @@ const Home: NextPage = () => {
           </div>
         </section>
         {/* Container 8  Caring is the new marketing  */}
-        <section className="flex flex-col items-center justify-start gap-3 px-4 lg:px-36">
-          <h1 className="font-heading text-neutral-dgrey text-4xl font-bold lg:text-5xl lg:tracking-tight">
-            Caring is the{" "}
-            <span className="font-extrabold tracking-normal max-sm:block">
+        <section className="flex flex-col items-center justify-start gap-3 xl:px-36">
+          <h1 className="font-heading text-neutral-dgrey/90 text-2xl font-bold tracking-tighter md:text-4xl lg:text-5xl xl:tracking-tight">
+            Caring is the&nbsp;
+            <span className="text-neutral-dgrey font-extrabold tracking-normal">
               New Marketing
             </span>
           </h1>
-          <p className="max-w-xl px-3 text-justify indent-9 font-sans text-[#232423] first-letter:font-bold lg:px-4">
+          <p className="text-black-200 max-w-xl px-3 indent-9 font-sans text-sm text-pretty first-letter:text-black max-md:mx-10 md:text-base xl:px-4">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
             veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
             commodo consequat.
           </p>
-          <div className="my-14 flex min-h-[565px] flex-row flex-wrap items-center justify-center gap-6">
+          <div className="my-14 flex min-h-[565px] flex-row flex-wrap items-center justify-center gap-6 gap-y-10">
             <div className="grid max-h-[417px] w-[368px] grid-cols-1">
               <Image
                 src="/landing/caring-1.png"
@@ -304,13 +313,13 @@ const Home: NextPage = () => {
                 height={286}
                 alt="caring 1"
               />
-              <Card className="shadow-landcard -mt-24 h-[227px] w-[310px] justify-self-center">
-                <h1 className="font-heading mx-8 text-center text-2xl font-bold text-neutral-500">
+              <Card className="shadow-landcard -mt-24 h-[227px] w-[310px] justify-self-center duration-500 ease-in-out hover:drop-shadow-lg">
+                <h1 className="font-heading text-neutral-grey mx-8 indent-6 text-2xl font-bold text-pretty">
                   Helping busy parents who are stressed with school communication
                 </h1>
                 <Link
                   href="#"
-                  className="text-darkblue-102 mx-auto leading-none font-semibold"
+                  className="text-darkblue-102 hover:text-darkblue-106 mx-auto leading-none font-semibold transition-colors"
                 >
                   Read more
                 </Link>
@@ -323,13 +332,13 @@ const Home: NextPage = () => {
                 height={283}
                 alt="caring 2"
               />
-              <Card className="shadow-landcard -mt-24 h-[227px] w-[310px] justify-self-center">
-                <h1 className="font-heading mx-8 text-center text-2xl font-bold text-neutral-500">
+              <Card className="shadow-landcard -mt-24 h-[227px] w-[310px] justify-self-center duration-500 ease-in-out hover:drop-shadow-lg">
+                <h1 className="font-heading text-neutral-grey mx-8 indent-6 text-2xl font-bold text-pretty">
                   Improve work-life balance so you enjoy quality time with family
                 </h1>
                 <Link
                   href="#"
-                  className="text-darkblue-102 mx-auto leading-none font-semibold"
+                  className="text-darkblue-102 hover:text-darkblue-106 mx-auto leading-none font-semibold transition-colors"
                 >
                   Read more
                 </Link>
@@ -342,13 +351,14 @@ const Home: NextPage = () => {
                 height={287}
                 alt="caring 3"
               />
-              <Card className="shadow-landcard -mt-24 h-[227px] w-[310px] justify-self-center">
-                <h1 className="font-heading mx-8 text-center text-2xl font-bold text-neutral-500">
-                  Improve work-life balance so you enjoy quality time with family
+              <Card className="shadow-landcard -mt-24 h-[227px] w-[310px] justify-self-center duration-500 ease-in-out hover:drop-shadow-lg">
+                <h1 className="font-heading text-neutral-grey mx-8 indent-6 text-2xl font-bold text-pretty">
+                  Let us show you how we can make your life easier with our trained
+                  models
                 </h1>
                 <Link
                   href="#"
-                  className="text-darkblue-102 mx-auto leading-none font-semibold hover:font-bold"
+                  className="text-darkblue-102 hover:text-darkblue-106 mx-auto leading-none font-semibold transition-colors"
                 >
                   Read more
                 </Link>
@@ -357,8 +367,8 @@ const Home: NextPage = () => {
           </div>
         </section>
       </main>
-      <footer className="bg-darkblue flex min-h-52 basis-full max-sm:flex-col lg:px-4">
-        <div className="flex basis-full items-start justify-between self-stretch p-10 max-sm:flex-col lg:inline-flex">
+      <footer className="bg-darkblue flex min-h-52 basis-full max-sm:flex-col xl:px-4">
+        <div className="flex basis-full items-start justify-between self-stretch p-10 max-sm:flex-col xl:inline-flex">
           <div className="inline-flex flex-col items-start justify-center gap-5">
             <div className="relative h-24 w-20">
               <Image
@@ -372,7 +382,7 @@ const Home: NextPage = () => {
             <div className="font-heading text-offwhite w-80 justify-center text-sm font-semibold">
               Parent Agent x School Support
             </div>
-            <div className="inline-flex grow basis-full flex-row flex-wrap gap-4 lg:flex-nowrap lg:gap-10">
+            <div className="inline-flex grow basis-full flex-row flex-wrap gap-4 xl:flex-nowrap xl:gap-10">
               <span className="text-offwhite justify-center text-center font-sans text-base leading-normal font-bold">
                 © 2025
               </span>
