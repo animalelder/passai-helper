@@ -84,3 +84,28 @@ model Verification {
 
   @@map("verification")
 }
+
+// model Family {
+//   id       String   @id @default(cuid())
+//   name     String
+//   address  String?
+//   createdAt DateTime @default(now())
+
+//   // Relationships
+//   // parents  Parent[]
+//   children Child[]
+// }
+
+// model Child {
+//   id        String   @id @default(cuid())
+//   name      String
+//   age       Int
+//   school    String
+//   grade     String
+//   createdAt DateTime @default(now())
+
+//   // Foreign Key
+//   familyId  String
+//   family    Family   @relation(fields: [familyId], references: [id])
+// }
+
