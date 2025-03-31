@@ -15,6 +15,7 @@ const Home: NextPage = () => {
             height={96}
             className="isolate -mb-7 h-24 w-20"
             src="/landing/passai-logo.png"
+            priority
             alt="logo"
           />
         </Link>
@@ -130,6 +131,7 @@ const Home: NextPage = () => {
             src="/landing/email-guy.png"
             width="454"
             height="408"
+            className="h-[310px] w-[346px] md:h-[408px] md:w-[454px]"
             alt="guy standing"
           />
 
