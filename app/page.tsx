@@ -13,7 +13,7 @@ const Home: NextPage = () => {
           <Image
             width={73}
             height={96}
-            className="isolate -mb-7 h-24 w-20"
+            className="isolate -mb-7 h-auto w-20"
             src="/landing/passai-logo.png"
             priority
             alt="logo"
@@ -43,7 +43,7 @@ const Home: NextPage = () => {
         <Link href="/signin">
           <Button
             variant="secondary"
-            className="cursor-pointer px-4 py-5 text-xl font-bold"
+            className="cursor-pointer"
           >
             Sign In
           </Button>
@@ -63,11 +63,7 @@ const Home: NextPage = () => {
               <p className="text-darkblue-102 font-bold xl:text-2xl">
                 PASS it to your AI Agent
               </p>
-              <Button className="p-2 md:h-12 md:p-3 xl:h-14 xl:p-4">
-                <span className="font-heading cursor-pointer font-bold md:text-xl">
-                  Learn more
-                </span>
-              </Button>
+              <Button className="cursor-pointer">Learn more</Button>
             </div>
             <Image
               src="/landing/man-walking.svg"
@@ -149,7 +145,7 @@ const Home: NextPage = () => {
               <li>Reduced stress and improved work-life balance</li>
             </ul>
 
-            <Button className="cursor-pointer py-3 text-lg font-bold lg:py-5 xl:h-14">
+            <Button className="cursor-pointer">
               <Link href="#">Learn more</Link>
             </Button>
           </div>
@@ -157,9 +153,9 @@ const Home: NextPage = () => {
 
         {/* Container 5 Connect all your child's school apps */}
         <section className="bg-darkblue font-heading text-offwhite flex flex-col items-center justify-center gap-4 py-7 max-sm:px-4 xl:flex-row xl:justify-between xl:px-40">
-          <div className="font-heading text-alert-100 h-full max-w-[540px] basis-1/2 gap-3 space-y-2 md:space-y-4 lg:space-y-6">
-            <h1 className="text-2xl font-bold text-neutral-200 lg:text-3xl xl:text-4xl">
-              How we have helped parents and school administrations manage their
+          <div className="font-heading h-full max-w-[540px] basis-1/2 gap-3 space-y-2 md:space-y-4 lg:space-y-6">
+            <h1 className="text-offwhite text-2xl font-bold lg:text-3xl xl:text-4xl">
+              How we have helped parents and school administrators manage their
               communication
             </h1>
             <p className="text-base font-semibold md:text-lg lg:text-xl">
@@ -171,8 +167,8 @@ const Home: NextPage = () => {
               <div className="inline-flex min-w-1/2 gap-2">
                 <Image
                   src="/landing/parents.svg"
-                  width={34}
-                  height={31}
+                  width={48}
+                  height={48}
                   alt="parents icon"
                 />
                 <div className="font-heading font-semibold">
@@ -182,11 +178,11 @@ const Home: NextPage = () => {
               </div>
               <div className="inline-flex min-w-1/2 gap-2">
                 <Image
-                  src="/landing/schools-icon.png"
-                  width={42}
-                  height={34}
+                  src="/landing/schools-icon.svg"
+                  width={48}
+                  height={49}
                   alt="schools icon"
-                  className="object-contain"
+                  className="object-fill"
                 />
                 <div className="font-heading font-semibold">
                   <h2 className="text-2xl font-bold">46,328</h2>
@@ -198,8 +194,8 @@ const Home: NextPage = () => {
               <div className="inline-flex min-w-1/2 gap-2">
                 <Image
                   src="/landing/trending-up.svg"
-                  width={34}
-                  height={31}
+                  width={48}
+                  height={48}
                   alt="trending-up icon"
                 />
                 <div className="font-heading font-semibold">
@@ -210,8 +206,9 @@ const Home: NextPage = () => {
               <div className="inline-flex min-w-1/2 gap-2">
                 <Image
                   src="/landing/payments.svg"
-                  width={34}
-                  height={31}
+                  width={48}
+                  height={48}
+                  className="object-cover- object-center"
                   alt="payments icon"
                 />
                 <div className="font-heading font-semibold">
@@ -246,9 +243,7 @@ const Home: NextPage = () => {
               href="/signup"
               className="cursor-pointer"
             >
-              <Button className="cursor-pointer py-3 text-lg font-bold lg:py-5 xl:h-14">
-                Sign up now
-              </Button>
+              <Button className="cursor-pointer">Sign up now</Button>
             </Link>
           </div>
         </section>
@@ -306,11 +301,12 @@ const Home: NextPage = () => {
             commodo consequat.
           </p>
           <div className="my-14 flex min-h-[565px] flex-row flex-wrap items-center justify-center gap-6 gap-y-10">
-            <div className="grid max-h-[417px] w-[368px] grid-cols-1">
+            <div className="grid max-h-[417px] grid-cols-1 xl:w-[368px]">
               <Image
                 src="/landing/caring-1.png"
                 width={368}
-                height={286}
+                height={287}
+                className="h-auto w-auto object-scale-down"
                 alt="caring 1"
               />
               <Card className="shadow-landcard -mt-24 h-[227px] w-[310px] justify-self-center duration-500 ease-in-out hover:drop-shadow-lg">
@@ -374,7 +370,7 @@ const Home: NextPage = () => {
               <Image
                 width={73}
                 height={96}
-                className="h-24 w-20"
+                className="h-auto w-20"
                 src="/landing/passai-logo.png"
                 alt="logo"
               />
