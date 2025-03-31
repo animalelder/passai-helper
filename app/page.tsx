@@ -76,10 +76,10 @@ const Home: NextPage = () => {
 
         {/* Container 2 Manage your children  */}
         <section className="mx-auto max-w-[542px] space-y-2 bg-white text-center">
-          <h1 className="font-heading text-2xl font-bold text-[#759EAB] lg:text-3xl">
+          <h1 className="font-heading text-darkblue-102 text-2xl font-bold lg:text-[32px]">
             Manage your children&apos;s schedules and activities in one place
           </h1>
-          <h2 className="text-secondary text-xl font-extrabold lg:text-xl">
+          <h2 className="text-secondary font-heading lg:text-2xlxl text-xl font-extrabold">
             Who is PASS.ai suitable for?
           </h2>
         </section>
