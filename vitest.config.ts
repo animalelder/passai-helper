@@ -2,6 +2,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { storybookTest } from "@storybook/experimental-addon-test/vitest-plugin";
+import react from "@vitejs/plugin-react";
 import { defineConfig } from "vitest/config";
 
 const dirname =
@@ -18,10 +19,12 @@ export default defineConfig({
         plugins: [
           // The plugin will run tests for the stories defined in your Storybook config
           // See options at: https://storybook.js.org/docs/writing-tests/test-addon#storybooktest
+          react(),
           storybookTest({ configDir: path.join(dirname, ".storybook") }),
         ],
         test: {
           name: "storybook",
+          environment: "jsdom",
           browser: {
             enabled: true,
             headless: true,
