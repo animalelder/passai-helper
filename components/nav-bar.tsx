@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 
 import { Menu, X } from "lucide-react";
 
@@ -18,9 +17,6 @@ const menuItems = [
 
 const NavBar = () => {
   const [menuState, setMenuState] = useState(false);
-  const pathname = usePathname();
-
-  console.info(pathname);
 
   return (
     <header className="sticky inset-0 z-20 max-h-[82px] min-w-dvw basis-full *:transition-all *:duration-300 md:max-h-[92px]">
@@ -33,7 +29,7 @@ const NavBar = () => {
             width={73}
             height={96}
             className={cn(
-              "in-data-[state=active]:slide-out-to-left slide-in-from-left isolate -mb-7 w-20 in-data-[state=active]:hidden in-data-[state=active]:opacity-0"
+              "in-data-[state=active]:slide-out-to-left slide-in-from-left isolate z-30 -mb-7 w-20 in-data-[state=active]:hidden in-data-[state=active]:opacity-0"
             )}
             src="/landing/passai-logo.png"
             priority
@@ -63,7 +59,7 @@ const NavBar = () => {
             <Menu className="size-6 duration-200 in-data-[state=active]:hidden in-data-[state=active]:scale-0 in-data-[state=active]:rotate-180 in-data-[state=active]:opacity-0" />
           </button>
         </div>
-        <div className="bg-background/80 slide-out-from-bottom in-data-[state=active]:slide-in-from-top isolate z-50 mx-auto mt-10 hidden h-fit w-full rounded-3xl p-5 backdrop-blur-lg transition-all max-md:in-data-[state=active]:isolate max-md:in-data-[state=active]:flex max-md:in-data-[state=active]:flex-col lg:hidden">
+        <div className="bg-lightblue mix slide-out-from-bottom in-data-[state=active]:slide-in-from-top isolate z-50 mx-auto mt-10 hidden h-fit w-full rounded-3xl border-2 border-white p-5 backdrop-blur-lg transition-all in-data-[state=active]:isolate in-data-[state=active]:flex in-data-[state=active]:flex-col lg:hidden">
           <div className="contents lg:hidden">
             <button
               onClick={() => {
@@ -85,11 +81,20 @@ const NavBar = () => {
                   </Link>
                 </li>
               ))}
-              <li>
-                <Link href="/signup">Sign Up</Link>
-              </li>
-              <li>
-                <Link href="/signin">Sign In</Link>
+              <li className="inline-flex w-full justify-around gap-2">
+                <Button
+                  variant="secondary"
+                  asChild
+                >
+                  <Link href="/signup">Sign Up</Link>
+                </Button>
+
+                <Button
+                  variant="secondary"
+                  asChild
+                >
+                  <Link href="/signin">Sign In</Link>
+                </Button>
               </li>
             </ul>
           </div>
