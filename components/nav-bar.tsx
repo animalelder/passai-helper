@@ -29,7 +29,7 @@ const NavBar = () => {
             width={73}
             height={96}
             className={cn(
-              "in-data-[state=active]:slide-out-to-left slide-in-from-left isolate z-30 -mb-7 w-20 in-data-[state=active]:hidden in-data-[state=active]:opacity-0"
+              "in-data-[state=active]:slide-out-to-left slide-in-from-left isolate z-30 -mb-7 w-20 overflow-y-visible in-data-[state=active]:hidden in-data-[state=active]:opacity-0"
             )}
             src="/landing/passai-logo.png"
             priority
