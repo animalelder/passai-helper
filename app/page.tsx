@@ -2,53 +2,14 @@ import { NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
+import { NavBar } from "@/components/nav-bar";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 
 const Home: NextPage = () => {
   return (
-    <div className="flex min-h-screen basis-full flex-col">
-      <nav className="bg-lightblue inline-flex h-[82px] flex-auto basis-full items-center justify-between overflow-x-clip overflow-y-visible px-[32px] py-2 md:h-[92px]">
-        <Link href="/">
-          <Image
-            width={73}
-            height={96}
-            className="isolate -mb-7 h-auto w-20"
-            src="/landing/passai-logo.png"
-            priority
-            alt="logo"
-          />
-        </Link>
-        <span className="hidden gap-2 font-medium md:inline-flex">
-          <Link
-            className="px-2"
-            href="#"
-          >
-            What is PASS.ai?
-          </Link>
-          <Link
-            className="px-2"
-            href="#"
-          >
-            Pricing
-          </Link>
-          <Link
-            className="px-2"
-            href="#"
-          >
-            About Us
-          </Link>
-        </span>
-        <div className="md:hidden">Hamburger</div>
-        <Link href="/signin">
-          <Button
-            variant="secondary"
-            className="cursor-pointer"
-          >
-            Sign In
-          </Button>
-        </Link>
-      </nav>
+    <div className="relative flex min-h-screen w-dvw basis-full flex-col">
+      <NavBar />
       <main className="flex flex-col gap-20">
         {/* Container 1 Overwhelmed? */}
         <section className="bg-card">
