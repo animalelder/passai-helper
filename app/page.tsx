@@ -2,6 +2,20 @@ import { type NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
+import caring_1 from "@/assets/landing/caring-1.png";
+import caring_2 from "@/assets/landing/caring-2.png";
+import caring_3 from "@/assets/landing/caring-3.png";
+import emailGuy from "@/assets/landing/email-guy.png";
+import manWalking from "@/assets/landing/man-walking.svg";
+import parents from "@/assets/landing/parents.svg";
+import logo from "@/assets/landing/passai-logo.svg";
+import paymentsIcon from "@/assets/landing/payments.svg";
+import peopleIcon from "@/assets/landing/people-icon.png";
+import quoteIcon from "@/assets/landing/quote.svg";
+import schoolsIcon from "@/assets/landing/schools-icon.svg";
+import setupWizard from "@/assets/landing/setup-wizard.svg";
+import ashley from "@/assets/landing/testimonial-ashley.png";
+import trendingUp from "@/assets/landing/trending-up.svg";
 import { NavBar } from "@/components/nav-bar";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -15,19 +29,19 @@ const Home: NextPage = () => {
         <section className="bg-card">
           <div className="mx-auto flex min-h-[599px] max-w-[1152px] min-w-fit flex-col items-center justify-center gap-y-6 px-4 py-[96px] md:gap-x-14 md:px-6 lg:flex-row xl:justify-between xl:gap-x-24 xl:px-36">
             <div className="font-heading space-y-5 -tracking-tighter xl:tracking-normal">
-              <h1 className="text-darkblue text-4xl font-semibold md:text-5xl xl:text-7xl">
+              <h1 className="text-darkblue text-4xl font-semibold md:text-5xl lg:text-7xl">
                 Overwhelmed with
                 <span className="text-alert-104 block">School</span>
                 <span className="text-alert-104 block">Communication</span>
               </h1>
 
-              <p className="text-darkblue-102 font-bold xl:text-2xl">
+              <p className="text-darkblue-102 text-lg font-bold md:text-xl lg:text-2xl">
                 PASS it to your AI Agent
               </p>
               <Button className="cursor-pointer">Learn more</Button>
             </div>
             <Image
-              src="/landing/man-walking.svg"
+              src={manWalking}
               width={481}
               height={407}
               className="h-[229px] w-[271px] md:h-auto md:w-[300px] xl:h-[407px] xl:w-[481px]"
@@ -52,7 +66,7 @@ const Home: NextPage = () => {
         <section className="m-6 flex flex-col items-center justify-start gap-5 gap-y-8 bg-[#FFF] text-center xl:flex-row xl:items-start xl:justify-center xl:gap-80">
           <Card className="shadow-landcard flex h-[256px] w-[299px] flex-col items-center justify-center text-base">
             <Image
-              src="/landing/people-icon.png"
+              src={peopleIcon}
               width="65"
               height="56"
               alt="parents icon"
@@ -69,7 +83,7 @@ const Home: NextPage = () => {
 
           <Card className="shadow-landcard flex h-[256px] w-[299px] flex-col items-center justify-center">
             <Image
-              src="/landing/people-icon.png"
+              src={peopleIcon}
               width="65"
               height="56"
               alt="admins icon"
@@ -85,9 +99,9 @@ const Home: NextPage = () => {
         </section>
 
         {/* Container 4 How does PASSai help me*/}
-        <section className="m-6 flex flex-col items-center justify-center gap-4 xl:flex-row">
+        <section className="flex flex-col items-center justify-center gap-4 p-6 xl:flex-row">
           <Image
-            src="/landing/email-guy.png"
+            src={emailGuy}
             width="454"
             height="408"
             className="h-[310px] w-[346px] md:h-[408px] md:w-[454px]"
@@ -127,7 +141,7 @@ const Home: NextPage = () => {
             <div className="grow basis-full">
               <div className="inline-flex min-w-1/2 gap-2">
                 <Image
-                  src="/landing/parents.svg"
+                  src={parents}
                   width={48}
                   height={48}
                   alt="parents icon"
@@ -139,7 +153,7 @@ const Home: NextPage = () => {
               </div>
               <div className="inline-flex min-w-1/2 gap-2">
                 <Image
-                  src="/landing/schools-icon.svg"
+                  src={schoolsIcon}
                   width={48}
                   height={49}
                   alt="schools icon"
@@ -154,7 +168,7 @@ const Home: NextPage = () => {
             <div className="grow basis-full">
               <div className="inline-flex min-w-1/2 gap-2">
                 <Image
-                  src="/landing/trending-up.svg"
+                  src={trendingUp}
                   width={48}
                   height={48}
                   alt="trending-up icon"
@@ -166,7 +180,7 @@ const Home: NextPage = () => {
               </div>
               <div className="inline-flex min-w-1/2 gap-2">
                 <Image
-                  src="/landing/payments.svg"
+                  src={paymentsIcon}
                   width={48}
                   height={48}
                   className="object-cover- object-center"
@@ -184,7 +198,7 @@ const Home: NextPage = () => {
         {/* Container 6  How have we helped parents and school admins  */}
         <section className="m-6 flex max-h-fit flex-col items-center justify-center space-x-3 xl:flex-row">
           <Image
-            src="/landing/setup-wizard.png"
+            src={setupWizard}
             width={456}
             height={408}
             alt="girl board"
@@ -212,7 +226,7 @@ const Home: NextPage = () => {
         {/* Container 7  Ashley Vee Testimonial */}
         <section className="bg-offwhite flex min-h-[438px] flex-col items-center justify-center gap-x-16 p-6 px-4 py-8 xl:flex-row xl:px-36 xl:py-8">
           <Image
-            src="/landing/testimonial-ashley.png"
+            src={ashley}
             width={358}
             height={359}
             alt="mom with child"
@@ -220,7 +234,7 @@ const Home: NextPage = () => {
 
           <div className="flex min-h-[288px] max-w-[748px] flex-col items-start justify-center gap-4 px-4">
             <Image
-              src="/landing/quote.svg"
+              src={quoteIcon}
               width={98}
               height={81}
               alt="quote icon"
@@ -264,7 +278,7 @@ const Home: NextPage = () => {
           <div className="my-14 flex min-h-[565px] flex-row flex-wrap items-center justify-center gap-6 gap-y-10">
             <div className="grid max-h-[417px] grid-cols-1 xl:w-[368px]">
               <Image
-                src="/landing/caring-1.png"
+                src={caring_1}
                 width={368}
                 height={287}
                 className="h-auto w-auto object-scale-down"
@@ -284,7 +298,7 @@ const Home: NextPage = () => {
             </div>
             <div className="grid h-[417px] w-[368px] grid-cols-1">
               <Image
-                src="/landing/caring-2.png"
+                src={caring_2}
                 width={368}
                 height={283}
                 alt="caring 2"
@@ -303,7 +317,7 @@ const Home: NextPage = () => {
             </div>
             <div className="grid h-[417px] w-[368px] grid-cols-1">
               <Image
-                src="/landing/caring-3.png"
+                src={caring_3}
                 width={368}
                 height={287}
                 alt="caring 3"
@@ -332,7 +346,7 @@ const Home: NextPage = () => {
                 width={73}
                 height={96}
                 className="h-auto w-20"
-                src="/landing/passai-logo.png"
+                src={logo}
                 alt="logo"
               />
             </div>

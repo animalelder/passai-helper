@@ -6,6 +6,7 @@ import Link from "next/link";
 
 import { Menu, X } from "lucide-react";
 
+import logo from "@/assets/landing/passai-logo.png";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -31,7 +32,7 @@ const NavBar = () => {
             className={cn(
               "in-data-[state=active]:slide-out-to-left slide-in-from-left isolate z-30 -mb-7 w-20 overflow-y-visible in-data-[state=active]:hidden in-data-[state=active]:opacity-0"
             )}
-            src="/landing/passai-logo.png"
+            src={logo}
             priority
             alt="logo"
           />
