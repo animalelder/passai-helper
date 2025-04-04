@@ -41,7 +41,7 @@ export default function RootLayout({
       lang="en"
     >
       <body
-        className={`${openSans.variable} ${inter.variable} font-sans antialiased`}
+        className={`${openSans.variable} ${inter.variable} font-sans subpixel-antialiased`}
       >
         <ThemeProvider
           attribute="class"

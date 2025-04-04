@@ -225,7 +225,7 @@ const Home: NextPage = () => {
         </section>
 
         {/* Container 7  Ashley Vee Testimonial */}
-        <section className="bg-offwhite flex min-h-[438px] flex-col items-center justify-center gap-x-16 p-6 px-4 py-8 xl:flex-row xl:px-36 xl:py-8">
+        <section className="bg-offwhite flex min-h-[438px] flex-col items-center justify-center p-6 px-4 py-8 xl:flex-row xl:space-x-16 xl:px-36 xl:py-8">
           <Image
             src={ashley}
             width={358}
@@ -236,15 +236,13 @@ const Home: NextPage = () => {
           <div className="flex min-h-[288px] max-w-[748px] flex-col items-start justify-center gap-4 px-4">
             <Image
               src={quoteIcon}
-              width={98}
-              height={81}
               alt="quote icon"
               className="py-2 max-lg:block lg:-mt-20"
             />
-            <p className="xl:text-black-200 indent-3 font-sans text-blue-950">
-              PASS.ai has been a game-changer for our family. I can now manage my
-              children&apos;s schedules and school activities in one place. It has
-              made our lives so much easier!
+            <p className="xl:text-black-200 indent-3 font-sans lg:text-lg">
+              PASS.ai has been a game-changer for our family. No more jumping between
+              apps! I can now manage my children&apos;s schedules and school
+              activities in one place. It has made our lives so much easier!
             </p>
             <p className="text-darkblue-104 font-heading text-2xl font-bold">
               Ashley Vee
@@ -255,7 +253,7 @@ const Home: NextPage = () => {
 
             <Link
               href="#"
-              className="font-heading text-darkblue text-xl/relaxed font-semibold"
+              className="font-heading text-darkblue self-center-safe justify-self-end-safe text-xl/relaxed font-semibold"
             >
               See what other customers have said
             </Link>
@@ -283,7 +281,9 @@ const Home: NextPage = () => {
                 <h1 className="font-heading text-neutral-grey mx-8 text-2xl font-bold text-pretty">
                   Family Calendar
                 </h1>
-                <p className="indent-2">Make scheduling simple and stress-free.</p>
+                <p className="mx-2 indent-2">
+                  Make scheduling simple and stress-free.
+                </p>
                 <Link
                   href="#"
                   className="text-darkblue-102 hover:text-darkblue-106 mx-auto leading-none font-semibold transition-colors"
@@ -303,7 +303,9 @@ const Home: NextPage = () => {
                 <h1 className="font-heading text-neutral-grey mx-8 text-center text-2xl font-bold text-pretty">
                   School Communication
                 </h1>
-                <p className="indent-2">Never miss an important message again.</p>
+                <p className="mx-2 indent-2">
+                  Never miss an important message again.
+                </p>
                 <Link
                   href="#"
                   className="text-darkblue-102 hover:text-darkblue-106 mx-auto leading-none font-semibold transition-colors"
@@ -323,7 +325,7 @@ const Home: NextPage = () => {
                 <h1 className="font-heading text-neutral-grey mx-8 text-center text-2xl font-bold text-pretty">
                   Track Academic Progress
                 </h1>
-                <p className="indent-2">
+                <p className="mx-2 indent-2">
                   Stay updated on schoolwork and attendance.
                 </p>
                 <Link
