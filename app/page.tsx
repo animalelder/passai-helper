@@ -277,10 +277,9 @@ const Home: NextPage = () => {
                 src={caring_1}
                 width={368}
                 height={287}
-                className="h-auto w-auto object-scale-down"
                 alt="caring 1"
               />
-              <Card className="shadow-landcard -mt-24 h-[227px] w-[310px] justify-self-center px-2 duration-500 ease-in-out hover:drop-shadow-lg">
+              <Card className="shadow-landcard -mt-24 flex h-[227px] w-[310px] flex-col items-center justify-between justify-self-center px-2 duration-500 ease-in-out hover:drop-shadow-lg">
                 <h1 className="font-heading text-neutral-grey mx-8 text-2xl font-bold text-pretty">
                   Family Calendar
                 </h1>
@@ -300,9 +299,9 @@ const Home: NextPage = () => {
                 height={283}
                 alt="caring 2"
               />
-              <Card className="shadow-landcard -mt-24 h-[227px] w-[310px] justify-self-center px-2 duration-500 ease-in-out hover:drop-shadow-lg">
-                <h1 className="font-heading text-neutral-grey mx-8 text-2xl font-bold text-pretty">
-                  School to Home Communication
+              <Card className="shadow-landcard -mt-24 flex h-[227px] w-[310px] flex-col items-center justify-between justify-self-center px-2 duration-500 ease-in-out hover:drop-shadow-lg">
+                <h1 className="font-heading text-neutral-grey mx-8 text-center text-2xl font-bold text-pretty">
+                  School Communication
                 </h1>
                 <p className="indent-2">Never miss an important message again.</p>
                 <Link
@@ -320,8 +319,8 @@ const Home: NextPage = () => {
                 height={287}
                 alt="caring 3"
               />
-              <Card className="shadow-landcard -mt-24 h-[227px] w-[310px] justify-self-center px-2 duration-500 ease-in-out hover:drop-shadow-lg">
-                <h1 className="font-heading text-neutral-grey mx-8 text-2xl font-bold text-pretty">
+              <Card className="shadow-landcard -mt-24 flex h-[227px] w-[310px] flex-col items-center justify-between justify-self-center px-2 duration-500 ease-in-out hover:drop-shadow-lg">
+                <h1 className="font-heading text-neutral-grey mx-8 text-center text-2xl font-bold text-pretty">
                   Track Academic Progress
                 </h1>
                 <p className="indent-2">
