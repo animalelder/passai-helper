@@ -1,4 +1,4 @@
-import { NextPage } from "next";
+import { type NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -63,7 +63,7 @@ const Home: NextPage = () => {
             <p className="text-black-200 mx-4 text-base font-normal">
               {" "}
               Parents are overwhelmed by the complexity and fragmentation of managing
-              their children’s school-related activities and schedules.
+              their children&apos;s school-related activities and schedules.
             </p>
           </Card>
 
@@ -78,7 +78,7 @@ const Home: NextPage = () => {
               School Admins
             </h1>
             <p className="text-black-200 mx-4 text-base font-normal">
-              School admins are overwhelmed by the workload; tracking incidents,
+              School admins are overwhelmed by the workload: tracking incidents,
               managing communication and ensuring security.
             </p>
           </Card>

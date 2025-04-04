@@ -1,6 +1,6 @@
 "use client";
 
-import { HTMLMotionProps, motion } from "motion/react";
+import { motion, type HTMLMotionProps } from "motion/react";
 
 import { cn } from "@/lib/utils";
 
