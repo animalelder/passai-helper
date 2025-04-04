@@ -111,14 +111,13 @@ const Home: NextPage = () => {
 
           <div className="space-y-3">
             <h1 className="font-heading text-xl font-bold text-neutral-800 xl:text-3xl">
-              How does PASS.ai help me
+              Why Choose PASS.ai?
             </h1>
             <ul className="font-heading list-disc self-stretch pl-5 text-sm text-neutral-800 xl:text-base">
-              <li>Stay organized effortlessly</li>
-              <li>Never miss important updates</li>
-              <li>No more scheduling conflicts</li>
-              <li>No more stress and time wasted on manual tracking</li>
-              <li>Reduced stress and improved work-life balance</li>
+              <li>Intelligent Calendar Management</li>
+              <li>Unified Communication Hub</li>
+              <li>Smart Child Progress Tracking</li>
+              <li>Secure & Customizable Access</li>
             </ul>
 
             <Button className="cursor-pointer">
@@ -131,11 +130,12 @@ const Home: NextPage = () => {
         <section className="bg-darkblue font-heading text-offwhite flex flex-col items-center justify-center gap-4 py-7 max-sm:px-4 xl:flex-row xl:justify-between xl:px-40">
           <div className="font-heading h-full max-w-[540px] basis-1/2 gap-3 space-y-2 md:space-y-4 lg:space-y-6">
             <h1 className="text-offwhite text-2xl font-bold lg:text-3xl xl:text-4xl">
-              How we have helped parents and school administrators manage their
-              communication
+              Let the Numbers Talk
             </h1>
-            <p className="text-base font-semibold md:text-lg lg:text-xl">
-              We reached here with our hard work and dedication
+            <p className="indent-4 text-base font-semibold text-pretty md:text-lg">
+              Whether it&apos;s managing school schedules, tracking assignments, or
+              improving parent-teacher communication, PASS.ai streamlines everything
+              into a single, intuitive dashboard.
             </p>
           </div>
           <div className="flex h-full max-w-[540px] flex-wrap justify-between gap-4">
@@ -206,14 +206,14 @@ const Home: NextPage = () => {
           />
           <div className="flex max-w-[600px] flex-col items-start gap-4 space-y-3.5 py-4">
             <h1 className="font-heading text-3xl font-bold text-neutral-800 xl:text-4xl">
-              Connect all your child&apos;s school apps and let our AI agent do the
-              rest
+              Seamless Scheduling, Smarter Communication, and Effortless Organization
             </h1>
-            <ol className="list-decimal pl-5">
-              <li>Donec a eros justo. Fusce egestas tristique ultrices.</li>
-              <li>Nam tempor, augue nec tincidunt molestie, massa nunc varius.</li>
-              <li>Donec quis erat at libero ultrices mollis.</li>
-              <li>In hac habitasse platea dictumst.</li>
+            <ol className="list-inside list-none space-y-1 lg:space-y-0.5">
+              <li>🚀 &nbsp;&nbsp;Effortless Family Management</li>
+              <li>📅 &nbsp;&nbsp;Smart Calendar & AI-powered Reminders</li>
+              <li>📩 &nbsp;&nbsp;School Emails...Sorted</li>
+              <li>📊 &nbsp;&nbsp;Track Grades & Attendance</li>
+              <li>🔒 &nbsp;&nbsp;Safe & Secure Access</li>
             </ol>
             <Link
               href="/signup"
@@ -241,16 +241,15 @@ const Home: NextPage = () => {
               alt="quote icon"
               className="py-2 max-lg:block lg:-mt-20"
             />
-            <p className="xl:text-black-200 text-grey-204 font-sans">
-              Maecenas dignissim justo eget nulla rutrum molestie. Maecenas lobortis
-              sem dui, vel rutrum risus tincidunt ullamcorper. Proin eu enim metus.
-              Vivamus sed libero ornare, tristique quam in, gravida enim. Nullam ut
-              molestie arcu, at hendrerit elit.
+            <p className="xl:text-black-200 indent-3 font-sans text-blue-950">
+              PASS.ai has been a game-changer for our family. I can now manage my
+              children&apos;s schedules and school activities in one place. It has
+              made our lives so much easier!
             </p>
-            <p className="text-darkblue-101 font-heading text-2xl font-bold">
+            <p className="text-darkblue-104 font-heading text-2xl font-bold">
               Ashley Vee
             </p>
-            <p className="font-heading text-neutral-lgrey -mt-3.5 mb-2 font-semibold">
+            <p className="font-heading text-darkblue-102 -mt-3.5 mb-2 font-semibold">
               Graphic Designer
             </p>
 
@@ -258,25 +257,21 @@ const Home: NextPage = () => {
               href="#"
               className="font-heading text-darkblue text-xl/relaxed font-semibold"
             >
-              See what our customers said
+              See what other customers have said
             </Link>
           </div>
         </section>
         {/* Container 8  Caring is the new marketing  */}
         <section className="flex flex-col items-center justify-start gap-3 xl:px-36">
-          <h1 className="font-heading text-neutral-dgrey/90 text-2xl font-bold tracking-tighter md:text-4xl lg:text-5xl xl:tracking-tight">
-            Caring is the&nbsp;
-            <span className="text-neutral-dgrey font-extrabold tracking-normal">
-              New Marketing
-            </span>
+          <h1 className="font-heading text-secondary text-shadow-neutral-dgrey/25 text-3xl font-bold tracking-tighter text-shadow-xs md:text-4xl lg:text-5xl xl:tracking-tight">
+            PASS.ai Features
           </h1>
-          <p className="text-black-200 max-w-xl px-3 indent-9 font-sans text-sm text-pretty first-letter:text-black max-md:mx-10 md:text-base xl:px-4">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-            commodo consequat.
+          <p className="text-black-200 font-heading max-w-xl px-3 indent-9 text-sm text-pretty first-letter:text-black max-md:mx-10 md:text-base xl:px-4">
+            PASS.ai helps families stay on top of their busy lives. Keep track of
+            school events, homework, and important updates—all in one simple
+            dashboard.
           </p>
-          <div className="my-14 flex min-h-[565px] flex-row flex-wrap items-center justify-center gap-6 gap-y-10">
+          <div className="my-4 flex min-h-[565px] flex-row flex-wrap items-center justify-center gap-6 gap-y-10">
             <div className="grid max-h-[417px] grid-cols-1 xl:w-[368px]">
               <Image
                 src={caring_1}
@@ -285,10 +280,11 @@ const Home: NextPage = () => {
                 className="h-auto w-auto object-scale-down"
                 alt="caring 1"
               />
-              <Card className="shadow-landcard -mt-24 h-[227px] w-[310px] justify-self-center duration-500 ease-in-out hover:drop-shadow-lg">
-                <h1 className="font-heading text-neutral-grey mx-8 indent-6 text-2xl font-bold text-pretty">
-                  Helping busy parents who are stressed with school communication
+              <Card className="shadow-landcard -mt-24 h-[227px] w-[310px] justify-self-center px-2 duration-500 ease-in-out hover:drop-shadow-lg">
+                <h1 className="font-heading text-neutral-grey mx-8 text-2xl font-bold text-pretty">
+                  Family Calendar
                 </h1>
+                <p className="indent-2">Make scheduling simple and stress-free.</p>
                 <Link
                   href="#"
                   className="text-darkblue-102 hover:text-darkblue-106 mx-auto leading-none font-semibold transition-colors"
@@ -304,10 +300,11 @@ const Home: NextPage = () => {
                 height={283}
                 alt="caring 2"
               />
-              <Card className="shadow-landcard -mt-24 h-[227px] w-[310px] justify-self-center duration-500 ease-in-out hover:drop-shadow-lg">
-                <h1 className="font-heading text-neutral-grey mx-8 indent-6 text-2xl font-bold text-pretty">
-                  Improve work-life balance so you enjoy quality time with family
+              <Card className="shadow-landcard -mt-24 h-[227px] w-[310px] justify-self-center px-2 duration-500 ease-in-out hover:drop-shadow-lg">
+                <h1 className="font-heading text-neutral-grey mx-8 text-2xl font-bold text-pretty">
+                  School to Home Communication
                 </h1>
+                <p className="indent-2">Never miss an important message again.</p>
                 <Link
                   href="#"
                   className="text-darkblue-102 hover:text-darkblue-106 mx-auto leading-none font-semibold transition-colors"
@@ -323,11 +320,13 @@ const Home: NextPage = () => {
                 height={287}
                 alt="caring 3"
               />
-              <Card className="shadow-landcard -mt-24 h-[227px] w-[310px] justify-self-center duration-500 ease-in-out hover:drop-shadow-lg">
-                <h1 className="font-heading text-neutral-grey mx-8 indent-6 text-2xl font-bold text-pretty">
-                  Let us show you how we can make your life easier with our trained
-                  models
+              <Card className="shadow-landcard -mt-24 h-[227px] w-[310px] justify-self-center px-2 duration-500 ease-in-out hover:drop-shadow-lg">
+                <h1 className="font-heading text-neutral-grey mx-8 text-2xl font-bold text-pretty">
+                  Track Academic Progress
                 </h1>
+                <p className="indent-2">
+                  Stay updated on schoolwork and attendance.
+                </p>
                 <Link
                   href="#"
                   className="text-darkblue-102 hover:text-darkblue-106 mx-auto leading-none font-semibold transition-colors"
