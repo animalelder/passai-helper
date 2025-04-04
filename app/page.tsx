@@ -2,6 +2,10 @@ import { type NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { NavBar } from "@/components/nav-bar";
+
 import caring_1 from "@/assets/landing/caring-1.png";
 import caring_2 from "@/assets/landing/caring-2.png";
 import caring_3 from "@/assets/landing/caring-3.png";
@@ -16,9 +20,6 @@ import schoolsIcon from "@/assets/landing/schools-icon.svg";
 import setupWizard from "@/assets/landing/setup-wizard.svg";
 import ashley from "@/assets/landing/testimonial-ashley.png";
 import trendingUp from "@/assets/landing/trending-up.svg";
-import { NavBar } from "@/components/nav-bar";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
 
 const Home: NextPage = () => {
   return (

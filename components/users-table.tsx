@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 import { type User } from "@prisma/client";
 
+import { authClient } from "@/lib/auth-client";
 import {
   Table,
   TableBody,
@@ -12,7 +13,6 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { authClient } from "@/lib/auth-client";
 
 export default function UsersTable() {
   const [users, setUsers] = useState<User[]>([]);

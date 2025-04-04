@@ -4,8 +4,8 @@ import React from "react";
 
 import { toast } from "sonner";
 
-import { useAuthState } from "@/hooks/use-auth-state";
 import { signIn } from "@/lib/auth-client";
+import { useAuthState } from "@/hooks/use-auth-state";
 
 import { Button } from "../ui/button";
 

@@ -6,13 +6,12 @@
 // The email verification is disabled for now.
 // The auth object is exported to be used in the API routes.
 
+import { sendEmail } from "@/actions/send-email";
+import prisma from "@/db";
 import { betterAuth } from "better-auth";
 import { prismaAdapter } from "better-auth/adapters/prisma";
 import { nextCookies } from "better-auth/next-js";
 import { admin, oAuthProxy, openAPI } from "better-auth/plugins";
-
-import { sendEmail } from "@/actions/send-email";
-import prisma from "@/db";
 
 export const auth = betterAuth({
   appName: "passai-parent-helper",

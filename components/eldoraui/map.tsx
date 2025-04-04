@@ -52,7 +52,7 @@ export function Map() {
       aria-hidden="true"
       className="relative size-full"
     >
-      <div className="absolute inset-0 bg-[url(https://res.cloudinary.com/eldoraui/image/upload/v1734021299/map_pcqdwb.png)] bg-[length:530px_430px] bg-[center_-75px] bg-no-repeat [mask-image:linear-gradient(to_bottom,black_50%,transparent)]" />
+      <div className="absolute inset-0 bg-[url(https://res.cloudinary.com/eldoraui/image/upload/v1734021299/map_pcqdwb.png)] [mask-image:linear-gradient(to_bottom,black_50%,transparent)] bg-[length:530px_430px] bg-[center_-75px] bg-no-repeat" />
       <div className="absolute inset-0">
         <Marker
           src="https://res.cloudinary.com/eldoraui/image/upload/v1734021174/5_xph5sf.jpg"

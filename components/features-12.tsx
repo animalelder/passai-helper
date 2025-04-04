@@ -6,13 +6,13 @@ import Image from "next/image";
 import { ChartBarIncreasingIcon, Database, Fingerprint, IdCard } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 
-import { BorderBeam } from "@/components/magicui/border-beam";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { BorderBeam } from "@/components/magicui/border-beam";
 
 export default function Features() {
   type ImageKey = "item-1" | "item-2" | "item-3" | "item-4";

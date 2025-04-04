@@ -6,9 +6,10 @@ import Link from "next/link";
 
 import { Menu, X } from "lucide-react";
 
-import logo from "@/assets/landing/passai-logo.png";
-import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+
+import logo from "@/assets/landing/passai-logo.png";
 
 const menuItems = [
   { name: "What is PASS.ai?", href: "/" },
