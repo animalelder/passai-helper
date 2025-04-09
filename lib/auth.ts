@@ -18,6 +18,12 @@ export const auth = betterAuth({
   database: prismaAdapter(prisma, {
     provider: "postgresql",
   }),
+  trustedOrigins: [
+    "https://passai-helper.vercel.app",
+    "https://localhost:3000",
+    "http://localhost:3000",
+    "*.vercel.app",
+  ],
   account: {
     accountLinking: {
       trustedProviders: ["google"],
