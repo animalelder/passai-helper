@@ -1,10 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 import { type User } from "@prisma/client";
+import { Delete } from "lucide-react";
 
 import { authClient } from "@/lib/auth-client";
+import { Button } from "@/components/ui/button";
 import {
   Table,
   TableBody,
@@ -18,6 +21,7 @@ export default function UsersTable() {
   const [users, setUsers] = useState<User[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
+  const router = useRouter();
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -86,6 +90,16 @@ export default function UsersTable() {
               )}
             </TableCell>
             <TableCell>{new Date(user.createdAt).toLocaleDateString()}</TableCell>
+            <TableCell>
+              <Button
+                onClick={() => {
+                  authClient.admin.removeUser({ userId: user.id });
+                  router.push("/admin");
+                }}
+              >
+                <Delete />
+              </Button>
+            </TableCell>
           </TableRow>
         ))}
       </TableBody>
