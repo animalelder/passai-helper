@@ -1,8 +1,17 @@
 {
   "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "eslint.codeAction.showDocumentation": {
+    "enable": true
+  },
+  "eslint.format.enable": false,
+  "eslint.codeAction.disableRuleComment": {
+    "enable": true,
+    "location": "separateLine"
+  },
   "editor.detectIndentation": true,
   "editor.quickSuggestions": {
-    "strings": "on"
+    "strings": "off",
+    "comments": "on"
   },
   "editor.formatOnType": false, // required
   "editor.formatOnPaste": true, // optional
@@ -12,28 +21,11 @@
     "source.fixAll.eslint": "explicit",
     "source.addMissingImports.ts": "explicit"
   },
-  "tailwindCSS.experimental.configFile": "app/globals.css",
-  "tailwindCSS.classFunctions": [
-    "cva",
-    "cn",
-    "clsx",
-    "classNames",
-    "classnames",
-    "twMerge"
-  ],
-  "tailwindCSS.includeLanguages": {
-    "plaintext": "html",
-    "javascript": "javascriptreact",
-    "typescript": "typescriptreact"
-  },
-  "tailwindCSS.experimental.classRegex": [
-    ["cva\\(([^)]*)\\)", "'([^']*)'", "cva"],
-    ["cn\\(([^)]*)\\)", "'([^']*)'", "cn"],
-    ["clsx\\(([^)]*)\\)", "'([^']*)'", "clsx"],
-    ["classNames\\(([^)]*)\\)", "'([^']*)'", "classNames"],
-    ["classnames\\(([^)]*)\\)", "'([^']*)'", "classnames"],
-    ["twMerge\\(([^)]*)\\)", "'([^']*)'", "twMerge"]
-  ],
+  "tailwindCSS.colorDecorators": true,
+  "tailwindCSS.codeLens": true,
+  "tailwindCSS.hovers": true,
+  "tailwindCSS.classAttributes": ["class", "className", "ngClass", "cn"],
+  "tailwindCSS.suggestions": true,
 
   "[javascriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
