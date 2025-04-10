@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Open_Sans } from "next/font/google";
+import { Cinzel_Decorative, Inter, Open_Sans } from "next/font/google";
 
 import { Toaster } from "@/components/ui/sonner";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -13,6 +13,7 @@ const openSans = Open_Sans({
   style: ["normal", "italic"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-open-sans",
+  preload: true,
 });
 
 const inter = Inter({
@@ -22,6 +23,15 @@ const inter = Inter({
   style: ["normal", "italic"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-inter",
+  preload: true,
+});
+
+const cinzel = Cinzel_Decorative({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-cinzel",
+  weight: ["700", "900"],
+  preload: true,
 });
 
 export const metadata: Metadata = {
@@ -41,7 +51,7 @@ export default function RootLayout({
       lang="en"
     >
       <body
-        className={`${openSans.variable} ${inter.variable} font-sans subpixel-antialiased`}
+        className={`${openSans.variable} ${inter.variable} ${cinzel.variable} font-sans subpixel-antialiased`}
       >
         <ThemeProvider
           attribute="class"
