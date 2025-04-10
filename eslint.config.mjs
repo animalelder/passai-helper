@@ -17,6 +17,7 @@ const eslintConfig = [
       "no-console": "warn",
       "@typescript-eslint/no-unused-vars": "warn",
       "react/react-in-jsx-scope": "off",
+      "@typescript-eslint/no-explicit-any": "warn",
     },
   },
 ];
