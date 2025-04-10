@@ -8,10 +8,10 @@
 
 import { sendEmail } from "@/actions/send-email";
 import prisma from "@/db";
-import { betterAuth } from "better-auth";
+import { betterAuth, type User } from "better-auth";
 import { prismaAdapter } from "better-auth/adapters/prisma";
 import { nextCookies } from "better-auth/next-js";
-import { admin, oAuthProxy, openAPI } from "better-auth/plugins";
+import { admin, emailOTP, oAuthProxy, openAPI } from "better-auth/plugins";
 
 export const auth = betterAuth({
   appName: "passai-parent-helper",
@@ -23,6 +23,7 @@ export const auth = betterAuth({
     "https://localhost:3000",
     "http://localhost:3000",
     "*.vercel.app",
+    `${(process.env.NEXT_PUBLIC_APP_URL as string) ?? ""}`,
   ],
   account: {
     accountLinking: {
@@ -35,7 +36,7 @@ export const auth = betterAuth({
     minPasswordLength: 8,
     maxPasswordLength: 20,
     requireEmailVerification: true,
-    sendResetPassword: async ({ user, url, token }, request) => {
+    sendResetPassword: async ({ user, url }: { user: User; url: string }) => {
       await sendEmail({
         to: user.email,
         subject: "Reset your password",
@@ -63,6 +64,25 @@ export const auth = betterAuth({
   plugins: [
     admin({
       adminUserIds: ["BNrwpk5g53yma8A0KPOvJmfImOU46i15"],
+    }),
+    emailOTP({
+      expiresIn: 600,
+      sendVerificationOnSignUp: true,
+      sendVerificationOTP: async ({ email, otp, type }) => {
+        if (type === "email-verification") {
+          await sendEmail({
+            to: email,
+            subject: "Use this code to verify your email address",
+            text: `Your OTP code is: ${otp}`,
+          });
+        } else {
+          await sendEmail({
+            to: email,
+            subject: "Use this code to reset your password",
+            text: `Your OTP code is: ${otp}`,
+          });
+        }
+      },
     }),
     oAuthProxy(),
     openAPI(),
