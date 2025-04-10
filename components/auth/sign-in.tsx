@@ -12,6 +12,7 @@ import { z } from "zod";
 
 import { signIn } from "@/lib/auth-client";
 import { useAuthState } from "@/hooks/use-auth-state";
+import { PasswordInput } from "@/components/ui/password-input";
 
 import CardWrapper from "../card-wrapper";
 import FormError from "../form-error";
@@ -41,6 +42,7 @@ const SignIn = () => {
       email: "",
       password: "",
     },
+    mode: "onBlur",
   });
 
   const onSubmit = async (values: z.infer<typeof SigninSchema>) => {
@@ -112,9 +114,8 @@ const SignIn = () => {
               <FormItem>
                 <FormLabel>Password</FormLabel>
                 <FormControl>
-                  <Input
+                  <PasswordInput
                     disabled={loading}
-                    type="password"
                     placeholder="********"
                     {...field}
                   />
@@ -125,18 +126,21 @@ const SignIn = () => {
           />
           <FormError message={error} />
           <FormSuccess message={success} />
-          <Button
-            disabled={loading}
-            type="submit"
-            className="w-full"
-          >
-            Login
-          </Button>
-          <div className="flex justify-between">
+          <div className="mx-auto flex w-full flex-col items-center justify-between gap-2">
+            <Button
+              disabled={loading}
+              type="submit"
+              variant="secondary"
+              className="mx-auto block px-4"
+            >
+              Login
+            </Button>
+            <div className="text-muted-foreground mx-auto block text-sm">or</div>
+
             <SocialButton
               provider="google"
               icon={<FcGoogle />}
-              label=""
+              label="Sign in with Google"
             />
           </div>
         </form>

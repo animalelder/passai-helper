@@ -8,13 +8,7 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
-const PasswordInput = ({
-  ref,
-  className,
-  ...props
-}: React.ComponentProps<"input"> & {
-  ref: React.RefObject<HTMLInputElement>;
-}) => {
+const PasswordInput = ({ className, ...props }: React.ComponentProps<"input">) => {
   const [showPassword, setShowPassword] = React.useState(false);
   const disabled = props.value === "" || props.value === undefined || props.disabled;
 
@@ -24,14 +18,13 @@ const PasswordInput = ({
         {...props}
         type={showPassword ? "text" : "password"}
         name="password_fake"
-        className={cn("hide-password-toggle pr-10", className)}
-        ref={ref}
+        className={cn("hide-password-toggle pr-1", className)}
       />
       <Button
         type="button"
         variant="ghost"
-        size="sm"
-        className="absolute top-0 right-0 h-full px-3 py-2 hover:bg-transparent"
+        size="icon"
+        className="absolute end-0 top-0 h-full hover:bg-transparent max-sm:px-2 md:ml-auto"
         onClick={() => setShowPassword((prev) => !prev)}
         disabled={disabled}
       >

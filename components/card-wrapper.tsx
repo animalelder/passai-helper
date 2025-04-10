@@ -14,6 +14,8 @@
 import React from "react";
 import Link from "next/link";
 
+import { cn } from "@/lib/utils";
+
 import {
   Card,
   CardContent,
@@ -43,7 +45,12 @@ const CardWrapper = ({
   className = "",
 }: CardWrapperType) => {
   return (
-    <Card className={`relative w-[400px] ${className} border-2 shadow-md`}>
+    <Card
+      className={cn(
+        `relative flex w-full flex-col justify-between border-0 shadow-md max-sm:h-full md:w-[400px]`,
+        className
+      )}
+    >
       <CardHeader>
         <CardTitle>{cardTitle}</CardTitle>
         <CardDescription>{cardDescription}</CardDescription>

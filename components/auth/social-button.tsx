@@ -52,7 +52,8 @@ const SocialButton: React.FC<SocialButtonProps> = ({
   return (
     <>
       <Button
-        variant="default"
+        variant="ghost"
+        size="icon"
         onClick={handleSignIn}
         disabled={loading}
         className="w-20"
