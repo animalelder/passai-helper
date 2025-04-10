@@ -1,22 +1,29 @@
+import { useFormStatus } from "react-dom";
+
+import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
 export function FormButton({
   pending,
-  children,
+  className,
+  children = "",
   onClick,
 }: React.ComponentProps<typeof Button> & {
   pending?: boolean;
+  className?: string;
   children: React.ReactNode;
   onClick?: () => void;
 }) {
+  const { pending: formPending } = useFormStatus();
+
   return (
     <Button
       onClick={onClick}
-      className="w-full"
+      className={cn("px-2", className)}
       type="submit"
-      disabled={pending}
+      disabled={formPending || pending}
     >
-      {pending ? (
+      {formPending ? (
         <div className="flex items-center justify-center">
           <svg
             className="mr-2 h-5 w-5 animate-spin text-white"

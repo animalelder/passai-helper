@@ -51,7 +51,7 @@ export default function RootLayout({
       lang="en"
     >
       <body
-        className={`${openSans.variable} ${inter.variable} ${cinzel.variable} font-sans subpixel-antialiased`}
+        className={`${openSans.variable} ${inter.variable} ${cinzel.variable} font-sans antialiased`}
       >
         <ThemeProvider
           attribute="class"
