@@ -73,30 +73,29 @@ export default function EmailEntryForm() {
         </div>
 
         {/* Submit button */}
-        <button
-          type="submit"
+        <Button
           disabled={loading}
-          className="w-full rounded-md bg-yellow-500 py-2 text-white transition hover:bg-yellow-600"
+          type="submit"
+          variant="secondary"
+          className="mx-auto block px-2"
         >
-          {loading ? "Sending..." : "Verify email address"}
-        </button>
+          <p className="font-heading text-darkblue-106 text-xs font-semibold">
+            Verify email address
+          </p>
+        </Button>
 
         {/* Message */}
         {message && <p className="text-sm text-gray-700">{message}</p>}
 
         {/* OR divider */}
-        <div className="flex items-center justify-center gap-2 pt-1 text-sm text-gray-500">
-          <div className="h-px w-10 bg-gray-300" />
-          OR
-          <div className="h-px w-10 bg-gray-300" />
+        <div className="font-heading text-darkblue-104 text-sm font-semibold">
+          - OR -
         </div>
 
         {/* Social logins */}
         <div>
-          <p className="text-sm font-medium text-gray-700">
-            Use your social account
-          </p>
-          <div className="text-darkblue-104 mt-2 flex justify-center gap-4 text-2xl">
+          <p className="text-sm font-semibold text-black">Use your social account</p>
+          <div className="text-darkblue-104 mt-2 flex justify-center gap-9 text-2xl">
             <FaGoogle className="cursor-pointer" />
             <FaFacebookF className="cursor-pointer" />
             <FaTwitter className="cursor-pointer" />

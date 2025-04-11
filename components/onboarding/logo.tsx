@@ -1,16 +1,16 @@
 import Image from "next/image";
 
-import logo from "@/assets/landing/passai-logo.svg";
+import logo from "@/assets/onboarding/pass.ai-logo-horizontal.png";
 
 // components/Logo.tsx
 export default function Logo() {
   return (
-    <Image
-      width={73}
-      height={96}
-      className="h-auto w-10"
-      src={logo}
-      alt="passailogo"
-    />
+    <div className="mt-4 flex justify-center">
+      <Image
+        className="h-auto w-20"
+        src={logo}
+        alt="passailogo"
+      />
+    </div>
   );
 }

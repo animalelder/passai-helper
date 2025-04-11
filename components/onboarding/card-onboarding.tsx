@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Link from "next/link";
 
+import motion from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
 import { cn } from "@/lib/utils";
