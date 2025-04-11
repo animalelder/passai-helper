@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cinzel_Decorative, Inter, Open_Sans } from "next/font/google";
+import { Alatsi, Cinzel_Decorative, Inter, Open_Sans } from "next/font/google";
 
 import { Toaster } from "@/components/ui/sonner";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -34,6 +34,14 @@ const cinzel = Cinzel_Decorative({
   preload: true,
 });
 
+const alatsi = Alatsi({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-alatsi",
+  weight: "400",
+  preload: true,
+});
+
 export const metadata: Metadata = {
   title: "PASS.ai: The Parent Helper",
   description: "Overwhelmed? Pass it to your AI assistant.",
@@ -51,7 +59,7 @@ export default function RootLayout({
       lang="en"
     >
       <body
-        className={`${openSans.variable} ${inter.variable} ${cinzel.variable} font-sans antialiased`}
+        className={`${openSans.variable} ${inter.variable} ${cinzel.variable} ${alatsi.variable} font-sans antialiased`}
       >
         <ThemeProvider
           attribute="class"

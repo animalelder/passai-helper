@@ -80,6 +80,7 @@
   --color-black-200: oklch(from #232423 l c h);
   --color-lightblue: oklch(from #c4dbd1 l c h);
   --color-lightblue-100: oklch(from #e8f3ee l c h);
+  --color-lightblue-102: oklch(from #A0B3AA l c h);
   --color-lightblue-103: oklch(from #7d8c86 l c h);
   --color-lightblue-104: oklch(from #5c6762 l c h);
   --color-darkblue: oklch(from #3d545b l c h);
@@ -110,6 +111,7 @@
   --font-logo: var(--font-cinzel);
   --font-sans: var(--font-open-sans);
   --font-heading: var(--font-inter);
+  --font-footer: var(--font-alatsi);
   --color-light-blue: var(--light-blue);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -152,6 +154,7 @@
     from {
       height: 0;
     }
+
     to {
       height: var(--radix-accordion-content-height);
     }
@@ -161,6 +164,7 @@
     from {
       height: var(--radix-accordion-content-height);
     }
+
     to {
       height: 0;
     }
