@@ -17,25 +17,25 @@ const PasswordInput = ({ className, ...props }: React.ComponentProps<"input">) =
       <Input
         {...props}
         type={showPassword ? "text" : "password"}
-        name="password_fake"
-        className={cn("hide-password-toggle pr-1", className)}
+        name="password"
+        className={cn("hide-password-toggle", className)}
       />
       <Button
         type="button"
         variant="ghost"
-        size="icon"
-        className="absolute end-0 top-0 h-full hover:bg-transparent max-sm:px-2 md:ml-auto"
+        size="sm"
+        className="absolute end-0 top-0 ml-auto h-full hover:bg-transparent max-sm:px-2"
         onClick={() => setShowPassword((prev) => !prev)}
         disabled={disabled}
       >
         {showPassword && !disabled ? (
           <EyeIcon
-            className="h-4 w-4"
+            className="size-4"
             aria-hidden="true"
           />
         ) : (
           <EyeOffIcon
-            className="h-4 w-4"
+            className="size-4"
             aria-hidden="true"
           />
         )}

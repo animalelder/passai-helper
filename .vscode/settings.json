@@ -1,39 +1,62 @@
 {
   "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "eslint.codeAction.showDocumentation": {
+    "enable": true
+  },
+  "eslint.format.enable": false,
+  "eslint.codeAction.disableRuleComment": {
+    "enable": true,
+    "location": "separateLine"
+  },
+  "better-comments.multilineComments": true,
+  "better-comments.highlightPlainText": true,
+
   "editor.detectIndentation": true,
   "editor.quickSuggestions": {
-    "strings": "on"
+    "strings": "off",
+    "comments": "on"
   },
   "editor.formatOnType": false, // required
   "editor.formatOnPaste": true, // optional
   "editor.formatOnSave": true, // optional
   "editor.formatOnSaveMode": "file", // required to format on save
+  "editor.acceptSuggestionOnEnter": "smart",
+  "eslint.lintTask.enable": true,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "html"
+  ],
+  "terminal.integrated.shellIntegration.showCommandGuide": true,
+  "eslint.problems.shortenToSingleLine": true,
+  "editor.autoClosingDelete": "always",
+  "editor.autoClosingQuotes": "always",
+  "htmltagwrap.autoDeselectClosingTag": true,
+  "html.autoClosingTags": true,
+  "html.suggest.html5": true,
+  "html.hover.references": true,
+  "typescript.format.placeOpenBraceOnNewLineForFunctions": true,
+  "typescript.preferences.organizeImports": {
+    "enabled": true,
+    "includeCompletionsForModuleExports": true,
+    "includeCompletionsForImportStatements": true,
+    "typeOrder": "last",
+    "unicodeCollation": "unicode",
+    "locale": "en-US"
+  },
+  "window.commandCenter": true,
+  "chat.commandCenter.enabled": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit",
     "source.addMissingImports.ts": "explicit"
   },
-  "tailwindCSS.experimental.configFile": "app/globals.css",
-  "tailwindCSS.classFunctions": [
-    "cva",
-    "cn",
-    "clsx",
-    "classNames",
-    "classnames",
-    "twMerge"
-  ],
-  "tailwindCSS.includeLanguages": {
-    "plaintext": "html",
-    "javascript": "javascriptreact",
-    "typescript": "typescriptreact"
-  },
-  "tailwindCSS.experimental.classRegex": [
-    ["cva\\(([^)]*)\\)", "'([^']*)'", "cva"],
-    ["cn\\(([^)]*)\\)", "'([^']*)'", "cn"],
-    ["clsx\\(([^)]*)\\)", "'([^']*)'", "clsx"],
-    ["classNames\\(([^)]*)\\)", "'([^']*)'", "classNames"],
-    ["classnames\\(([^)]*)\\)", "'([^']*)'", "classnames"],
-    ["twMerge\\(([^)]*)\\)", "'([^']*)'", "twMerge"]
-  ],
+  "tailwindCSS.colorDecorators": true,
+  "tailwindCSS.codeLens": true,
+  "tailwindCSS.hovers": true,
+  "tailwindCSS.classAttributes": ["class", "className", "ngClass", "cn"],
+  "tailwindCSS.suggestions": true,
 
   "[javascriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -44,7 +67,8 @@
     "editor.formatOnSave": true,
     "editor.formatOnType": false,
     "editor.codeActionsOnSave": {
-      "source.fixAll.eslint": "never"
+      "source.fixAll.eslint": "explicit",
+      "source.organizeImports": "explicit"
     }
   },
   "[tailwindcss]": {
