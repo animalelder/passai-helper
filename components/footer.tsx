@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { Logo } from "@/components/logo";
+import { Logo } from "@/components/onboarding/logo";
 
 const links = [
   {
