@@ -1,10 +1,8 @@
 "use client";
 
-import React from "react";
-
+import Logo from "@/components/logo";
 import CompleteRegistrationForm from "@/components/onboarding/auth/complete-registration-form";
 import AppFooter from "@/components/onboarding/footers/app-footer";
-import Logo from "@/components/onboarding/logo";
 import PageWrapper from "@/components/onboarding/page-wrapper";
 
 export default function SignUpPage() {

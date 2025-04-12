@@ -1,8 +1,8 @@
 "use client";
 
+import Logo from "@/components/logo";
 import SignInForm from "@/components/onboarding/auth/sign-in-form";
 import AppFooter from "@/components/onboarding/footers/app-footer";
-import Logo from "@/components/onboarding/logo";
 import PageWrapper from "@/components/onboarding/page-wrapper";
 
 export default function SignInPage() {

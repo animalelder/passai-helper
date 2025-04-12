@@ -1,9 +1,8 @@
-import React from "react";
 import Image from "next/image";
 
 import { Button } from "@/components/ui/button";
+import Logo from "@/components/logo";
 import BottomLinks from "@/components/onboarding/footers/legal-footer";
-import Logo from "@/components/onboarding/logo";
 import PageWrapper from "@/components/onboarding/page-wrapper";
 
 import undrawSetupWizard from "@/assets/onboarding/undraw-setup-wizard.png";

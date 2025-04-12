@@ -1,10 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
-
+import Logo from "@/components/logo";
 import EmailEntryForm from "@/components/onboarding/auth/email-entry-form";
 import AppFooter from "@/components/onboarding/footers/app-footer";
-import Logo from "@/components/onboarding/logo";
 import PageWrapper from "@/components/onboarding/page-wrapper";
 
 export default function SignUpPage() {

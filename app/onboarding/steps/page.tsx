@@ -1,10 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
-
+import Logo from "@/components/logo";
 import CardOnboarding from "@/components/onboarding/card-onboarding";
 import LegalFooter from "@/components/onboarding/footers/legal-footer";
-import Logo from "@/components/onboarding/logo";
 import PageWrapper from "@/components/onboarding/page-wrapper";
 
 export default function OnboardingPage() {
