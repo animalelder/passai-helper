@@ -1,1 +1,1 @@
-npm run format:write && npm run lint && git add .
+npm run lint
