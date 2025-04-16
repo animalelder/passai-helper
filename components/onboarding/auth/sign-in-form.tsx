@@ -110,15 +110,21 @@ export default function SignInForm() {
           </label>
         </div>
 
-        <Button
-          type="submit"
-          disabled={loading}
-          className="w-full bg-yellow-500 py-2 text-white hover:bg-yellow-600"
-        >
-          {loading ? "Logging in..." : "Login"}
-        </Button>
+        <div className="mx-auto flex w-fit flex-col items-center justify-between">
+          <p className="font-heading cursor-pointer text-xs text-black underline">
+            Forgot your password?
+          </p>
 
-        <div className="text-sm text-gray-500">– OR –</div>
+          <Button
+            type="submit"
+            disabled={loading}
+            className="w-full bg-yellow-500 py-2 text-white hover:bg-yellow-600"
+          >
+            {loading ? "Logging in..." : "Login"}
+          </Button>
+        </div>
+
+        <div className="text-darkblue-104 text-sm">– OR –</div>
 
         <div>
           <p className="text-sm font-semibold text-black">Use your social account</p>
