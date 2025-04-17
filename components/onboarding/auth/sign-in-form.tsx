@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { EyeIcon, EyeOffIcon } from "lucide-react";
 import { FaApple, FaFacebookF, FaGoogle, FaTwitter } from "react-icons/fa";
 
+import { signIn } from "@/lib/auth-client";
 import { Button } from "@/components/ui/button";
 
 export default function SignInForm() {
@@ -20,23 +21,47 @@ export default function SignInForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    setLoading(true);
-    setMessage("");
+    // These are set in the onRequest callback below
+    // setLoading(true);
+    // setMessage("");
 
     try {
-      const res = await fetch("/api/logins/ss/s", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password }),
-      });
+      await signIn.email(
+        { email, password, callbackURL: "/dashboard" },
+        {
+          onResponse: () => {
+            setLoading(false);
+            setMessage("Login successful");
+          },
+          onRequest: () => {
+            setLoading(true);
+            setMessage("");
+          },
+          onSuccess: () => {
+            router.push("/dashboard");
+          },
+          onError: (ctx) => {
+            setLoading(false);
+            setMessage(ctx.error.message);
+            throw new Error(ctx.error.message);
+          },
+        }
+      );
+      // Your previous code
+      // const res = await fetch("/api/logins/ss/s", {
+      //   method: "POST",
+      //   headers: { "Content-Type": "application/json" },
+      //   body: JSON.stringify({ email, password }),
+      // });
 
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.message || "Login failed");
+      // const data = await res.json();
+      // if (!res.ok) throw new Error(data.message || "Login failed");
 
-      router.push("/dashboard");
-    } catch (err: any) {
+      // router.push("/dashboard");
+    } catch (err) {
       setMessage(err.message || "Something went wrong.");
     } finally {
+      // finally is good, but it is already covered in onResponse, which is for success and error cases
       setLoading(false);
     }
   };
@@ -47,7 +72,7 @@ export default function SignInForm() {
         onSubmit={handleSubmit}
         className="font-heading w-full max-w-xs space-y-5 text-center"
       >
-        <h1 className="text-darkblue-104 font-heading text-2xl font-bold">Login</h1>
+        <h1 className="font-heading text-darkblue-104 text-2xl font-bold">Login</h1>
 
         <div className="space-y-2 text-left">
           <label
