@@ -5,7 +5,8 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import onboard
+
+// import onboard
 
 import DotsIndicator from "./dots-indicator";
 
@@ -45,7 +46,7 @@ export default function CardOnboarding() {
 
       {/* Add Header Text */}
       {/* Add sub text */}
-     
+
       {/* Onboarding step card */}
       <div className="bg-darkblue-101 flex h-[20rem] w-[19.5rem] flex-col justify-between rounded-lg p-6 text-center shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)]">
         {/* Step description */}
