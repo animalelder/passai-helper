@@ -1,11 +1,11 @@
 import { useState } from "react";
 import Link from "next/link";
 
-import motion from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import onboard
 
 import DotsIndicator from "./dots-indicator";
 
@@ -19,18 +19,19 @@ export default function CardOnboarding() {
   // Onboarding step data
   const steps = [
     {
-      step: "Step 1: Create an account",
-      description: "Use your personal email to create your account",
+      step: "Welcome to your School Support Agent, PASS.ai",
+      description:
+        "To get started, create an account or Login using your existing account",
     },
     {
-      step: "Step 2: Create your children’s profiles",
+      step: "Controlled by you, Powered by AI",
       description:
-        "You can add a picture for each child and their date of birth too",
+        "You can connect any school related apps and our smart  AI engine will do the rest",
     },
     {
-      step: "Step 3: Connect the children’s profiles with their school accounts",
+      step: "All communications in one place, PASS.ai",
       description:
-        "Use the children’s school accounts to connect to the apps listed by the school",
+        "Never worry about missed class parties or conflict in appointments",
     },
   ];
 
@@ -40,6 +41,11 @@ export default function CardOnboarding() {
 
   return (
     <div className="text-center">
+      {/* Add image */}
+
+      {/* Add Header Text */}
+      {/* Add sub text */}
+     
       {/* Onboarding step card */}
       <div className="bg-darkblue-101 flex h-[20rem] w-[19.5rem] flex-col justify-between rounded-lg p-6 text-center shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)]">
         {/* Step description */}
