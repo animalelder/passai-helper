@@ -7,7 +7,7 @@ export default function DotsIndicator({ current }: { current: number }) {
           <div
             key={i}
             className={`h-2 w-2 rounded-full ${
-              i === current ? "bg-[#2C6D67]" : "bg-gray-300"
+              i === current ? "bg-darkblue-104" : "bg-darkblue-101"
             }`}
           />
         ))}
