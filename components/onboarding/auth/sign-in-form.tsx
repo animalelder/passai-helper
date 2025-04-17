@@ -34,7 +34,7 @@ export default function SignInForm() {
       if (!res.ok) throw new Error(data.message || "Login failed");
 
       router.push("/dashboard");
-    } catch (err: any) {
+    } catch (err) {
       setMessage(err.message || "Something went wrong.");
     } finally {
       setLoading(false);
@@ -47,7 +47,7 @@ export default function SignInForm() {
         onSubmit={handleSubmit}
         className="font-heading w-full max-w-xs space-y-5 text-center"
       >
-        <h1 className="text-darkblue-104 font-heading text-2xl font-bold">Login</h1>
+        <h1 className="font-heading text-darkblue-104 text-2xl font-bold">Login</h1>
 
         <div className="space-y-2 text-left">
           <label
