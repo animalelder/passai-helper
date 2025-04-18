@@ -71,12 +71,24 @@ export default function SignUpRoleSelection() {
       {/* Spacer for button with smooth appearance */}
       <div className="mt-10 h-10">
         {selectedRole && (
-          <Link
-            href="/register/email-entry"
-            className="inline-block rounded bg-yellow-500 px-6 py-2 text-sm font-semibold text-white transition-colors hover:bg-yellow-600"
-          >
-            Next
-          </Link>
+          <>
+            {selectedRole === "parent" ? (
+              <Link
+                href="\onboarding\sign-up"
+                className="inline-block rounded bg-yellow-500 px-6 py-2 text-sm font-semibold text-white transition-colors hover:bg-yellow-600"
+              >
+                Next
+              </Link>
+            ) : (
+              <button
+                type="button"
+                disabled
+                className="inline-block cursor-not-allowed rounded bg-gray-300 px-6 py-2 text-sm font-semibold text-white"
+              >
+                Coming Soon
+              </button>
+            )}
+          </>
         )}
       </div>
     </div>
