@@ -29,6 +29,7 @@ const inter = Inter({
 const cinzel = Cinzel_Decorative({
   subsets: ["latin"],
   display: "swap",
+  fallback: ["system-ui", "sans-serif"],
   variable: "--font-cinzel",
   weight: ["700", "900"],
   preload: true,
@@ -37,6 +38,7 @@ const cinzel = Cinzel_Decorative({
 const alatsi = Alatsi({
   subsets: ["latin"],
   display: "swap",
+  fallback: ["system-ui", "sans-serif"],
   variable: "--font-alatsi",
   weight: "400",
   preload: true,

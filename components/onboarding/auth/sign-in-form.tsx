@@ -88,7 +88,9 @@ export default function SignInForm() {
             placeholder="youremail@anysite.com"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="placeholder:text-lightblue-102 w-full rounded-md border border-gray-300 bg-white px-4 py-2 placeholder:text-sm"
+            className={`placeholder:text-lightblue-102 w-full rounded-md border ${
+              message ? "border-red-500 focus:ring-red-500" : "border-gray-300"
+            } bg-white px-4 py-2 placeholder:text-sm focus:ring-1 focus:outline-none`}
           />
 
           <label
@@ -105,7 +107,9 @@ export default function SignInForm() {
               placeholder="your password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="placeholder:text-lightblue-102 w-full rounded-md border border-gray-300 bg-white px-4 py-2 pr-10 placeholder:text-sm"
+              className={`placeholder:text-lightblue-102 w-full rounded-md border ${
+                message ? "border-red-500 focus:ring-red-500" : "border-gray-300"
+              } bg-white px-4 py-2 pr-10 placeholder:text-sm focus:ring-1 focus:outline-none`}
             />
             <span
               onClick={() => setShowPassword((prev) => !prev)}
@@ -124,6 +128,8 @@ export default function SignInForm() {
               )}
             </span>
           </div>
+
+          {message && <p className="text-xs text-red-500">{message}</p>}
 
           <label className="mt-2 flex items-center gap-2 text-sm">
             <input
@@ -160,8 +166,6 @@ export default function SignInForm() {
             <FaApple className="cursor-pointer" />
           </div>
         </div>
-
-        {message && <p className="text-xs text-red-500">{message}</p>}
       </form>
     </div>
   );

@@ -4,6 +4,8 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+import Checkmark from "@/components/onboarding/checkmark";
+
 import parentIcon from "@/assets/onboarding/parent-icon.svg";
 import schoolAdminIcon from "@/assets/onboarding/school-admin-icon.svg";
 
@@ -29,12 +31,19 @@ export default function SignUpRoleSelection() {
         <button
           type="button"
           onClick={() => handleSelect("parent")}
-          className={`border-darkblue-102 inline-flex cursor-pointer flex-col items-center justify-end gap-[0.625rem] rounded border px-12 py-4 text-sm font-semibold transition-shadow ${
+          className={`border-darkblue-102 relative inline-flex cursor-pointer flex-col items-center justify-end gap-[0.625rem] rounded border px-12 py-4 text-sm font-semibold transition-shadow ${
             selectedRole === "parent"
               ? "shadow-[inset_0_4px_4px_rgba(0,0,0,0.25)]"
               : ""
           }`}
         >
+          {/* Tick Overlay */}
+          {selectedRole === "parent" && (
+            <div className="absolute top-26 left-50">
+              <Checkmark />
+            </div>
+          )}
+
           <div className="flex flex-col items-center gap-2">
             <Image
               src={parentIcon}
@@ -49,12 +58,19 @@ export default function SignUpRoleSelection() {
         <button
           type="button"
           onClick={() => handleSelect("school-admin")}
-          className={`inline-flex cursor-pointer flex-col items-center justify-end gap-[0.625rem] rounded border border-yellow-500 px-12 py-4 text-sm font-semibold transition-shadow ${
+          className={`relative inline-flex cursor-pointer flex-col items-center justify-end gap-[0.625rem] rounded border border-yellow-500 px-12 py-4 text-sm font-semibold transition-shadow ${
             selectedRole === "school-admin"
               ? "shadow-[inset_0_4px_4px_rgba(0,0,0,0.25)]"
               : ""
           }`}
         >
+          {/* Tick Overlay */}
+          {selectedRole === "school-admin" && (
+            <div className="absolute top-26 left-50">
+              <Checkmark />
+            </div>
+          )}
+
           <div className="flex flex-col items-center gap-2">
             <Image
               src={schoolAdminIcon}
