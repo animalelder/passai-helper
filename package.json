@@ -93,6 +93,12 @@
     "vitest": "^3.0.9"
   },
   "prettier": {
+    "tailwindStylesheet": "./app/globals.css",
+    "tailwindFunctions": [
+      "clsx",
+      "cn",
+      "twMerge"
+    ],
     "endOfLine": "lf",
     "semi": true,
     "singleQuote": false,
