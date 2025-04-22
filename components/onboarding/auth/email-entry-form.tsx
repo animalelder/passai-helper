@@ -3,37 +3,58 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
 import { FaApple, FaFacebookF, FaGoogle, FaTwitter } from "react-icons/fa";
+import { toast } from "sonner";
+import { z } from "zod";
 
+import { useAuthState } from "@/hooks/use-auth-state";
 import { Button } from "@/components/ui/button";
 
+const formSchema = z.object({
+  email: z.string().email(),
+});
+
 export default function EmailEntryForm() {
-  const [email, setEmail] = useState("");
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm({
+    resolver: zodResolver(formSchema),
+  });
+
   const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState("");
   const router = useRouter();
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const { setError, setSuccess, resetState } = useAuthState();
 
+  const onSubmit = async (values: z.infer<typeof formSchema>) => {
     setLoading(true);
-    setMessage("");
+    resetState();
 
     try {
-      const res = await fetch("/api/register-email", {
+      const res = await fetch("/api/auth/request-verification", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email: values.email }),
       });
 
       const data = await res.json();
 
-      if (!res.ok) throw new Error(data.message || "Something went wrong");
-
-      setMessage("Verification email sent. Check your inbox.");
-      router.push("/register/complete"); // or wait for verification
-    } catch (err: any) {
-      setMessage(err.message || "Something went wrong.");
+      if (res.ok) {
+        setSuccess("Verification email sent.");
+        toast.success("Verification email sent.");
+        reset(); // clear form input
+      } else {
+        setError(data.error);
+        toast.error(data.error);
+      }
+    } catch (error) {
+      toast.error(error?.message ?? "Something went wrong");
+      setError("Something went wrong");
     } finally {
       setLoading(false);
     }
@@ -42,7 +63,7 @@ export default function EmailEntryForm() {
   return (
     <div className="flex items-center justify-center px-4">
       <form
-        onSubmit={handleSubmit}
+        onSubmit={handleSubmit(onSubmit)}
         className="font-heading w-full max-w-xs space-y-4 text-center"
       >
         {/* Title */}
@@ -64,12 +85,13 @@ export default function EmailEntryForm() {
           <input
             type="email"
             id="email"
-            required
             placeholder="youremail@anysite.com"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
             className="placeholder:text-lightblue-102 border-darkblue-102 w-full rounded-md border bg-white px-4 py-2 text-left placeholder:text-sm"
+            {...register("email")}
           />
+          {errors.email && (
+            <p className="text-xs text-red-600">{errors.email.message}</p>
+          )}
         </div>
 
         {/* Submit button */}
@@ -83,9 +105,6 @@ export default function EmailEntryForm() {
             Verify email address
           </p>
         </Button>
-
-        {/* Message */}
-        {message && <p className="text-sm text-gray-700">{message}</p>}
 
         {/* OR divider */}
         <div className="font-heading text-darkblue-104 text-sm font-semibold">

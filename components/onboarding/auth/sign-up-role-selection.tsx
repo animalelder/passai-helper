@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import Checkmark from "@/components/onboarding/checkmark";
+import Checkmark from "@/components/ui/checkmark";
 
 import parentIcon from "@/assets/onboarding/parent-icon.svg";
 import schoolAdminIcon from "@/assets/onboarding/school-admin-icon.svg";
