@@ -39,6 +39,13 @@ export async function sendEmail({
       text: message.text,
     });
 
+    console.log("[EMAIL SENT]", {
+      to: message.to,
+      subject: message.subject,
+      text: message,
+      response: info.response,
+    });
+
     return {
       success: true,
       messageId: info.messageId,

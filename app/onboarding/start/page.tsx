@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 import Logo from "@/components/logo";
@@ -25,11 +26,18 @@ export default function StartPage() {
             alt="setup-wizard"
           />
           <div className="mt-6">
-            <Button className="cursor-pointer">Get started</Button>
+            <Button className="cursor-pointer">
+              <Link href="/onboarding/steps">Get Started</Link>
+            </Button>
           </div>
-          <div className="mt-25 text-sm">
-            <p>Already have an account?</p>
-            <p className="font-sans text-xl font-bold">Login</p>
+          <div className="mt-6 text-center text-sm">
+            <p className="mb-1">Already have an account?</p>
+            <Link
+              href="\onboarding\sign-in\"
+              className="hover:text-darkblue-102 cursor-pointer font-sans text-xl font-bold text-black transition-colors"
+            >
+              Login
+            </Link>
           </div>
         </div>
       </div>
