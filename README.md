@@ -44,9 +44,11 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 The main entrypoint file is `app/page.tsx`. The page auto-updates as you edit the file.
 
-### Prisma & Fonts
+### Prisma
 
 You can use Prisma Studio to interact with your database locally. Run `npx prisma studio` to start the Studio server
+
+### Fonts
 
 We use [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load Google Fonts. You can import fonts from the Google CDN or use local files.
 
