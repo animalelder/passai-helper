@@ -17,7 +17,37 @@
   "forwardPorts": [3000],
 
   // Use 'postCreateCommand' to run commands after the container is created.
-  "postCreateCommand": "npm install"
+  "postCreateCommand": "npm install",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "usernamehw.errorlens",
+        "dbaeumer.vscode-eslint",
+        "mhutchie.git-graph",
+        "donjayamanne.githistory",
+        "patriceoklou.html-jsx-wrapper",
+        "bradlc.vscode-tailwindcss",
+        "YoavBls.pretty-ts-errors",
+        "esbenp.prettier-vscode",
+        "Prisma.prisma",
+        "Orta.vscode-twoslash-queries",
+        "ms-vsliveshare.vsliveshare",
+        "ms-vscode.live-server",
+        "mgmcdermott.vscode-language-babel",
+        "GitHub.copilot",
+        "GitHub.copilot-chat",
+        "VisualStudioExptTeam.vscodeintellicode",
+        "rangav.vscode-thunder-client",
+        "Gruntfuggly.todo-tree",
+        "aaron-bond.better-comments",
+        "formulahendry.auto-close-tag",
+        "GitHub.remotehub",
+        "ms-vscode.Theme-MaterialKit",
+        "PKief.material-icon-theme",
+        "SuhelMakkad.shadcn-ui"
+      ]
+    }
+  }
 
   // Configure tool-specific properties.
   // "customizations": {},
