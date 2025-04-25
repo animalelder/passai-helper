@@ -9,7 +9,7 @@ import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
-import logo from "@/assets/landing/passai-logo.png";
+import logo from "@/assets/landing/pass-logo-nav.png";
 
 const menuItems = [
   { name: "What is PASS.ai?", href: "/" },
@@ -24,14 +24,14 @@ const NavBar = () => {
     <header className="sticky inset-0 z-20 max-h-[82px] min-w-dvw basis-full *:transition-all *:duration-300 md:max-h-[92px]">
       <nav
         data-state={menuState && "active"}
-        className="bg-lightblue data-[state=active]:bg-card inline-flex w-full grow items-center justify-between overflow-x-clip overflow-y-visible px-[32px] py-2"
+        className="inline-flex w-full grow items-center justify-between overflow-x-clip overflow-y-visible bg-lightblue px-[32px] py-2 data-[state=active]:bg-card"
       >
         <Link href="/">
           <Image
-            width={73}
-            height={96}
+            width={150}
+            height={60}
             className={cn(
-              "in-data-[state=active]:slide-out-to-left slide-in-from-left isolate z-30 -mb-7 w-20 overflow-y-visible in-data-[state=active]:hidden in-data-[state=active]:opacity-0"
+              "isolate z-30 overflow-y-visible slide-in-from-left in-data-[state=active]:hidden in-data-[state=active]:opacity-0 in-data-[state=active]:slide-out-to-left"
             )}
             src={logo}
             priority
@@ -42,7 +42,7 @@ const NavBar = () => {
           {menuItems.map((item) => (
             <li key={item.name}>
               <Link
-                className="text-primary-foreground hover:text-accent-foreground px-2 text-lg font-semibold"
+                className="px-2 text-lg font-semibold text-primary-foreground hover:text-accent-foreground"
                 href={item.href}
               >
                 {item.name}
@@ -61,7 +61,7 @@ const NavBar = () => {
             <Menu className="size-6 duration-200 in-data-[state=active]:hidden in-data-[state=active]:scale-0 in-data-[state=active]:rotate-180 in-data-[state=active]:opacity-0" />
           </button>
         </div>
-        <div className="bg-lightblue mix slide-out-from-bottom in-data-[state=active]:slide-in-from-top isolate z-50 mx-auto mt-10 hidden h-fit w-full rounded-3xl border-2 border-white p-5 backdrop-blur-lg transition-all in-data-[state=active]:isolate in-data-[state=active]:flex in-data-[state=active]:flex-col lg:hidden">
+        <div className="slide-out-from-bottom mix isolate z-50 mx-auto mt-10 hidden h-fit w-full rounded-3xl border-2 border-white bg-lightblue p-5 backdrop-blur-lg transition-all in-data-[state=active]:isolate in-data-[state=active]:flex in-data-[state=active]:flex-col in-data-[state=active]:slide-in-from-top lg:hidden">
           <div className="contents lg:hidden">
             <button
               onClick={() => {
@@ -77,7 +77,7 @@ const NavBar = () => {
                 <li key={index}>
                   <Link
                     href={item.href}
-                    className="text-primary-foreground hover:text-darkblue-106 block font-semibold duration-150"
+                    className="block font-semibold text-primary-foreground duration-150 hover:text-darkblue-106"
                   >
                     <span>{item.name}</span>
                   </Link>
