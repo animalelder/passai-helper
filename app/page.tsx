@@ -10,7 +10,6 @@ import caring_1 from "@/assets/landing/caring-1.png";
 import caring_2 from "@/assets/landing/caring-2.png";
 import caring_3 from "@/assets/landing/caring-3.png";
 import emailGuy from "@/assets/landing/email-guy.png";
-import manWalking from "@/assets/landing/man-walking.svg";
 import parents from "@/assets/landing/parents.svg";
 import logo from "@/assets/landing/passai-logo.svg";
 import paymentsIcon from "@/assets/landing/payments.svg";
@@ -28,71 +27,63 @@ const Home: NextPage = () => {
       <main className="flex flex-col gap-20">
         {/* Container 1 Overwhelmed? */}
         <section className="bg-card">
-          <div className="mx-auto flex min-h-[599px] max-w-[1152px] min-w-fit flex-col items-center justify-center gap-y-6 px-4 py-[96px] md:gap-x-14 md:px-6 lg:flex-row xl:justify-between xl:gap-x-24 xl:px-36">
-            <div className="font-heading space-y-5 -tracking-tighter xl:tracking-normal">
-              <h1 className="text-darkblue text-4xl font-semibold md:text-5xl lg:text-7xl">
-                Overwhelmed with
-                <span className="text-alert-104 block">School</span>
-                <span className="text-alert-104 block">Communication</span>
+          <div className="mx-auto flex min-h-[599px] min-w-fit flex-col items-center justify-center gap-y-6 bg-(image:--hero-img) bg-cover bg-center bg-no-repeat px-4 py-[96px] md:gap-x-14 md:px-6 lg:flex-row xl:justify-between xl:gap-x-24 xl:px-36">
+            <div className="space-y-5 font-heading -tracking-tighter xl:tracking-normal">
+              <h1 className="text-6xl font-semibold text-paleyellow-100 md:text-5xl lg:text-7xl">
+                Smart Parenting,
+                <span className="block text-offwhite">Made Easy</span>
               </h1>
 
-              <p className="text-darkblue-102 text-lg font-bold md:text-xl lg:text-2xl">
-                PASS it to your AI Agent
+              <p className="font-heading text-lg text-white md:text-xl lg:text-2xl">
+                Stay organized. Stay ahead. Stay connected.
               </p>
-              <Button className="cursor-pointer">Learn more</Button>
+              <Button className="cursor-pointer bg-alert-102 font-semibold lg:text-xl">
+                Sign up now
+              </Button>
             </div>
-            <Image
-              src={manWalking}
-              width={481}
-              height={407}
-              className="h-[229px] w-[271px] md:h-auto md:w-[300px] xl:h-[407px] xl:w-[481px]"
-              priority
-              quality={90}
-              alt="guy walking"
-            />
           </div>
         </section>
 
         {/* Container 2 Manage your children  */}
         <section className="mx-auto max-w-[542px] space-y-2 bg-white text-center">
-          <h1 className="font-heading text-darkblue-102 text-2xl font-bold xl:text-[32px]">
+          <h1 className="font-heading text-2xl font-bold text-darkblue-102 xl:text-[32px]">
             Manage your children&apos;s schedules and activities in one place
           </h1>
-          <h2 className="text-secondary font-heading xl:text-2xlxl text-xl font-extrabold">
+          <h2 className="xl:text-2xlxl font-heading text-xl font-extrabold text-secondary">
             Who is PASS.ai suitable for?
           </h2>
         </section>
 
         {/* Container 3 Busy Parents and School Admins  */}
         <section className="m-6 flex flex-col items-center justify-start gap-5 gap-y-8 bg-[#FFF] text-center xl:flex-row xl:items-start xl:justify-center xl:gap-80">
-          <Card className="shadow-landcard flex h-[256px] w-[299px] flex-col items-center justify-center text-base">
+          <Card className="flex h-[256px] w-[299px] flex-col items-center justify-center text-base shadow-landcard">
             <Image
               src={peopleIcon}
               width="65"
               height="56"
               alt="parents icon"
             />
-            <h1 className="font-heading text-neutral-dgrey text-3xl font-bold">
+            <h1 className="font-heading text-3xl font-bold text-neutral-dgrey">
               Busy Parents
             </h1>
-            <p className="text-black-200 mx-4 text-base font-normal">
+            <p className="mx-4 text-base font-normal text-black-200">
               {" "}
               Parents are overwhelmed by the complexity and fragmentation of managing
               their children&apos;s school-related activities and schedules.
             </p>
           </Card>
 
-          <Card className="shadow-landcard flex h-[256px] w-[299px] flex-col items-center justify-center">
+          <Card className="flex h-[256px] w-[299px] flex-col items-center justify-center shadow-landcard">
             <Image
               src={peopleIcon}
               width="65"
               height="56"
               alt="admins icon"
             />
-            <h1 className="font-heading text-neutral-dgrey text-3xl font-bold">
+            <h1 className="font-heading text-3xl font-bold text-neutral-dgrey">
               School Admins
             </h1>
-            <p className="text-black-200 mx-4 text-base font-normal">
+            <p className="mx-4 text-base font-normal text-black-200">
               School admins are overwhelmed by the workload: tracking incidents,
               managing communication and ensuring security.
             </p>
@@ -113,7 +104,7 @@ const Home: NextPage = () => {
             <h1 className="font-heading text-xl font-bold text-neutral-800 xl:text-3xl">
               Why Choose PASS.ai?
             </h1>
-            <ul className="font-heading list-disc self-stretch pl-5 text-sm text-neutral-800 xl:text-base">
+            <ul className="list-disc self-stretch pl-5 font-heading text-sm text-neutral-800 xl:text-base">
               <li>Intelligent Calendar Management</li>
               <li>Unified Communication Hub</li>
               <li>Smart Child Progress Tracking</li>
@@ -127,9 +118,9 @@ const Home: NextPage = () => {
         </section>
 
         {/* Container 5 Connect all your child's school apps */}
-        <section className="bg-darkblue font-heading text-offwhite flex flex-col items-center justify-center gap-4 py-7 max-sm:px-4 xl:flex-row xl:justify-between xl:px-40">
-          <div className="font-heading h-full max-w-[540px] basis-1/2 gap-3 space-y-2 md:space-y-4 lg:space-y-6">
-            <h1 className="text-offwhite text-2xl font-bold lg:text-3xl xl:text-4xl">
+        <section className="flex flex-col items-center justify-center gap-4 bg-darkblue py-7 font-heading text-offwhite max-sm:px-4 xl:flex-row xl:justify-between xl:px-40">
+          <div className="h-full max-w-[540px] basis-1/2 gap-3 space-y-2 font-heading md:space-y-4 lg:space-y-6">
+            <h1 className="text-2xl font-bold text-offwhite lg:text-3xl xl:text-4xl">
               Let the Numbers Talk
             </h1>
             <p className="indent-4 text-base font-semibold text-pretty md:text-lg">
@@ -225,7 +216,7 @@ const Home: NextPage = () => {
         </section>
 
         {/* Container 7  Ashley Vee Testimonial */}
-        <section className="bg-offwhite flex min-h-[438px] flex-col items-center justify-center p-6 px-4 py-8 xl:flex-row xl:space-x-16 xl:px-36 xl:py-8">
+        <section className="flex min-h-[438px] flex-col items-center justify-center bg-offwhite p-6 px-4 py-8 xl:flex-row xl:space-x-16 xl:px-36 xl:py-8">
           <Image
             src={ashley}
             width={358}
@@ -239,21 +230,21 @@ const Home: NextPage = () => {
               alt="quote icon"
               className="py-2 max-lg:block lg:-mt-20"
             />
-            <p className="xl:text-black-200 indent-3 font-sans lg:text-lg">
+            <p className="indent-3 font-sans lg:text-lg xl:text-black-200">
               PASS.ai has been a game-changer for our family. No more jumping between
               apps! I can now manage my children&apos;s schedules and school
               activities in one place. It has made our lives so much easier!
             </p>
-            <p className="text-darkblue-104 font-heading text-2xl font-bold">
+            <p className="font-heading text-2xl font-bold text-darkblue-104">
               Ashley Vee
             </p>
-            <p className="font-heading text-darkblue-102 -mt-3.5 mb-2 font-semibold">
+            <p className="-mt-3.5 mb-2 font-heading font-semibold text-darkblue-102">
               Graphic Designer
             </p>
 
             <Link
               href="#"
-              className="font-heading text-darkblue self-center-safe justify-self-end-safe text-xl/relaxed font-semibold"
+              className="self-center-safe justify-self-end-safe font-heading text-xl/relaxed font-semibold text-darkblue"
             >
               See what other customers have said
             </Link>
@@ -261,10 +252,10 @@ const Home: NextPage = () => {
         </section>
         {/* Container 8  Caring is the new marketing  */}
         <section className="flex flex-col items-center justify-start gap-3 xl:px-36">
-          <h1 className="font-heading text-secondary text-shadow-neutral-dgrey/25 text-3xl font-bold tracking-tighter text-shadow-xs md:text-4xl lg:text-5xl xl:tracking-tight">
+          <h1 className="font-heading text-3xl font-bold tracking-tighter text-secondary text-shadow-neutral-dgrey/25 text-shadow-xs md:text-4xl lg:text-5xl xl:tracking-tight">
             PASS.ai Features
           </h1>
-          <p className="text-black-200 font-heading max-w-xl px-3 indent-9 text-sm text-pretty first-letter:text-black max-md:mx-10 md:text-base xl:px-4">
+          <p className="max-w-xl px-3 indent-9 font-heading text-sm text-pretty text-black-200 first-letter:text-black max-md:mx-10 md:text-base xl:px-4">
             PASS.ai helps families stay on top of their busy lives. Keep track of
             school events, homework, and important updates—all in one simple
             dashboard.
@@ -277,8 +268,8 @@ const Home: NextPage = () => {
                 height={287}
                 alt="caring 1"
               />
-              <Card className="shadow-landcard -mt-24 flex h-[227px] w-[310px] flex-col items-center justify-between justify-self-center px-2 duration-500 ease-in-out hover:drop-shadow-lg">
-                <h1 className="font-heading text-neutral-grey mx-8 text-2xl font-bold text-pretty">
+              <Card className="-mt-24 flex h-[227px] w-[310px] flex-col items-center justify-between justify-self-center px-2 shadow-landcard duration-500 ease-in-out hover:drop-shadow-lg">
+                <h1 className="mx-8 font-heading text-2xl font-bold text-pretty text-neutral-grey">
                   Family Calendar
                 </h1>
                 <p className="mx-2 indent-2">
@@ -286,7 +277,7 @@ const Home: NextPage = () => {
                 </p>
                 <Link
                   href="#"
-                  className="text-darkblue-102 hover:text-darkblue-106 mx-auto leading-none font-semibold transition-colors"
+                  className="mx-auto leading-none font-semibold text-darkblue-102 transition-colors hover:text-darkblue-106"
                 >
                   Read more
                 </Link>
@@ -299,8 +290,8 @@ const Home: NextPage = () => {
                 height={283}
                 alt="caring 2"
               />
-              <Card className="shadow-landcard -mt-24 flex h-[227px] w-[310px] flex-col items-center justify-between justify-self-center px-2 duration-500 ease-in-out hover:drop-shadow-lg">
-                <h1 className="font-heading text-neutral-grey mx-8 text-center text-2xl font-bold text-pretty">
+              <Card className="-mt-24 flex h-[227px] w-[310px] flex-col items-center justify-between justify-self-center px-2 shadow-landcard duration-500 ease-in-out hover:drop-shadow-lg">
+                <h1 className="mx-8 text-center font-heading text-2xl font-bold text-pretty text-neutral-grey">
                   School Communication
                 </h1>
                 <p className="mx-2 indent-2">
@@ -308,7 +299,7 @@ const Home: NextPage = () => {
                 </p>
                 <Link
                   href="#"
-                  className="text-darkblue-102 hover:text-darkblue-106 mx-auto leading-none font-semibold transition-colors"
+                  className="mx-auto leading-none font-semibold text-darkblue-102 transition-colors hover:text-darkblue-106"
                 >
                   Read more
                 </Link>
@@ -321,8 +312,8 @@ const Home: NextPage = () => {
                 height={287}
                 alt="caring 3"
               />
-              <Card className="shadow-landcard -mt-24 flex h-[227px] w-[310px] flex-col items-center justify-between justify-self-center px-2 duration-500 ease-in-out hover:drop-shadow-lg">
-                <h1 className="font-heading text-neutral-grey mx-8 text-center text-2xl font-bold text-pretty">
+              <Card className="-mt-24 flex h-[227px] w-[310px] flex-col items-center justify-between justify-self-center px-2 shadow-landcard duration-500 ease-in-out hover:drop-shadow-lg">
+                <h1 className="mx-8 text-center font-heading text-2xl font-bold text-pretty text-neutral-grey">
                   Track Academic Progress
                 </h1>
                 <p className="mx-2 indent-2">
@@ -330,7 +321,7 @@ const Home: NextPage = () => {
                 </p>
                 <Link
                   href="#"
-                  className="text-darkblue-102 hover:text-darkblue-106 mx-auto leading-none font-semibold transition-colors"
+                  className="mx-auto leading-none font-semibold text-darkblue-102 transition-colors hover:text-darkblue-106"
                 >
                   Read more
                 </Link>
@@ -339,9 +330,9 @@ const Home: NextPage = () => {
           </div>
         </section>
       </main>
-      <footer className="bg-darkblue flex min-h-52 basis-full max-sm:flex-col xl:px-4">
+      <footer className="flex min-h-52 basis-full bg-darkblue max-sm:flex-col xl:px-4">
         <div className="flex basis-full items-start justify-between self-stretch p-10 max-sm:flex-col xl:inline-flex">
-          <div className="inline-flex flex-col items-start justify-center gap-5">
+          <div className="flex inline-flex flex-col items-start justify-center gap-5">
             <div className="relative h-24 w-20">
               <Image
                 width={73}
@@ -351,70 +342,70 @@ const Home: NextPage = () => {
                 alt="logo"
               />
             </div>
-            <div className="font-heading text-offwhite w-80 justify-center text-sm font-semibold">
+            <div className="flex w-80 justify-center font-heading text-sm font-semibold text-offwhite">
               Parent Agent x School Support
             </div>
             <div className="inline-flex grow basis-full flex-row flex-wrap gap-4 xl:flex-nowrap xl:gap-10">
-              <span className="text-offwhite justify-center text-center font-sans text-base leading-normal font-bold">
+              <span className="flex justify-center text-center font-sans text-base leading-normal font-bold text-offwhite">
                 © 2025
               </span>
-              <span className="text-offwhite justify-center text-center font-sans text-base leading-normal font-semibold">
+              <span className="flex justify-center text-center font-sans text-base leading-normal font-semibold text-offwhite">
                 PASS.ai
               </span>
             </div>
           </div>
           <Link
             href="#"
-            className="inline-flex h-full w-full flex-col items-start justify-center gap-2"
+            className="flex inline-flex h-full w-full flex-col items-start justify-center gap-2"
           >
-            <div className="text-offwhite justify-center text-center font-sans text-sm leading-none font-bold uppercase">
+            <div className="flex justify-center text-center font-sans text-sm leading-none font-bold text-offwhite uppercase">
               GET CONNECTED
             </div>
-            <div className="text-offwhite justify-center text-center font-sans text-base leading-normal font-normal">
+            <div className="flex justify-center text-center font-sans text-base leading-normal font-normal text-offwhite">
               About us
             </div>
-            <div className="text-offwhite justify-center text-center font-sans text-base leading-normal font-normal">
+            <div className="flex justify-center text-center font-sans text-base leading-normal font-normal text-offwhite">
               Services
             </div>
-            <div className="text-offwhite justify-center text-center font-sans text-base leading-normal font-normal">
+            <div className="flex justify-center text-center font-sans text-base leading-normal font-normal text-offwhite">
               Contact us
             </div>
           </Link>
           <Link
             href="#"
-            className="inline-flex h-full w-full flex-col items-start justify-center gap-2"
+            className="flex inline-flex h-full w-full flex-col items-start justify-center gap-2"
           >
-            <div className="text-offwhite justify-center text-center font-sans text-sm leading-none font-bold uppercase">
+            <div className="flex justify-center text-center font-sans text-sm leading-none font-bold text-offwhite uppercase">
               Product
             </div>
-            <div className="text-offwhite justify-center text-center font-sans text-base leading-normal font-normal">
+            <div className="flex justify-center text-center font-sans text-base leading-normal font-normal text-offwhite">
               Pricing
             </div>
-            <div className="text-offwhite justify-center text-center font-sans text-base leading-normal font-normal">
+            <div className="flex justify-center text-center font-sans text-base leading-normal font-normal text-offwhite">
               Features
             </div>
-            <div className="text-offwhite justify-center text-center font-sans text-base leading-normal font-normal">
+            <div className="flex justify-center text-center font-sans text-base leading-normal font-normal text-offwhite">
               Customers
             </div>
           </Link>
           <Link
             href="#"
-            className="inline-flex h-full w-full flex-col items-start justify-center gap-2"
+            className="flex inline-flex h-full w-full flex-col items-start justify-center gap-2"
           >
-            <div className="text-offwhite justify-center text-center font-sans text-sm leading-none font-bold uppercase">
+            <div className="flex justify-center text-center font-sans text-sm leading-none font-bold text-offwhite uppercase">
               Help
             </div>
-            <div className="text-offwhite justify-center text-center font-sans text-base leading-normal font-normal">
+            <div className="flex justify-center text-center font-sans text-base leading-normal font-normal text-offwhite">
               Getting started
             </div>
-            <div className="text-offwhite justify-center text-center font-sans text-base leading-normal font-normal">
+            <div className="flex justify-center text-center font-sans text-base leading-normal font-normal text-offwhite">
               FAQs
             </div>
-            <div className="text-offwhite justify-center text-center font-sans text-base leading-normal font-normal">
+            <div className="flex justify-center text-center font-sans text-base leading-normal font-normal text-offwhite">
               Referral program
             </div>
           </Link>
-          <div className="inline-flex w-full flex-row items-center justify-center gap-2">
+          <div className="flex inline-flex w-full flex-row items-center justify-center gap-2">
             <Link
               href="https://www.facebook.com"
               className="size-8 hover:drop-shadow-lg"

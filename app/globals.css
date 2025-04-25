@@ -38,6 +38,7 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  --hero-img: url("@/assets/landing/hero-bg.png");
 }
 
 .dark {
@@ -80,7 +81,7 @@
   --color-black-200: oklch(from #232423 l c h);
   --color-lightblue: oklch(from #c4dbd1 l c h);
   --color-lightblue-100: oklch(from #e8f3ee l c h);
-  --color-lightblue-102: oklch(from #A0B3AA l c h);
+  --color-lightblue-102: oklch(from #a0b3aa l c h);
   --color-lightblue-103: oklch(from #7d8c86 l c h);
   --color-lightblue-104: oklch(from #5c6762 l c h);
   --color-darkblue: oklch(from #3d545b l c h);
