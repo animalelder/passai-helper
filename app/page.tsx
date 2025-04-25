@@ -26,7 +26,7 @@ const Home: NextPage = () => {
       <main className="flex flex-col gap-20">
         {/* Container 1 Overwhelmed? */}
         <section className="bg-card">
-          <div className="mx-auto flex min-h-[599px] min-w-fit flex-col items-center justify-center gap-y-6 bg-(image:--hero-img) bg-cover bg-center bg-no-repeat px-4 py-[96px] md:gap-x-14 md:px-6 lg:flex-row xl:justify-between xl:gap-x-24 xl:px-36">
+          <div className="mx-auto flex min-h-[599px] min-w-fit flex-col items-center justify-center gap-y-6 bg-[url(/landing/hero-bg.png)] bg-cover bg-center bg-no-repeat px-4 py-[96px] md:gap-x-14 md:px-6 lg:flex-row xl:justify-between xl:gap-x-24 xl:px-36">
             <div className="space-y-5 font-heading -tracking-tighter xl:tracking-normal">
               <h1 className="text-6xl font-semibold text-paleyellow-100 md:text-5xl lg:text-7xl">
                 Smart Parenting,
