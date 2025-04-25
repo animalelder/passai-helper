@@ -11,6 +11,7 @@ import caring_1 from "@/assets/landing/caring-1.png";
 import caring_2 from "@/assets/landing/caring-2.png";
 import caring_3 from "@/assets/landing/caring-3.png";
 import gear from "@/assets/landing/gear.png";
+import herobg from "@/assets/landing/hero-bg.png";
 import history from "@/assets/landing/history.png";
 import lock from "@/assets/landing/lock.png";
 import monitor from "@/assets/landing/monitor.png";
@@ -25,8 +26,13 @@ const Home: NextPage = () => {
       <NavBar />
       <main className="flex flex-col gap-20">
         {/* Container 1 Overwhelmed? */}
-        <section className="bg-card">
-          <div className="mx-auto flex min-h-[599px] min-w-fit flex-col items-center justify-center gap-y-6 bg-[url(/landing/hero-bg.png)] bg-cover bg-center bg-no-repeat px-4 py-[96px] md:gap-x-14 md:px-6 lg:flex-row xl:justify-between xl:gap-x-24 xl:px-36">
+        <section className="relative">
+          <Image
+            src={herobg}
+            alt="background image of parent and child"
+            className="absolute inset-0 -z-10 w-full"
+          />
+          <div className="mx-auto flex min-h-[599px] min-w-fit flex-col items-center justify-center gap-y-6 bg-transparent bg-cover bg-center bg-no-repeat px-4 py-[96px] md:gap-x-14 md:px-6 lg:flex-row xl:justify-between xl:gap-x-24 xl:px-36">
             <div className="space-y-5 font-heading -tracking-tighter xl:tracking-normal">
               <h1 className="text-6xl font-semibold text-paleyellow-100 md:text-5xl lg:text-7xl">
                 Smart Parenting,
