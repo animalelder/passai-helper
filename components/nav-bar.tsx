@@ -95,7 +95,8 @@ const NavBar = () => {
                   variant="secondary"
                   asChild
                 >
-                  <Link href="/signin">Sign In</Link>
+                  {/* <Link href="/signin">Sign In</Link> */}
+                  <Link href="/onboarding/sign-in">Sign In</Link>
                 </Button>
               </li>
             </ul>
@@ -107,7 +108,8 @@ const NavBar = () => {
           className="hidden lg:inline-flex"
           asChild
         >
-          <Link href="/signin">Sign In</Link>
+          {/* <Link href="/signin">Sign In</Link> */}
+          <Link href="/onboarding/sign-in">Sign In</Link>
         </Button>
       </nav>
     </header>

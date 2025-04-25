@@ -5,8 +5,10 @@ import { useRouter } from "next/navigation";
 
 import { EyeIcon, EyeOffIcon } from "lucide-react";
 import { FaApple, FaFacebookF, FaGoogle, FaTwitter } from "react-icons/fa";
+import { toast } from "sonner";
 
 import { signIn } from "@/lib/auth-client";
+import { useAuthState } from "@/hooks/use-auth-state";
 import { Button } from "@/components/ui/button";
 
 export default function SignInForm() {
@@ -14,55 +16,76 @@ export default function SignInForm() {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [saveDetails, setSaveDetails] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
+
   const router = useRouter();
+  const { setError, setSuccess, loading, setLoading, resetState } = useAuthState();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
-    // These are set in the onRequest callback below
-    // setLoading(true);
-    // setMessage("");
 
     try {
       await signIn.email(
         { email, password, callbackURL: "/dashboard" },
         {
+          onRequest: () => {
+            resetState();
+            setLoading(true);
+            setErrorMessage("");
+            setSuccessMessage("");
+          },
           onResponse: () => {
             setLoading(false);
-            setMessage("Login successful");
-          },
-          onRequest: () => {
-            setLoading(true);
-            setMessage("");
           },
           onSuccess: () => {
+            setSuccessMessage("Login successful");
             router.push("/dashboard");
           },
           onError: (ctx) => {
+            setErrorMessage(ctx.error.message);
             setLoading(false);
-            setMessage(ctx.error.message);
             throw new Error(ctx.error.message);
           },
         }
       );
-      // Your previous code
-      // const res = await fetch("/api/logins/ss/s", {
-      //   method: "POST",
-      //   headers: { "Content-Type": "application/json" },
-      //   body: JSON.stringify({ email, password }),
-      // });
-
-      // const data = await res.json();
-      // if (!res.ok) throw new Error(data.message || "Login failed");
-
-      // router.push("/dashboard");
-    } catch (err) {
-      setMessage(err.message || "Something went wrong.");
+    } catch (err: any) {
+      setErrorMessage(err.message || "Something went wrong.");
     } finally {
-      // finally is good, but it is already covered in onResponse, which is for success and error cases
       setLoading(false);
+    }
+  };
+
+  const socialSignIn = async (
+    provider: "google" | "github" | "facebook",
+    callbackURL: string
+  ) => {
+    try {
+      await signIn.social(
+        { provider, callbackURL },
+        {
+          onRequest: () => {
+            resetState();
+            setErrorMessage("");
+            setSuccessMessage("");
+            setLoading(true);
+          },
+          onResponse: () => setLoading(false),
+          onSuccess: () => {
+            setSuccess("You are logged in successfully");
+            router.push(callbackURL);
+          },
+          onError: (ctx) => {
+            setError(ctx.error.message);
+            setErrorMessage(ctx.error.message);
+            toast.error(ctx.error.message);
+          },
+        }
+      );
+    } catch (error: any) {
+      toast.error(error?.message ?? "Something went wrong");
+      setError("Something went wrong");
+      setErrorMessage("Something went wrong");
     }
   };
 
@@ -89,7 +112,7 @@ export default function SignInForm() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             className={`placeholder:text-lightblue-102 w-full rounded-md border ${
-              message ? "border-red-500 focus:ring-red-500" : "border-gray-300"
+              errorMessage ? "border-red-500 focus:ring-red-500" : "border-gray-300"
             } bg-white px-4 py-2 placeholder:text-sm focus:ring-1 focus:outline-none`}
           />
 
@@ -108,7 +131,9 @@ export default function SignInForm() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className={`placeholder:text-lightblue-102 w-full rounded-md border ${
-                message ? "border-red-500 focus:ring-red-500" : "border-gray-300"
+                errorMessage
+                  ? "border-red-500 focus:ring-red-500"
+                  : "border-gray-300"
               } bg-white px-4 py-2 pr-10 placeholder:text-sm focus:ring-1 focus:outline-none`}
             />
             <span
@@ -129,7 +154,10 @@ export default function SignInForm() {
             </span>
           </div>
 
-          {message && <p className="text-xs text-red-500">{message}</p>}
+          {errorMessage && <p className="text-xs text-red-500">{errorMessage}</p>}
+          {successMessage && (
+            <p className="text-xs text-green-500">{successMessage}</p>
+          )}
 
           <label className="mt-2 flex items-center gap-2 text-sm">
             <input
@@ -160,10 +188,24 @@ export default function SignInForm() {
         <div>
           <p className="text-sm font-semibold text-black">Use your social account</p>
           <div className="text-darkblue-104 mt-2 flex justify-center gap-6 text-xl">
-            <FaGoogle className="cursor-pointer" />
-            <FaFacebookF className="cursor-pointer" />
-            <FaTwitter className="cursor-pointer" />
-            <FaApple className="cursor-pointer" />
+            <button
+              type="button"
+              onClick={() => socialSignIn("google", "/dashboard")}
+            >
+              <FaGoogle className="cursor-pointer" />
+            </button>
+            <button
+              type="button"
+              onClick={() => socialSignIn("facebook", "/dashboard")}
+            >
+              <FaFacebookF className="cursor-pointer" />
+            </button>
+            <button type="button">
+              <FaTwitter className="cursor-pointer" />
+            </button>
+            <button type="button">
+              <FaApple className="cursor-pointer" />
+            </button>
           </div>
         </div>
       </form>
