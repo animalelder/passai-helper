@@ -135,7 +135,7 @@ const SignIn = () => {
             >
               Login
             </Button>
-            <div className="text-muted-foreground mx-auto block text-sm">or</div>
+            <div className="mx-auto block text-sm text-muted-foreground">or</div>
 
             <SocialButton
               provider="google"

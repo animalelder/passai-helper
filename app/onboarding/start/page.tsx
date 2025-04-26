@@ -14,7 +14,7 @@ export default function StartPage() {
       <div>
         <Logo />
         <div className="mt-6 text-center">
-          <h1 className="text-alert-104 text-2xl font-bold">
+          <h1 className="text-2xl font-bold text-alert-104">
             Smart Parenting... <br />
             <span className="text-black"> Simplified</span>
           </h1>
@@ -34,7 +34,7 @@ export default function StartPage() {
             <p className="mb-1">Already have an account?</p>
             <Link
               href="\onboarding\sign-in\"
-              className="hover:text-darkblue-102 cursor-pointer font-sans text-xl font-bold text-black transition-colors"
+              className="cursor-pointer font-sans text-xl font-bold text-black transition-colors hover:text-darkblue-102"
             >
               Login
             </Link>

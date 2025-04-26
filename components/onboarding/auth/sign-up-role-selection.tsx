@@ -23,15 +23,15 @@ export default function SignUpRoleSelection() {
     <div className="flex flex-col items-center justify-between px-4 py-6">
       {/* Title */}
       <div className="flex flex-col items-center gap-4 pt-6">
-        <h1 className="text-darkblue-104 text-xl font-bold">Sign up as</h1>
+        <h1 className="text-xl font-bold text-darkblue-104">Sign up as</h1>
       </div>
 
       {/* Role Selection */}
-      <div className="text-darkblue-104 font-openSans mt-8 flex flex-col gap-6 text-center leading-[0.9rem]">
+      <div className="font-openSans mt-8 flex flex-col gap-6 text-center leading-[0.9rem] text-darkblue-104">
         <button
           type="button"
           onClick={() => handleSelect("parent")}
-          className={`border-darkblue-102 relative inline-flex cursor-pointer flex-col items-center justify-end gap-[0.625rem] rounded border px-12 py-4 text-sm font-semibold transition-shadow ${
+          className={`relative inline-flex cursor-pointer flex-col items-center justify-end gap-[0.625rem] rounded border border-darkblue-102 px-12 py-4 text-sm font-semibold transition-shadow ${
             selectedRole === "parent"
               ? "shadow-[inset_0_4px_4px_rgba(0,0,0,0.25)]"
               : ""

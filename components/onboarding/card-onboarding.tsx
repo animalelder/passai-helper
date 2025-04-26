@@ -62,7 +62,7 @@ export default function CardOnboarding() {
       />
 
       {/* Title */}
-      <h2 className="font-heading mx-auto w-[16rem] text-center text-base font-bold text-black">
+      <h2 className="mx-auto w-[16rem] text-center font-heading text-base font-bold text-black">
         {steps[index - 1].step}
         {steps[index - 1].extra && (
           <span className="text-darkblue-104"> {steps[index - 1].extra}</span>
@@ -108,7 +108,7 @@ export default function CardOnboarding() {
       {/* Account link */}
       <Link
         href="\onboarding\sign-in\"
-        className="text-darkblue-102 mt-1 text-center text-[0.875rem] font-bold underline"
+        className="mt-1 text-center text-[0.875rem] font-bold text-darkblue-102 underline"
       >
         I already have an account
       </Link>

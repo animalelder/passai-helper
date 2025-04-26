@@ -70,14 +70,14 @@ export default function SignInForm() {
     <div className="flex min-h-screen items-center justify-center px-4">
       <form
         onSubmit={handleSubmit}
-        className="font-heading w-full max-w-xs space-y-5 text-center"
+        className="w-full max-w-xs space-y-5 text-center font-heading"
       >
-        <h1 className="font-heading text-darkblue-104 text-2xl font-bold">Login</h1>
+        <h1 className="font-heading text-2xl font-bold text-darkblue-104">Login</h1>
 
         <div className="space-y-2 text-left">
           <label
             htmlFor="email"
-            className="text-darkblue-104 text-xs"
+            className="text-xs text-darkblue-104"
           >
             Email address
           </label>
@@ -88,14 +88,14 @@ export default function SignInForm() {
             placeholder="youremail@anysite.com"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className={`placeholder:text-lightblue-102 w-full rounded-md border ${
+            className={`w-full rounded-md border placeholder:text-lightblue-102 ${
               message ? "border-red-500 focus:ring-red-500" : "border-gray-300"
             } bg-white px-4 py-2 placeholder:text-sm focus:ring-1 focus:outline-none`}
           />
 
           <label
             htmlFor="password"
-            className="text-darkblue-104 text-xs"
+            className="text-xs text-darkblue-104"
           >
             Password
           </label>
@@ -107,7 +107,7 @@ export default function SignInForm() {
               placeholder="your password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className={`placeholder:text-lightblue-102 w-full rounded-md border ${
+              className={`w-full rounded-md border placeholder:text-lightblue-102 ${
                 message ? "border-red-500 focus:ring-red-500" : "border-gray-300"
               } bg-white px-4 py-2 pr-10 placeholder:text-sm focus:ring-1 focus:outline-none`}
             />
@@ -142,7 +142,7 @@ export default function SignInForm() {
         </div>
 
         <div className="mx-auto flex w-fit flex-col items-center justify-between">
-          <p className="font-heading cursor-pointer text-xs text-black underline">
+          <p className="cursor-pointer font-heading text-xs text-black underline">
             Forgot your password?
           </p>
 
@@ -155,11 +155,11 @@ export default function SignInForm() {
           </Button>
         </div>
 
-        <div className="text-darkblue-104 text-sm">– OR –</div>
+        <div className="text-sm text-darkblue-104">– OR –</div>
 
         <div>
           <p className="text-sm font-semibold text-black">Use your social account</p>
-          <div className="text-darkblue-104 mt-2 flex justify-center gap-6 text-xl">
+          <div className="mt-2 flex justify-center gap-6 text-xl text-darkblue-104">
             <FaGoogle className="cursor-pointer" />
             <FaFacebookF className="cursor-pointer" />
             <FaTwitter className="cursor-pointer" />

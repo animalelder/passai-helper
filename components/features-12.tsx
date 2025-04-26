@@ -112,9 +112,9 @@ export default function Features() {
             </AccordionItem>
           </Accordion>
 
-          <div className="bg-background relative flex overflow-hidden rounded-3xl border p-2">
+          <div className="relative flex overflow-hidden rounded-3xl border bg-background p-2">
             <div className="absolute inset-0 right-0 ml-auto w-15 border-l bg-[repeating-linear-gradient(-45deg,var(--color-border),var(--color-border)_1px,transparent_1px,transparent_8px)]"></div>
-            <div className="bg-background relative aspect-76/59 w-[calc(3/4*100%+3rem)] rounded-2xl">
+            <div className="relative aspect-76/59 w-[calc(3/4*100%+3rem)] rounded-2xl bg-background">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={`${activeItem}-id`}

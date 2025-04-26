@@ -1,7 +1,7 @@
 // components/BottomLinks.tsx
 export default function LegalFooter() {
   return (
-    <p className="text-lightblue-103 font-heading mb-4 text-center text-sm">
+    <p className="mb-4 text-center font-heading text-sm text-lightblue-103">
       Terms of use | Privacy Policy
     </p>
   );
