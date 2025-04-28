@@ -47,14 +47,14 @@ const DashboardPage: NextPage = async () => {
           <h1 className="font-heading text-[2rem] font-bold text-darkblue-104">
             Welcome to your PASS.ai Dashboard
           </h1>
-          <p className="mb-4 font-heading text-2xl font-bold text-darkblue-103 underline">
+          <p className="mb-4 font-heading text-2xl font-bold text-darkblue-103">
             Let&apos;s setup your account!
           </p>
 
           {/* Setup Steps (Checklist) */}
           <div className="mb-8 space-y-2">
-            <p className="text-gray-700">You need to:</p>
-            <ol className="list-decimal pl-5 text-gray-600">
+            <p className="text-gray-700">You need to</p>
+            <ol className="list-decimal pl-5 font-sans">
               <li>Create your children&apos;s profile</li>
               <li>Add any of your chosen calendars</li>
               <li>Add another parent/guardian (if you wish)</li>

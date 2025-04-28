@@ -25,7 +25,7 @@ export default function Sidebar() {
     <div
       className={`flex flex-col bg-[#5e8189] text-white transition-all duration-200 ${isOpen ? "w-50" : "w-20"} relative h-screen`}
     >
-      <div className="mt-4 mb-8 flex items-center justify-center">
+      <div className="mt-4 mb-20 flex items-center justify-center">
         {isOpen ? (
           <div className="flex items-center gap-2">
             <LogoAlt />
