@@ -80,6 +80,7 @@
   --color-black-200: oklch(from #232423 l c h);
   --color-lightblue: oklch(from #c4dbd1 l c h);
   --color-lightblue-100: oklch(from #e8f3ee l c h);
+  --color-lightblue-101: oklch(from #c4dbd1 l c h);
   --color-lightblue-102: oklch(from #A0B3AA l c h);
   --color-lightblue-103: oklch(from #7d8c86 l c h);
   --color-lightblue-104: oklch(from #5c6762 l c h);
@@ -92,6 +93,7 @@
   --color-alert-105: oklch(from #61230f l c h);
   --color-darkblue-101: oklch(from #93c6d6 l c h);
   --color-darkblue-102: oklch(from #759eab l c h);
+  --color-darkblue-103: oklch(from #587882 l c h);
   --color-darkblue-104: oklch(from #3d545b l c h);
   --color-darkblue-106: oklch(from #0b1316 l c h);
   --color-grey-203: oklch(from #858987 l c h);
