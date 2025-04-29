@@ -75,7 +75,7 @@ export default function ContactSection() {
                 type="url"
                 id="website"
               />
-              <span className="text-muted-foreground inline-block text-sm">
+              <span className="inline-block text-sm text-muted-foreground">
                 Must start with &rsquo;https&rsquo;
               </span>
             </div>

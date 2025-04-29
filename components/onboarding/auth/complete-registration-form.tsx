@@ -44,10 +44,10 @@ export default function CompleteRegistrationForm() {
     <div className="flex items-center justify-center px-4">
       <form
         onSubmit={handleSubmit}
-        className="font-heading w-full max-w-xs space-y-4 text-center"
+        className="w-full max-w-xs space-y-4 text-center font-heading"
       >
         {/* Title */}
-        <h1 className="text-darkblue-104 text-2xl font-bold">Email Verified</h1>
+        <h1 className="text-2xl font-bold text-darkblue-104">Email Verified</h1>
 
         {/* Description */}
         <p className="mx-auto w-[18rem] text-sm text-black">
@@ -61,7 +61,7 @@ export default function CompleteRegistrationForm() {
         <div className="space-y-2 text-left">
           <label
             htmlFor="firstName"
-            className="text-darkblue-104 text-xs"
+            className="text-xs text-darkblue-104"
           >
             First name
           </label>
@@ -72,12 +72,12 @@ export default function CompleteRegistrationForm() {
             placeholder="Your first name"
             value={firstName}
             onChange={(e) => setFirstName(e.target.value)}
-            className="placeholder:text-lightblue-102 w-full rounded-md border border-gray-300 bg-white px-4 py-2 placeholder:text-sm"
+            className="w-full rounded-md border border-gray-300 bg-white px-4 py-2 placeholder:text-sm placeholder:text-lightblue-102"
           />
 
           <label
             htmlFor="lastName"
-            className="text-darkblue-104 mt-4 text-xs"
+            className="mt-4 text-xs text-darkblue-104"
           >
             Last name
           </label>
@@ -88,7 +88,7 @@ export default function CompleteRegistrationForm() {
             placeholder="Your last name"
             value={lastName}
             onChange={(e) => setLastName(e.target.value)}
-            className="placeholder:text-lightblue-102 w-full rounded-md border border-gray-300 bg-white px-4 py-2 placeholder:text-sm"
+            className="w-full rounded-md border border-gray-300 bg-white px-4 py-2 placeholder:text-sm placeholder:text-lightblue-102"
           />
         </div>
 
@@ -99,7 +99,7 @@ export default function CompleteRegistrationForm() {
           variant="secondary"
           className="mx-auto block"
         >
-          <p className="font-heading text-darkblue-106 text-xs font-semibold">
+          <p className="font-heading text-xs font-semibold text-darkblue-106">
             Register
           </p>
         </Button>

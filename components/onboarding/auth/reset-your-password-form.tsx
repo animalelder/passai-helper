@@ -35,16 +35,16 @@ export default function ResetYourPasswordForm() {
         className="w-full max-w-sm space-y-6 text-center"
       >
         {/* Title */}
-        <h1 className="text-darkblue-104 text-2xl font-bold">Reset your password</h1>
+        <h1 className="text-2xl font-bold text-darkblue-104">Reset your password</h1>
 
         {/* Subheading */}
-        <p className="text-darkblue-104 text-sm">Enter your new password</p>
+        <p className="text-sm text-darkblue-104">Enter your new password</p>
 
         {/* New password input */}
         <div className="text-left">
           <label
             htmlFor="newPassword"
-            className="text-darkblue-104 mb-1 block text-sm font-medium"
+            className="mb-1 block text-sm font-medium text-darkblue-104"
           >
             New password
           </label>
@@ -56,7 +56,7 @@ export default function ResetYourPasswordForm() {
               onChange={(e) => setNewPassword(e.target.value)}
               required
               placeholder="new password"
-              className="placeholder:text-lightblue-102 w-full rounded-md border border-blue-300 bg-white px-4 py-2 pr-10 placeholder:text-sm focus:ring-2 focus:ring-blue-400 focus:outline-none"
+              className="w-full rounded-md border border-blue-300 bg-white px-4 py-2 pr-10 placeholder:text-sm placeholder:text-lightblue-102 focus:ring-2 focus:ring-blue-400 focus:outline-none"
             />
             <button
               type="button"
@@ -75,7 +75,7 @@ export default function ResetYourPasswordForm() {
         <div className="text-left">
           <label
             htmlFor="confirmPassword"
-            className="text-darkblue-104 mb-1 block text-sm font-medium"
+            className="mb-1 block text-sm font-medium text-darkblue-104"
           >
             Confirm new password
           </label>
@@ -87,7 +87,7 @@ export default function ResetYourPasswordForm() {
               onChange={(e) => setConfirmPassword(e.target.value)}
               required
               placeholder="confirm new password"
-              className="placeholder:text-lightblue-102 w-full rounded-md border border-blue-300 bg-white px-4 py-2 pr-10 placeholder:text-sm focus:ring-2 focus:ring-blue-400 focus:outline-none"
+              className="w-full rounded-md border border-blue-300 bg-white px-4 py-2 pr-10 placeholder:text-sm placeholder:text-lightblue-102 focus:ring-2 focus:ring-blue-400 focus:outline-none"
             />
             <button
               type="button"
@@ -110,7 +110,7 @@ export default function ResetYourPasswordForm() {
         <button
           type="submit"
           disabled={loading}
-          className="bg-darkblue-102 font-heading text-darkblue-106 w-[9rem] cursor-pointer rounded-[10px] py-2 text-xs font-semibold transition hover:bg-[#5b8891]"
+          className="w-[9rem] cursor-pointer rounded-[10px] bg-darkblue-102 py-2 font-heading text-xs font-semibold text-darkblue-106 transition hover:bg-[#5b8891]"
         >
           Reset password
         </button>

@@ -52,7 +52,7 @@ export default function Testimonials() {
 
                   <div>
                     <cite className="text-sm font-medium">Shekinah Tshiokufila</cite>
-                    <span className="text-muted-foreground block text-sm">
+                    <span className="block text-sm text-muted-foreground">
                       Parent in Ontario
                     </span>
                   </div>
@@ -81,7 +81,7 @@ export default function Testimonials() {
                   </Avatar>
                   <div>
                     <cite className="text-sm font-medium">Jonathan Yombo</cite>
-                    <span className="text-muted-foreground block text-sm">
+                    <span className="block text-sm text-muted-foreground">
                       Software Lover
                     </span>
                   </div>
@@ -110,7 +110,7 @@ export default function Testimonials() {
                   </Avatar>
                   <div>
                     <cite className="text-sm font-medium">Yucel Faruksahan</cite>
-                    <span className="text-muted-foreground block text-sm">
+                    <span className="block text-sm text-muted-foreground">
                       Creator, Gmail
                     </span>
                   </div>
@@ -139,7 +139,7 @@ export default function Testimonials() {
                   </Avatar>
                   <div>
                     <p className="text-sm font-medium">Rodrigo Aguilar</p>
-                    <span className="text-muted-foreground block text-sm">
+                    <span className="block text-sm text-muted-foreground">
                       Creator, The Parent Trap
                     </span>
                   </div>

@@ -7,19 +7,19 @@ import { Card } from "@/components/ui/card";
 import Logo_elepehant from "@/components/logo";
 import { NavBar } from "@/components/nav-bar";
 
+import builtForImg from "@/assets/landing/built-for-img.png";
 import caring_1 from "@/assets/landing/caring-1.png";
 import caring_2 from "@/assets/landing/caring-2.png";
 import caring_3 from "@/assets/landing/caring-3.png";
-import emailGuy from "@/assets/landing/email-guy.png";
-import manWalking from "@/assets/landing/man-walking.svg";
-import parents from "@/assets/landing/parents.svg";
-import paymentsIcon from "@/assets/landing/payments.svg";
-import peopleIcon from "@/assets/landing/people-icon.png";
-import quoteIcon from "@/assets/landing/quote.svg";
-import schoolsIcon from "@/assets/landing/schools-icon.svg";
-import setupWizard from "@/assets/landing/setup-wizard.svg";
-import ashley from "@/assets/landing/testimonial-ashley.png";
-import trendingUp from "@/assets/landing/trending-up.svg";
+import gear from "@/assets/landing/gear.png";
+import herobg from "@/assets/landing/hero-bg.png";
+import history from "@/assets/landing/history.png";
+import lock from "@/assets/landing/lock.png";
+import monitor from "@/assets/landing/monitor.png";
+import logo from "@/assets/landing/pass-logo-footer.png";
+import schoolAdminImg from "@/assets/landing/school-admin-img.png";
+import section from "@/assets/landing/section.png";
+import shield from "@/assets/landing/shield.png";
 
 const Home: NextPage = () => {
   return (
@@ -27,244 +27,118 @@ const Home: NextPage = () => {
       <NavBar />
       <main className="flex flex-col gap-20">
         {/* Container 1 Overwhelmed? */}
-        <section className="bg-card">
-          <div className="mx-auto flex min-h-[599px] max-w-[1152px] min-w-fit flex-col items-center justify-center gap-y-6 px-4 py-[96px] md:gap-x-14 md:px-6 lg:flex-row xl:justify-between xl:gap-x-24 xl:px-36">
+        <section className="relative">
+          <Image
+            src={herobg}
+            alt="background image of parent and child"
+            className="absolute inset-0 -z-10 w-full"
+          />
+          <div className="mx-auto flex min-h-[599px] min-w-fit flex-col items-center justify-center gap-y-6 bg-transparent bg-cover bg-center bg-no-repeat px-4 py-[96px] md:gap-x-14 md:px-6 lg:flex-row xl:justify-between xl:gap-x-24 xl:px-36">
             <div className="space-y-5 font-heading -tracking-tighter xl:tracking-normal">
-              <h1 className="text-4xl font-semibold text-darkblue md:text-5xl lg:text-7xl">
-                Overwhelmed with
-                <span className="block text-alert-104">School</span>
-                <span className="block text-alert-104">Communication</span>
+              <h1 className="text-6xl font-semibold text-paleyellow-100 md:text-5xl lg:text-7xl">
+                Smart Parenting,
+                <span className="block text-offwhite">Made Easy</span>
               </h1>
 
-              <p className="text-lg font-bold text-darkblue-102 md:text-xl lg:text-2xl">
-                PASS it to your AI Agent
+              <p className="font-heading text-lg text-white md:text-xl lg:text-2xl">
+                Stay organized. Stay ahead. Stay connected.
               </p>
-              <Button className="cursor-pointer">Learn more</Button>
+              <Button className="cursor-pointer bg-alert-102 font-semibold lg:text-xl">
+                Sign up now
+              </Button>
             </div>
-            <Image
-              src={manWalking}
-              width={481}
-              height={407}
-              className="h-[229px] w-[271px] md:h-auto md:w-[300px] xl:h-[407px] xl:w-[481px]"
-              priority
-              quality={90}
-              alt="guy walking"
-            />
           </div>
         </section>
 
         {/* Container 2 Manage your children  */}
         <section className="mx-auto max-w-[542px] space-y-2 bg-white text-center">
           <h1 className="font-heading text-2xl font-bold text-darkblue-102 xl:text-[32px]">
-            Manage your children&apos;s schedules and activities in one place
+            Built for busy parents, families, and schools who want life to run
+            smoother.
           </h1>
-          <h2 className="xl:text-2xlxl font-heading text-xl font-extrabold text-secondary">
-            Who is PASS.ai suitable for?
-          </h2>
         </section>
 
         {/* Container 3 Busy Parents and School Admins  */}
-        <section className="m-6 flex flex-col items-center justify-start gap-5 gap-y-8 bg-[#FFF] text-center xl:flex-row xl:items-start xl:justify-center xl:gap-80">
-          <Card className="flex h-[256px] w-[299px] flex-col items-center justify-center text-base shadow-landcard">
+        <section className="flex flex-col items-center justify-start bg-[#FFF] text-center">
+          <div className="flex h-[597px] w-full">
             <Image
-              src={peopleIcon}
-              width="65"
-              height="56"
+              src={builtForImg}
               alt="parents icon"
             />
-            <h1 className="font-heading text-3xl font-bold text-neutral-dgrey">
-              Busy Parents
-            </h1>
-            <p className="mx-4 text-base font-normal text-black-200">
-              {" "}
-              Parents are overwhelmed by the complexity and fragmentation of managing
-              their children&apos;s school-related activities and schedules.
-            </p>
-          </Card>
-
-          <Card className="flex h-[256px] w-[299px] flex-col items-center justify-center shadow-landcard">
-            <Image
-              src={peopleIcon}
-              width="65"
-              height="56"
-              alt="admins icon"
-            />
-            <h1 className="font-heading text-3xl font-bold text-neutral-dgrey">
-              School Admins
-            </h1>
-            <p className="mx-4 text-base font-normal text-black-200">
-              School admins are overwhelmed by the workload: tracking incidents,
-              managing communication and ensuring security.
-            </p>
-          </Card>
-        </section>
-
-        {/* Container 4 How does PASSai help me*/}
-        <section className="flex flex-col items-center justify-center gap-4 p-6 xl:flex-row">
-          <Image
-            src={emailGuy}
-            width="454"
-            height="408"
-            className="h-[310px] w-[346px] md:h-[408px] md:w-[454px]"
-            alt="guy standing"
-          />
-
-          <div className="space-y-3">
-            <h1 className="font-heading text-xl font-bold text-neutral-800 xl:text-3xl">
-              Why Choose PASS.ai?
-            </h1>
-            <ul className="list-disc self-stretch pl-5 font-heading text-sm text-neutral-800 xl:text-base">
-              <li>Intelligent Calendar Management</li>
-              <li>Unified Communication Hub</li>
-              <li>Smart Child Progress Tracking</li>
-              <li>Secure & Customizable Access</li>
-            </ul>
-
-            <Button className="cursor-pointer">
-              <Link href="#">Learn more</Link>
-            </Button>
-          </div>
-        </section>
-
-        {/* Container 5 Connect all your child's school apps */}
-        <section className="flex flex-col items-center justify-center gap-4 bg-darkblue py-7 font-heading text-offwhite max-sm:px-4 xl:flex-row xl:justify-between xl:px-40">
-          <div className="h-full max-w-[540px] basis-1/2 gap-3 space-y-2 font-heading md:space-y-4 lg:space-y-6">
-            <h1 className="text-2xl font-bold text-offwhite lg:text-3xl xl:text-4xl">
-              Let the Numbers Talk
-            </h1>
-            <p className="indent-4 text-base font-semibold text-pretty md:text-lg">
-              Whether it&apos;s managing school schedules, tracking assignments, or
-              improving parent-teacher communication, PASS.ai streamlines everything
-              into a single, intuitive dashboard.
-            </p>
-          </div>
-          <div className="flex h-full max-w-[540px] flex-wrap justify-between gap-4">
-            <div className="grow basis-full">
-              <div className="inline-flex min-w-1/2 gap-2">
-                <Image
-                  src={parents}
-                  width={48}
-                  height={48}
-                  alt="parents icon"
-                />
-                <div className="font-heading font-semibold">
-                  <h2 className="text-2xl font-bold">2,245,341</h2>
-                  <p>Parents</p>
-                </div>
-              </div>
-              <div className="inline-flex min-w-1/2 gap-2">
-                <Image
-                  src={schoolsIcon}
-                  width={48}
-                  height={49}
-                  alt="schools icon"
-                  className="object-fill"
-                />
-                <div className="font-heading font-semibold">
-                  <h2 className="text-2xl font-bold">46,328</h2>
-                  <p>Schools</p>
-                </div>
-              </div>
-            </div>
-            <div className="grow basis-full">
-              <div className="inline-flex min-w-1/2 gap-2">
-                <Image
-                  src={trendingUp}
-                  width={48}
-                  height={48}
-                  alt="trending-up icon"
-                />
-                <div className="font-heading font-semibold">
-                  <h2 className="text-2xl font-bold">828,867</h2>
-                  <p>Event Bookings</p>
-                </div>
-              </div>
-              <div className="inline-flex min-w-1/2 gap-2">
-                <Image
-                  src={paymentsIcon}
-                  width={48}
-                  height={48}
-                  className="object-cover- object-center"
-                  alt="payments icon"
-                />
-                <div className="font-heading font-semibold">
-                  <h2 className="text-2xl font-bold">1,926,436</h2>
-                  <p>Payments</p>
-                </div>
-              </div>
+            <div className="grid max-w-1/2 basis-1/2 place-content-center place-items-center bg-offwhite p-7 text-neutral-dgrey">
+              <h1 className="my-8 font-heading text-6xl font-bold">
+                Built for Your Family
+              </h1>
+              <ul className="mx-4 space-y-3 text-left font-sans text-lg text-black-200">
+                <li className="inline-flex items-end gap-1">
+                  <Image
+                    alt="history"
+                    className="size-6"
+                    src={history}
+                  />
+                  Sync all your connected calendars and school-related apps
+                </li>
+                <li className="inline-flex items-end gap-1">
+                  <Image
+                    alt="monitor"
+                    className="size-6"
+                    src={monitor}
+                  />
+                  Works on desktop, tablet, and mobile
+                </li>
+                <li className="inline-flex items-end gap-1">
+                  <Image
+                    alt="shield"
+                    className="size-6"
+                    src={shield}
+                  />
+                  Keeps your data safe with encryption
+                </li>
+              </ul>
+              <Button className="my-10 cursor-pointer justify-self-start bg-[#FCAA2F] font-bold lg:text-xl">
+                Get Started
+              </Button>
             </div>
           </div>
-        </section>
-
-        {/* Container 6  How have we helped parents and school admins  */}
-        <section className="m-6 flex max-h-fit flex-col items-center justify-center space-x-3 xl:flex-row">
-          <Image
-            src={setupWizard}
-            width={456}
-            height={408}
-            alt="girl board"
-          />
-          <div className="flex max-w-[600px] flex-col items-start gap-4 space-y-3.5 py-4">
-            <h1 className="font-heading text-3xl font-bold text-neutral-800 xl:text-4xl">
-              Seamless Scheduling, Smarter Communication, and Effortless Organization
-            </h1>
-            <ol className="list-inside list-none space-y-1 lg:space-y-0.5">
-              <li>🚀 &nbsp;&nbsp;Effortless Family Management</li>
-              <li>📅 &nbsp;&nbsp;Smart Calendar & AI-powered Reminders</li>
-              <li>📩 &nbsp;&nbsp;School Emails...Sorted</li>
-              <li>📊 &nbsp;&nbsp;Track Grades & Attendance</li>
-              <li>🔒 &nbsp;&nbsp;Safe & Secure Access</li>
-            </ol>
-            <Link
-              href="/signup"
-              className="cursor-pointer"
-            >
-              <Button className="cursor-pointer">Sign up now</Button>
-            </Link>
-          </div>
-        </section>
-
-        {/* Container 7  Ashley Vee Testimonial */}
-        <section className="flex min-h-[438px] flex-col items-center justify-center bg-offwhite p-6 px-4 py-8 xl:flex-row xl:space-x-16 xl:px-36 xl:py-8">
-          <Image
-            src={ashley}
-            width={358}
-            height={359}
-            alt="mom with child"
-          />
-
-          <div className="flex min-h-[288px] max-w-[748px] flex-col items-start justify-center gap-4 px-4">
+          <div className="flex h-[597px] w-full">
+            <div className="grid max-w-1/2 basis-1/2 place-content-center place-items-center bg-darkblue p-7 px-10 text-white">
+              <h1 className="my-8 justify-self-start font-heading text-6xl font-bold">
+                School Admins
+              </h1>
+              <ul className="mx-4 space-y-3 text-left font-sans text-lg">
+                <li className="inline-flex items-end gap-1">
+                  <Image
+                    alt="gear"
+                    className="size-6"
+                    src={gear}
+                  />
+                  Role-based access for parents, children, and teachers
+                </li>
+                <li className="inline-flex items-end gap-1">
+                  <Image
+                    alt="lock"
+                    className="size-6"
+                    src={lock}
+                  />
+                  Approval workflows for editing permissions.
+                </li>
+              </ul>
+              <Button className="my-10 cursor-pointer justify-self-start bg-[#FCAA2F] p-4 font-bold lg:text-xl">
+                Sign Up Now
+              </Button>
+            </div>
             <Image
-              src={quoteIcon}
-              alt="quote icon"
-              className="py-2 max-lg:block lg:-mt-20"
+              src={schoolAdminImg}
+              alt="admin icon"
             />
-            <p className="indent-3 font-sans lg:text-lg xl:text-black-200">
-              PASS.ai has been a game-changer for our family. No more jumping between
-              apps! I can now manage my children&apos;s schedules and school
-              activities in one place. It has made our lives so much easier!
-            </p>
-            <p className="font-heading text-2xl font-bold text-darkblue-104">
-              Ashley Vee
-            </p>
-            <p className="-mt-3.5 mb-2 font-heading font-semibold text-darkblue-102">
-              Graphic Designer
-            </p>
-
-            <Link
-              href="#"
-              className="self-center-safe justify-self-end-safe font-heading text-xl/relaxed font-semibold text-darkblue"
-            >
-              See what other customers have said
-            </Link>
           </div>
         </section>
         {/* Container 8  Caring is the new marketing  */}
         <section className="flex flex-col items-center justify-start gap-3 xl:px-36">
-          <h1 className="font-heading text-3xl font-bold tracking-tighter text-secondary text-shadow-neutral-dgrey/25 text-shadow-xs md:text-4xl lg:text-5xl xl:tracking-tight">
-            PASS.ai Features
+          <h1 className="font-heading text-3xl font-bold tracking-tighter text-darkgrey text-shadow-neutral-dgrey/10 text-shadow-xs md:text-4xl lg:text-5xl xl:tracking-tight">
+            What Can PASS.ai Do?
           </h1>
-          <p className="max-w-xl px-3 indent-9 font-heading text-sm text-pretty text-black-200 first-letter:text-black max-md:mx-10 md:text-base xl:px-4">
+          <p className="max-w-3xl px-3 text-justify font-heading text-sm text-black-200 first-letter:text-black max-md:mx-10 md:text-base xl:px-4">
             PASS.ai helps families stay on top of their busy lives. Keep track of
             school events, homework, and important updates—all in one simple
             dashboard.
@@ -279,7 +153,7 @@ const Home: NextPage = () => {
               />
               <Card className="-mt-24 flex h-[227px] w-[310px] flex-col items-center justify-between justify-self-center px-2 shadow-landcard duration-500 ease-in-out hover:drop-shadow-lg">
                 <h1 className="mx-8 font-heading text-2xl font-bold text-pretty text-neutral-grey">
-                  Family Calendar
+                  Smart Calendar Sync
                 </h1>
                 <p className="mx-2 indent-2">
                   Make scheduling simple and stress-free.
@@ -301,7 +175,7 @@ const Home: NextPage = () => {
               />
               <Card className="-mt-24 flex h-[227px] w-[310px] flex-col items-center justify-between justify-self-center px-2 shadow-landcard duration-500 ease-in-out hover:drop-shadow-lg">
                 <h1 className="mx-8 text-center font-heading text-2xl font-bold text-pretty text-neutral-grey">
-                  School Communication
+                  Easy School Updates
                 </h1>
                 <p className="mx-2 indent-2">
                   Never miss an important message again.
@@ -323,7 +197,7 @@ const Home: NextPage = () => {
               />
               <Card className="-mt-24 flex h-[227px] w-[310px] flex-col items-center justify-between justify-self-center px-2 shadow-landcard duration-500 ease-in-out hover:drop-shadow-lg">
                 <h1 className="mx-8 text-center font-heading text-2xl font-bold text-pretty text-neutral-grey">
-                  Track Academic Progress
+                  Track Your Child&apos;s Progress
                 </h1>
                 <p className="mx-2 indent-2">
                   Stay updated on schoolwork and attendance.
@@ -338,10 +212,170 @@ const Home: NextPage = () => {
             </div>
           </div>
         </section>
+
+        {/* Container 4 How does PASSai help me*/}
+        <section className="flex flex-col items-center justify-center">
+          <Image
+            src={section}
+            className="w-full"
+            alt="guy standing"
+          />
+
+          {/* <div className="space-y-3">
+            <h1 className="font-heading font-bold text-neutral-800 text-xl xl:text-3xl">
+              Why Choose PASS.ai?
+            </h1>
+            <ul className="self-stretch pl-5 font-heading text-neutral-800 text-sm xl:text-base list-disc">
+              <li>Intelligent Calendar Management</li>
+              <li>Unified Communication Hub</li>
+              <li>Smart Child Progress Tracking</li>
+              <li>Secure & Customizable Access</li>
+            </ul>
+
+            <Button className="cursor-pointer">
+              <Link href="#">Learn more</Link>
+            </Button>
+          </div> */}
+        </section>
+
+        {/* Container 5 Connect all your child's school apps */}
+        {/* <section className="flex xl:flex-row flex-col justify-center xl:justify-between items-center gap-4 bg-darkblue max-sm:px-4 xl:px-40 py-7 font-heading text-offwhite">
+          <div className="gap-3 space-y-2 md:space-y-4 lg:space-y-6 max-w-[540px] h-full font-heading basis-1/2">
+            <h1 className="font-bold text-offwhite text-2xl lg:text-3xl xl:text-4xl">
+              Let the Numbers Talk
+            </h1>
+            <p className="font-semibold text-base md:text-lg indent-4 text-pretty">
+              Whether it&apos;s managing school schedules, tracking assignments, or
+              improving parent-teacher communication, PASS.ai streamlines everything
+              into a single, intuitive dashboard.
+            </p>
+          </div>
+          <div className="flex flex-wrap justify-between gap-4 max-w-[540px] h-full">
+            <div className="grow basis-full">
+              <div className="inline-flex gap-2 min-w-1/2">
+                <Image
+                  src={parents}
+                  width={48}
+                  height={48}
+                  alt="parents icon"
+                />
+                <div className="font-heading font-semibold">
+                  <h2 className="font-bold text-2xl">2,245,341</h2>
+                  <p>Parents</p>
+                </div>
+              </div>
+              <div className="inline-flex gap-2 min-w-1/2">
+                <Image
+                  src={schoolsIcon}
+                  width={48}
+                  height={49}
+                  alt="schools icon"
+                  className="object-fill"
+                />
+                <div className="font-heading font-semibold">
+                  <h2 className="font-bold text-2xl">46,328</h2>
+                  <p>Schools</p>
+                </div>
+              </div>
+            </div>
+            <div className="grow basis-full">
+              <div className="inline-flex gap-2 min-w-1/2">
+                <Image
+                  src={trendingUp}
+                  width={48}
+                  height={48}
+                  alt="trending-up icon"
+                />
+                <div className="font-heading font-semibold">
+                  <h2 className="font-bold text-2xl">828,867</h2>
+                  <p>Event Bookings</p>
+                </div>
+              </div>
+              <div className="inline-flex gap-2 min-w-1/2">
+                <Image
+                  src={paymentsIcon}
+                  width={48}
+                  height={48}
+                  className="object-center object-cover-"
+                  alt="payments icon"
+                />
+                <div className="font-heading font-semibold">
+                  <h2 className="font-bold text-2xl">1,926,436</h2>
+                  <p>Payments</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section> */}
+
+        {/* Container 6  How have we helped parents and school admins  */}
+        {/* <section className="flex xl:flex-row flex-col justify-center items-center space-x-3 m-6 max-h-fit">
+          <Image
+            src={setupWizard}
+            width={456}
+            height={408}
+            alt="girl board"
+          />
+          <div className="flex flex-col items-start gap-4 space-y-3.5 py-4 max-w-[600px]">
+            <h1 className="font-heading font-bold text-neutral-800 text-3xl xl:text-4xl">
+              Seamless Scheduling, Smarter Communication, and Effortless Organization
+            </h1>
+            <ol className="space-y-1 lg:space-y-0.5 list-inside list-none">
+              <li>🚀 &nbsp;&nbsp;Effortless Family Management</li>
+              <li>📅 &nbsp;&nbsp;Smart Calendar & AI-powered Reminders</li>
+              <li>📩 &nbsp;&nbsp;School Emails...Sorted</li>
+              <li>📊 &nbsp;&nbsp;Track Grades & Attendance</li>
+              <li>🔒 &nbsp;&nbsp;Safe & Secure Access</li>
+            </ol>
+            <Link
+              href="/signup"
+              className="cursor-pointer"
+            >
+              <Button className="cursor-pointer">Sign up now</Button>
+            </Link>
+          </div>
+        </section> */}
+
+        {/* Container 7  Ashley Vee Testimonial */}
+        {/* <section className="flex xl:flex-row flex-col justify-center items-center xl:space-x-16 bg-offwhite p-6 px-4 xl:px-36 py-8 xl:py-8 min-h-[438px]">
+          <Image
+            src={ashley}
+            width={358}
+            height={359}
+            alt="mom with child"
+          />
+
+          <div className="flex flex-col justify-center items-start gap-4 px-4 max-w-[748px] min-h-[288px]">
+            <Image
+              src={quoteIcon}
+              alt="quote icon"
+              className="max-lg:block lg:-mt-20 py-2"
+            />
+            <p className="font-sans xl:text-black-200 lg:text-lg indent-3">
+              PASS.ai has been a game-changer for our family. No more jumping between
+              apps! I can now manage my children&apos;s schedules and school
+              activities in one place. It has made our lives so much easier!
+            </p>
+            <p className="font-heading font-bold text-darkblue-104 text-2xl">
+              Ashley Vee
+            </p>
+            <p className="-mt-3.5 mb-2 font-heading font-semibold text-darkblue-102">
+              Graphic Designer
+            </p>
+
+            <Link
+              href="#"
+              className="justify-self-end-safe self-center-safe font-heading font-semibold text-darkblue text-xl/relaxed"
+            >
+              See what other customers have said
+            </Link>
+          </div>
+        </section> */}
       </main>
+      {/* FOOTER FOOTER  */}
       <footer className="flex min-h-52 basis-full bg-darkblue max-sm:flex-col xl:px-4">
         <div className="flex basis-full items-start justify-between self-stretch p-10 max-sm:flex-col xl:inline-flex">
-          <div className="inline-flex flex-col items-start justify-center gap-5">
+          <div className="flex flex-col items-start justify-center gap-5">
             <div className="relative h-24 w-20">
               {/* <Image
                 width={73}
@@ -352,70 +386,70 @@ const Home: NextPage = () => {
               /> */}
               <Logo_elepehant />
             </div>
-            <div className="w-80 justify-center font-heading text-sm font-semibold text-offwhite">
+            <div className="flex w-80 justify-start font-heading text-sm font-semibold text-offwhite">
               Parent Agent x School Support
             </div>
             <div className="inline-flex grow basis-full flex-row flex-wrap gap-4 xl:flex-nowrap xl:gap-10">
-              <span className="justify-center text-center font-sans text-base leading-normal font-bold text-offwhite">
+              <span className="flex justify-center text-center font-sans text-base leading-normal font-bold text-offwhite">
                 © 2025
               </span>
-              <span className="justify-center text-center font-sans text-base leading-normal font-semibold text-offwhite">
+              <span className="flex justify-center text-center font-sans text-base leading-normal font-semibold text-offwhite">
                 PASS.ai
               </span>
             </div>
           </div>
           <Link
             href="#"
-            className="inline-flex h-full w-full flex-col items-start justify-center gap-2"
+            className="flex h-full w-full flex-col items-start justify-center gap-2"
           >
-            <div className="justify-center text-center font-sans text-sm leading-none font-bold text-offwhite uppercase">
+            <div className="flex justify-center text-center font-sans text-sm leading-none font-bold text-offwhite uppercase">
               GET CONNECTED
             </div>
-            <div className="justify-center text-center font-sans text-base leading-normal font-normal text-offwhite">
+            <div className="flex justify-center text-center font-sans text-base leading-normal font-normal text-offwhite">
               About us
             </div>
-            <div className="justify-center text-center font-sans text-base leading-normal font-normal text-offwhite">
+            <div className="flex justify-center text-center font-sans text-base leading-normal font-normal text-offwhite">
               Services
             </div>
-            <div className="justify-center text-center font-sans text-base leading-normal font-normal text-offwhite">
+            <div className="flex justify-center text-center font-sans text-base leading-normal font-normal text-offwhite">
               Contact us
             </div>
           </Link>
           <Link
             href="#"
-            className="inline-flex h-full w-full flex-col items-start justify-center gap-2"
+            className="flex h-full w-full flex-col items-start justify-center gap-2"
           >
-            <div className="justify-center text-center font-sans text-sm leading-none font-bold text-offwhite uppercase">
+            <div className="flex justify-center text-center font-sans text-sm leading-none font-bold text-offwhite uppercase">
               Product
             </div>
-            <div className="justify-center text-center font-sans text-base leading-normal font-normal text-offwhite">
+            <div className="flex justify-center text-center font-sans text-base leading-normal font-normal text-offwhite">
               Pricing
             </div>
-            <div className="justify-center text-center font-sans text-base leading-normal font-normal text-offwhite">
+            <div className="flex justify-center text-center font-sans text-base leading-normal font-normal text-offwhite">
               Features
             </div>
-            <div className="justify-center text-center font-sans text-base leading-normal font-normal text-offwhite">
+            <div className="flex justify-center text-center font-sans text-base leading-normal font-normal text-offwhite">
               Customers
             </div>
           </Link>
           <Link
             href="#"
-            className="inline-flex h-full w-full flex-col items-start justify-center gap-2"
+            className="flex h-full w-full flex-col items-start justify-center gap-2"
           >
-            <div className="justify-center text-center font-sans text-sm leading-none font-bold text-offwhite uppercase">
+            <div className="flex justify-center text-center font-sans text-sm leading-none font-bold text-offwhite uppercase">
               Help
             </div>
-            <div className="justify-center text-center font-sans text-base leading-normal font-normal text-offwhite">
+            <div className="flex justify-center text-center font-sans text-base leading-normal font-normal text-offwhite">
               Getting started
             </div>
-            <div className="justify-center text-center font-sans text-base leading-normal font-normal text-offwhite">
+            <div className="flex justify-center text-center font-sans text-base leading-normal font-normal text-offwhite">
               FAQs
             </div>
-            <div className="justify-center text-center font-sans text-base leading-normal font-normal text-offwhite">
+            <div className="flex justify-center text-center font-sans text-base leading-normal font-normal text-offwhite">
               Referral program
             </div>
           </Link>
-          <div className="inline-flex w-full flex-row items-center justify-center gap-2">
+          <div className="flex w-full flex-row items-center justify-center gap-2">
             <Link
               href="https://www.facebook.com"
               className="size-8 hover:drop-shadow-lg"

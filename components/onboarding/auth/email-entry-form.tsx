@@ -64,10 +64,10 @@ export default function EmailEntryForm() {
     <div className="flex items-center justify-center px-4">
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="font-heading w-full max-w-xs space-y-4 text-center"
+        className="w-full max-w-xs space-y-4 text-center font-heading"
       >
         {/* Title */}
-        <h1 className="text-darkblue-104 text-2xl font-bold">Sign up</h1>
+        <h1 className="text-2xl font-bold text-darkblue-104">Sign up</h1>
 
         {/* Description */}
         <p className="mx-auto w-[15rem] text-sm text-black">
@@ -78,7 +78,7 @@ export default function EmailEntryForm() {
         <div className="space-y-2 px-4 text-left">
           <label
             htmlFor="email"
-            className="text-darkblue-104 text-xs"
+            className="text-xs text-darkblue-104"
           >
             Email address
           </label>
@@ -86,7 +86,7 @@ export default function EmailEntryForm() {
             type="email"
             id="email"
             placeholder="youremail@anysite.com"
-            className="placeholder:text-lightblue-102 border-darkblue-102 w-full rounded-md border bg-white px-4 py-2 text-left placeholder:text-sm"
+            className="w-full rounded-md border border-darkblue-102 bg-white px-4 py-2 text-left placeholder:text-sm placeholder:text-lightblue-102"
             {...register("email")}
           />
           {errors.email && (
@@ -101,20 +101,20 @@ export default function EmailEntryForm() {
           variant="secondary"
           className="mx-auto block px-2"
         >
-          <p className="font-heading text-darkblue-106 text-xs font-semibold">
+          <p className="font-heading text-xs font-semibold text-darkblue-106">
             Verify email address
           </p>
         </Button>
 
         {/* OR divider */}
-        <div className="font-heading text-darkblue-104 text-sm font-semibold">
+        <div className="font-heading text-sm font-semibold text-darkblue-104">
           - OR -
         </div>
 
         {/* Social logins */}
         <div>
           <p className="text-sm font-semibold text-black">Use your social account</p>
-          <div className="text-darkblue-104 mt-2 flex justify-center gap-9 text-2xl">
+          <div className="mt-2 flex justify-center gap-9 text-2xl text-darkblue-104">
             <FaGoogle className="cursor-pointer" />
             <FaFacebookF className="cursor-pointer" />
             <FaTwitter className="cursor-pointer" />

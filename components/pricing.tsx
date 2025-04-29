@@ -24,7 +24,7 @@ export default function Pricing() {
               <div>
                 <h2 className="font-medium">Free</h2>
                 <span className="my-3 block text-2xl font-semibold">$0 / mo</span>
-                <p className="text-muted-foreground text-sm">Per child</p>
+                <p className="text-sm text-muted-foreground">Per child</p>
               </div>
 
               <Button
@@ -55,13 +55,13 @@ export default function Pricing() {
             </div>
           </div>
 
-          <div className="dark:bg-muted rounded-(--radius) border p-6 shadow-lg shadow-gray-950/5 md:col-span-3 lg:p-10 dark:[--color-muted:var(--color-zinc-900)]">
+          <div className="rounded-(--radius) border p-6 shadow-lg shadow-gray-950/5 md:col-span-3 lg:p-10 dark:bg-muted dark:[--color-muted:var(--color-zinc-900)]">
             <div className="grid gap-6 sm:grid-cols-2">
               <div className="space-y-4">
                 <div>
                   <h2 className="font-medium">Pro</h2>
                   <span className="my-3 block text-2xl font-semibold">$9 / mo</span>
-                  <p className="text-muted-foreground text-sm">Per child</p>
+                  <p className="text-sm text-muted-foreground">Per child</p>
                 </div>
 
                 <Button

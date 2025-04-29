@@ -21,12 +21,13 @@ const NavBar = () => {
     <header className="sticky inset-0 z-20 max-h-[82px] min-w-dvw basis-full *:transition-all *:duration-300 md:max-h-[92px]">
       <nav
         data-state={menuState && "active"}
+
         className="inline-flex w-full grow items-center justify-between overflow-x-clip overflow-y-visible bg-lightblue px-[32px] py-2 data-[state=active]:bg-card"
       >
         {/* <Link href="/">
           <Image
-            width={73}
-            height={96}
+            width={150}
+            height={60}
             className={cn(
               "isolate z-30 -mb-7 w-20 overflow-y-visible slide-in-from-left in-data-[state=active]:hidden in-data-[state=active]:opacity-0 in-data-[state=active]:slide-out-to-left"
             )}

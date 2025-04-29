@@ -39,7 +39,7 @@ export default function FeaturesSection() {
               </li>
             </ul>
           </div>
-          <div className="border-border/50 relative rounded-3xl border p-3 lg:col-span-3">
+          <div className="relative rounded-3xl border border-border/50 p-3 lg:col-span-3">
             <div className="relative aspect-76/59 rounded-2xl bg-linear-to-b from-zinc-300 to-transparent p-px dark:from-zinc-700">
               <Image
                 src="/payments.png"

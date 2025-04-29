@@ -94,7 +94,7 @@ export default function EditUserDialog() {
                   type="file"
                   accept="image/*"
                   onChange={handleImageChange}
-                  className="text-muted-foreground w-full"
+                  className="w-full text-muted-foreground"
                 />
                 {imagePreview && (
                   <X
