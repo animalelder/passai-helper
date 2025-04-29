@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-import { FaBell, FaHome, FaUser, FaUserFriends } from "react-icons/fa";
+import { FaCalendar, FaHome, FaUser, FaUserFriends } from "react-icons/fa";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 import LogoAlt from "@/components/logo-alt";
@@ -15,15 +15,15 @@ export default function Sidebar() {
   };
 
   const menuItems = [
-    { icon: <FaHome size={20} />, label: "Home" },
-    { icon: <FaUserFriends size={20} />, label: "My Kids" },
-    { icon: <FaBell size={20} />, label: "Alerts" },
-    { icon: <FaUser size={20} />, label: "Account" },
+    { icon: <FaUserFriends size={20} />, label: "Add Children" },
+    { icon: <FaCalendar size={20} />, label: "Connect Calendar" },
+    { icon: <FaUser size={20} />, label: "Add Parent/Gaurdian" },
+    { icon: <FaHome size={20} />, label: "Connect School Accounts" },
   ];
 
   return (
     <div
-      className={`flex flex-col bg-[#5e8189] text-white transition-all duration-200 ${isOpen ? "w-50" : "w-20"} relative h-screen`}
+      className={`flex flex-col bg-[#5e8189] text-white transition-all duration-200 ${isOpen ? "w-100" : "w-20"} relative h-screen`}
     >
       <div className="mt-4 mb-20 flex items-center justify-center">
         {isOpen ? (
@@ -45,7 +45,7 @@ export default function Sidebar() {
             className="flex cursor-pointer items-center gap-4 px-4 py-2 hover:bg-[#4a656b]"
           >
             {item.icon}
-            {isOpen && <span className="text-sm">{item.label}</span>}
+            {isOpen && <span className="text-sm font-[600]">{item.label}</span>}
           </div>
         ))}
       </div>
