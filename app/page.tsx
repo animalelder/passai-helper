@@ -4,6 +4,7 @@ import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import Logo_elepehant from "@/components/logo";
 import { NavBar } from "@/components/nav-bar";
 
 import builtForImg from "@/assets/landing/built-for-img.png";
@@ -376,13 +377,14 @@ const Home: NextPage = () => {
         <div className="flex basis-full items-start justify-between self-stretch p-10 max-sm:flex-col xl:inline-flex">
           <div className="flex flex-col items-start justify-center gap-5">
             <div className="relative h-24 w-20">
-              <Image
+              {/* <Image
                 width={73}
                 height={96}
                 className="h-auto w-20"
                 src={logo}
                 alt="logo"
-              />
+              /> */}
+              <Logo_elepehant />
             </div>
             <div className="flex w-80 justify-start font-heading text-sm font-semibold text-offwhite">
               Parent Agent x School Support
