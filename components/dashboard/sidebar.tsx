@@ -22,7 +22,7 @@ export default function Sidebar() {
   const pathname = usePathname();
 
   const toggleSidebar = () => {
-    setIsOpen(!isOpen);
+    setIsOpen((prev) => !prev);
   };
 
   const menuItems = [
@@ -47,6 +47,7 @@ export default function Sidebar() {
       href: "/dashboard/settings",
     },
     {
+      heading: "Account",
       icon: Account,
       label: "My Profile",
       href: "/dashboard/account",
@@ -80,16 +81,27 @@ export default function Sidebar() {
           const isActive = pathname === item.href;
 
           return (
-            <Link
-              key={index}
-              href={item.href}
-              className={`flex items-center gap-4 px-4 py-2 transition ${
-                isActive ? "bg-[#3d5055] font-bold" : "hover:bg-[#4a656b]"
-              }`}
-            >
-              <item.icon />
-              {isOpen && <span className="text-sm font-[600]">{item.label}</span>}
-            </Link>
+            <>
+              {item.heading && (
+                <h3
+                  className={`px-4 py-2 font-heading text-base font-bold ${
+                    isOpen ? "text-white" : "hidden"
+                  }`}
+                >
+                  {item.heading}
+                </h3>
+              )}
+              <Link
+                key={index}
+                href={item.href}
+                className={`flex items-center gap-4 px-4 py-2 transition-colors ${
+                  isActive ? "bg-[#3d5055] font-bold" : "hover:bg-[#4a656b]"
+                }`}
+              >
+                <item.icon />
+                {isOpen && <span className="text-sm font-[600]">{item.label}</span>}
+              </Link>
+            </>
           );
         })}
       </div>
