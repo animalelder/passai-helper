@@ -147,7 +147,7 @@ export default function AddChildrenPage() {
           </button>
 
           {/* Next Step Button (styled component) */}
-          <Link href="/dashboard/add-parent">
+          <Link href="/dashboard/add-calendar">
             <NextStepButton />
           </Link>
         </div>

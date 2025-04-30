@@ -175,7 +175,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "/Users/wll/repos/skillhat/passai-helper/prisma/generated/client",
+      "value": "C:\\Users\\Ibukunoluwa\\Documents\\SkillHat_Application\\Projects\\Passai\\passai-helper\\prisma\\generated\\client",
       "fromEnvVar": null
     },
     "config": {
@@ -184,12 +184,12 @@ const config = {
     "binaryTargets": [
       {
         "fromEnvVar": null,
-        "value": "darwin",
+        "value": "windows",
         "native": true
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "/Users/wll/repos/skillhat/passai-helper/prisma/schema.prisma",
+    "sourceFilePath": "C:\\Users\\Ibukunoluwa\\Documents\\SkillHat_Application\\Projects\\Passai\\passai-helper\\prisma\\schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
