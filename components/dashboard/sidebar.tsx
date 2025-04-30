@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 import { FaCalendar, FaHome, FaUser, FaUserFriends } from "react-icons/fa";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
@@ -9,16 +11,33 @@ import LogoAlt from "@/components/logo-alt";
 
 export default function Sidebar() {
   const [isOpen, setIsOpen] = useState(true);
+  const pathname = usePathname();
 
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
   };
 
   const menuItems = [
-    { icon: <FaUserFriends size={20} />, label: "Add Children" },
-    { icon: <FaCalendar size={20} />, label: "Connect Calendar" },
-    { icon: <FaUser size={20} />, label: "Add Parent/Gaurdian" },
-    { icon: <FaHome size={20} />, label: "Connect School Accounts" },
+    {
+      icon: <FaUserFriends size={20} />,
+      label: "Add Children",
+      href: "/dashboard/add-children",
+    },
+    {
+      icon: <FaCalendar size={20} />,
+      label: "Connect Calendar",
+      href: "/dashboard/connect-calendar",
+    },
+    {
+      icon: <FaUser size={20} />,
+      label: "Add Parent/Gaurdian",
+      href: "/dashboard/add-parent",
+    },
+    {
+      icon: <FaHome size={20} />,
+      label: "Connect School Accounts",
+      href: "/dashboard/connect-school-accounts",
+    },
   ];
 
   return (
@@ -39,15 +58,22 @@ export default function Sidebar() {
       </div>
 
       <div className="flex-1 space-y-4">
-        {menuItems.map((item, index) => (
-          <div
-            key={index}
-            className="flex cursor-pointer items-center gap-4 px-4 py-2 hover:bg-[#4a656b]"
-          >
-            {item.icon}
-            {isOpen && <span className="text-sm font-[600]">{item.label}</span>}
-          </div>
-        ))}
+        {menuItems.map((item, index) => {
+          const isActive = pathname === item.href;
+
+          return (
+            <Link
+              key={index}
+              href={item.href}
+              className={`flex items-center gap-4 px-4 py-2 transition ${
+                isActive ? "bg-[#3d5055] font-bold" : "hover:bg-[#4a656b]"
+              }`}
+            >
+              {item.icon}
+              {isOpen && <span className="text-sm font-[600]">{item.label}</span>}
+            </Link>
+          );
+        })}
       </div>
 
       <button

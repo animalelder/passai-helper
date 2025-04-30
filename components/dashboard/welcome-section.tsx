@@ -1,7 +1,10 @@
 // components/dashboard/WelcomeSection.tsx
 "use client";
 
+import Link from "next/link";
+
 import NextStepButton from "./next-step-button";
+import ProgressCircles from "./progress-circles";
 
 export default function WelcomeSection() {
   return (
@@ -24,15 +27,10 @@ export default function WelcomeSection() {
         </ol>
       </div>
 
-      <NextStepButton />
-
-      {/* Placeholder for visual icons (replace with actual illustrations later) */}
-      <div className="mt-10 flex items-center justify-center gap-8">
-        <div className="h-32 w-32 rounded-full border-6 border-gray-300"></div>
-        <div className="h-32 w-32 rounded-full border-6 border-gray-300"></div>
-        <div className="h-32 w-32 rounded-full border-6 border-gray-300"></div>
-        <div className="h-32 w-32 rounded-full border-6 border-gray-300"></div>
-      </div>
+      <Link href="/dashboard/add-children">
+        <NextStepButton />
+      </Link>
+      <ProgressCircles index={0} />
     </div>
   );
 }

@@ -7,7 +7,7 @@ interface TopHeaderBarProps {
 
 export default function TopHeaderBar({ userName }: TopHeaderBarProps) {
   return (
-    <div className="flex w-full justify-between bg-lightblue-101 pt-2 pl-14 shadow-xl">
+    <div className="flex w-full justify-between bg-lightblue-101 pt-2 pb-2 pl-14 shadow-xl">
       <div>
         <p className="font-heading text-[2rem] font-bold text-darkblue-104">
           Good morning, {userName}
