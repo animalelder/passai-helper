@@ -102,7 +102,7 @@
   --color-neutral-grey: oklch(from #717171 l c h);
   --color-neutral-dgrey: oklch(from #4d4d4d l c h);
   --color-darkgrey: oklch(from #495057 l c h);
-  --color-paleyellow-100: oklch(from #fdd293 l c h);
+  --color-paleyellow-100: oklch(from #F7B34F l c h);
   --color-paleyellow-101: oklch(from #f8ba5d l c h);
   --color-paleyellow-102: oklch(from #d19100 l c h);
 }
