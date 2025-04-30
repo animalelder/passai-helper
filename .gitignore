@@ -43,3 +43,6 @@ next-env.d.ts
 *storybook.log
 
 certificates
+
+#prisma client?
+prisma/generated/*
