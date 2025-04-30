@@ -1,6 +1,6 @@
 import type { SVGProps } from "react";
 
-function Home(props: SVGProps<SVGSVGElement>) {
+function Overview(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       fill="none"
@@ -119,4 +119,4 @@ function ChildAccount(props: SVGProps<SVGSVGElement>) {
   );
 }
 
-export { Account, Calendar, ChildAccount, Home, Settings };
+export { Account, Calendar, ChildAccount, Overview, Settings };
