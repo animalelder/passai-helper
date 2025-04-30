@@ -42,6 +42,35 @@ function Calendar(props: SVGProps<SVGSVGElement>) {
   );
 }
 
+function Updates(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      fill="none"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path
+        d="M12 4a6 6 0 016 6v5c0 3 2 4 2 4H4s2-1 2-4v-5a6 6 0 016-6v0z"
+        fillRule="evenodd"
+        stroke="#FEFCF7"
+        strokeWidth="2"
+      />
+      <path
+        d="M12 4V3"
+        stroke="#FEFCF7"
+        strokeLinecap="round"
+        strokeWidth="2"
+      />
+      <path
+        d="M10 19a2 2 0 104 0"
+        stroke="#FEFCF7"
+        strokeWidth="2"
+      />
+    </svg>
+  );
+}
+
 function Settings(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
@@ -74,12 +103,13 @@ function Settings(props: SVGProps<SVGSVGElement>) {
   );
 }
 
-function Account() {
+function Account(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       fill="none"
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
+      {...props}
     >
       <path
         d="M7 18c1.154-.74 2.692-1.111 3.461-1.852.77-.74-1.538-.74-1.538-4.444C8.923 8 12 8 12 8s3.077 0 3.077 3.704c0 3.703-2.308 3.703-1.538 4.444.769.74 2.307 1.111 3.461 1.852"
@@ -119,4 +149,4 @@ function ChildAccount(props: SVGProps<SVGSVGElement>) {
   );
 }
 
-export { Account, Calendar, ChildAccount, Overview, Settings };
+export { Account, Calendar, ChildAccount, Overview, Settings, Updates };

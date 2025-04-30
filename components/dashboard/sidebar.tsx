@@ -4,10 +4,18 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import { FaCalendar, FaHome, FaUser, FaUserFriends } from "react-icons/fa";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 import LogoAlt from "@/components/logo-alt";
+
+import {
+  Account,
+  Calendar,
+  ChildAccount,
+  Overview,
+  Settings,
+  Updates,
+} from "./icons";
 
 export default function Sidebar() {
   const [isOpen, setIsOpen] = useState(true);
@@ -19,24 +27,34 @@ export default function Sidebar() {
 
   const menuItems = [
     {
-      icon: <FaUserFriends size={20} />,
-      label: "Add Children",
-      href: "/dashboard/add-children",
+      icon: Overview,
+      label: "Dashboard",
+      href: "/",
     },
     {
-      icon: <FaCalendar size={20} />,
-      label: "Connect Calendar",
-      href: "/dashboard/connect-calendar",
+      icon: Calendar,
+      label: "Family Calendar",
+      href: "/dashboard/calendar",
     },
     {
-      icon: <FaUser size={20} />,
-      label: "Add Parent/Gaurdian",
-      href: "/dashboard/add-parent",
+      icon: Updates,
+      label: "My Updates",
+      href: "/dashboard/updates",
     },
     {
-      icon: <FaHome size={20} />,
-      label: "Connect School Accounts",
-      href: "/dashboard/connect-school-accounts",
+      icon: Settings,
+      label: "Settings",
+      href: "/dashboard/settings",
+    },
+    {
+      icon: Account,
+      label: "My Profile",
+      href: "/dashboard/account",
+    },
+    {
+      icon: ChildAccount,
+      label: "Kids Profile",
+      href: "/dashboard/account/kids",
     },
   ];
 
@@ -69,7 +87,7 @@ export default function Sidebar() {
                 isActive ? "bg-[#3d5055] font-bold" : "hover:bg-[#4a656b]"
               }`}
             >
-              {item.icon}
+              <item.icon />
               {isOpen && <span className="text-sm font-[600]">{item.label}</span>}
             </Link>
           );
@@ -78,6 +96,8 @@ export default function Sidebar() {
 
       <button
         onClick={toggleSidebar}
+        type="button"
+        aria-label="Toggle Sidebar"
         className="absolute top-6 -right-10 rounded-full bg-yellow-400 p-1 text-black"
       >
         {isOpen ? <IoIosArrowBack size={20} /> : <IoIosArrowForward size={20} />}
