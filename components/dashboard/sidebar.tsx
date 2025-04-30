@@ -29,7 +29,7 @@ export default function Sidebar() {
     {
       icon: Overview,
       label: "Dashboard",
-      href: "/",
+      href: "/dashboard",
     },
     {
       icon: Calendar,
