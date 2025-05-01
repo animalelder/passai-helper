@@ -1,4 +1,4 @@
-export default async function Page() {
+export default function Page() {
   return (
     <div>
       <h1>Account Page for Kids</h1>

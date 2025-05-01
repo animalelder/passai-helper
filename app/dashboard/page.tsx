@@ -8,7 +8,7 @@ import johnAvatar from "@/assets/dashboard/john-avatar.png";
 
 // I wrote all of this without running the dev server, so there might be some errors.
 
-export default async function DashboardPage() {
+export default function DashboardPage() {
   return (
     <main className="flex min-h-screen flex-col items-start justify-evenly bg-white p-4">
       <div className="flex flex-1 flex-col gap-4 bg-white px-4 py-10">
