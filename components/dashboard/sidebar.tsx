@@ -61,7 +61,7 @@ export default function Sidebar() {
 
   return (
     <div
-      className={`flex flex-col bg-[#5e8189] text-white transition-all duration-200 ${isOpen ? "w-100" : "w-20"} relative h-screen`}
+      className={`flex flex-col bg-darkblue-103 text-white transition-all duration-200 ${isOpen ? "w-[225px]" : "w-20"} relative h-screen`}
     >
       <div className="mt-4 mb-20 flex items-center justify-center">
         {isOpen ? (
