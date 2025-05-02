@@ -1,6 +1,8 @@
 import Image from "next/image";
 
 import { Badge } from "@/components/ui/badge";
+import QuickActions from "@/components/dashboard/quick-actions";
+import UpcomingEvents from "@/components/dashboard/upcoming-events";
 
 import alexAvatar from "@/assets/dashboard/alex-avatar.png";
 import benAvatar from "@/assets/dashboard/ben-avatar.png";
@@ -10,66 +12,67 @@ import johnAvatar from "@/assets/dashboard/john-avatar.png";
 
 export default function DashboardPage() {
   return (
-    <main className="flex min-h-full flex-col items-start justify-evenly bg-white p-4">
-      <div className="flex flex-1 flex-col self-stretch bg-white px-4 py-10 outline-1 outline-alert-102">
-        <div className="mx-auto h-72 rounded-xl">
-          <h3 className="text-xl text-black">Overview</h3>
-          <div className="my-4 flex max-w-lg items-center justify-evenly">
-            <FilterBadge>All</FilterBadge>
-            <FilterBadge>Ben</FilterBadge>
-            <FilterBadge>Alex</FilterBadge>
-            <FilterBadge>John</FilterBadge>
-            <FilterBadge>Mom</FilterBadge>
-            <FilterBadge>Dad</FilterBadge>
-          </div>
-          <div className="flex items-center justify-evenly gap-3">
-            <ChildCard>
-              <p className="inline-flex text-xl font-bold text-darkblue-104">
-                <Image
-                  src={benAvatar}
-                  alt="Child Avatar"
-                />
-                &nbsp;&nbsp;Ben
-              </p>
-              <ul className="mt-4 text-sm text-black">
-                <li className="text-sm text-black">7:30 Medicine time</li>
-                <li className="text-sm text-black">6pm Soccer practice</li>
-                <li className="text-sm text-black">
-                  8pm Math Homework-Algebra exercise
-                </li>
-              </ul>
-            </ChildCard>
-            <ChildCard>
-              <p className="inline-flex text-xl font-bold text-darkblue-104">
-                <Image
-                  src={alexAvatar}
-                  alt="Child Avatar"
-                />
-                &nbsp;&nbsp;Alex
-              </p>
-              <ul className="mt-4 text-sm text-black">
-                <li className="text-sm text-black">Science Project Due Tomorrow</li>
-                <li className="text-sm text-black">
-                  Trip to Crawford Lake - Pay fees
-                </li>
-              </ul>
-              <ChevronButton />
-            </ChildCard>
-            <ChildCard>
-              <p className="inline-flex text-xl font-bold text-darkblue-104">
-                <Image
-                  src={johnAvatar}
-                  alt="Child Avatar"
-                />
-                &nbsp;&nbsp;John
-              </p>
-              <ul className="mt-4 text-sm text-black">
-                <li className="text-sm text-black">5pm Coding class-online</li>
-              </ul>
-            </ChildCard>
-          </div>
+    <main className="flex min-h-full flex-col items-start justify-start border-1 border-alert-102 bg-white pt-6">
+      <div className="mx-auto h-72">
+        <h3 className="text-2xl font-bold text-darkblue">Overview</h3>
+        <div className="my-4 flex max-w-lg items-center justify-evenly">
+          <FilterBadge>All</FilterBadge>
+          <FilterBadge>Ben</FilterBadge>
+          <FilterBadge>Alex</FilterBadge>
+          <FilterBadge>John</FilterBadge>
+          <FilterBadge>Mom</FilterBadge>
+          <FilterBadge>Dad</FilterBadge>
         </div>
-        <div className="mx-auto min-h-full w-full max-w-3xl rounded-xl bg-muted/50"></div>
+        <div className="flex items-center justify-evenly gap-3">
+          <ChildCard>
+            <p className="inline-flex text-xl font-bold text-darkblue-104">
+              <Image
+                src={benAvatar}
+                alt="Child Avatar"
+              />
+              &nbsp;&nbsp;Ben
+            </p>
+            <ul className="mt-4 text-sm text-black">
+              <li className="text-sm text-black">7:30 Medicine time</li>
+              <li className="text-sm text-black">6pm Soccer practice</li>
+              <li className="text-sm text-black">
+                8pm Math Homework-Algebra exercise
+              </li>
+            </ul>
+          </ChildCard>
+          <ChildCard>
+            <p className="inline-flex text-xl font-bold text-darkblue-104">
+              <Image
+                src={alexAvatar}
+                alt="Child Avatar"
+              />
+              &nbsp;&nbsp;Alex
+            </p>
+            <ul className="mt-4 text-sm text-black">
+              <li className="text-sm text-black">Science Project Due Tomorrow</li>
+              <li className="text-sm text-black">
+                Trip to Crawford Lake - Pay fees
+              </li>
+            </ul>
+            <ChevronButton />
+          </ChildCard>
+          <ChildCard>
+            <p className="inline-flex text-xl font-bold text-darkblue-104">
+              <Image
+                src={johnAvatar}
+                alt="Child Avatar"
+              />
+              &nbsp;&nbsp;John
+            </p>
+            <ul className="mt-4 text-sm text-black">
+              <li className="text-sm text-black">5pm Coding class-online</li>
+            </ul>
+          </ChildCard>
+        </div>
+      </div>
+      <div className="mx-auto flex h-[600px] w-[1100px] items-start justify-around outline-1 outline-alert-105">
+        <QuickActions />
+        <UpcomingEvents />
       </div>
     </main>
   );
