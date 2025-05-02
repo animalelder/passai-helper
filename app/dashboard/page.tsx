@@ -12,26 +12,26 @@ export default function DashboardPage() {
   return (
     <main className="flex min-h-screen flex-col items-start justify-evenly bg-white p-4">
       <div className="flex flex-1 flex-col gap-4 bg-white px-4 py-10">
-        <div className="mx-auto h-72 w-full max-w-3xl rounded-xl bg-muted/50">
+        <div className="mx-auto h-72 rounded-xl">
           <h3 className="text-xl text-black">Overview</h3>
-          <div className="flex items-center justify-evenly">
+          <div className="my-4 flex max-w-lg items-center justify-evenly">
             <FilterBadge>All</FilterBadge>
             <FilterBadge>Ben</FilterBadge>
             <FilterBadge>Alex</FilterBadge>
             <FilterBadge>John</FilterBadge>
-            <FilterBadge>Parent 1</FilterBadge>
-            <FilterBadge>Parent 2</FilterBadge>
+            <FilterBadge>Mom</FilterBadge>
+            <FilterBadge>Dad</FilterBadge>
           </div>
-          <div className="flex items-center justify-evenly">
+          <div className="flex items-center justify-evenly gap-3">
             <ChildCard>
-              <p className="text-xl text-darkblue-104">
+              <p className="inline-flex text-xl font-bold text-darkblue-104">
                 <Image
                   src={benAvatar}
                   alt="Child Avatar"
                 />
                 &nbsp;&nbsp;Ben
               </p>
-              <ul className="text-sm text-black">
+              <ul className="mt-4 text-sm text-black">
                 <li className="text-sm text-black">7:30 Medicine time</li>
                 <li className="text-sm text-black">6pm Soccer practice</li>
                 <li className="text-sm text-black">
@@ -40,14 +40,14 @@ export default function DashboardPage() {
               </ul>
             </ChildCard>
             <ChildCard>
-              <p className="text-xl text-darkblue-104">
+              <p className="inline-flex text-xl font-bold text-darkblue-104">
                 <Image
                   src={alexAvatar}
                   alt="Child Avatar"
                 />
                 &nbsp;&nbsp;Alex
               </p>
-              <ul className="text-sm text-black">
+              <ul className="mt-4 text-sm text-black">
                 <li className="text-sm text-black">Science Project Due Tomorrow</li>
                 <li className="text-sm text-black">
                   Trip to Crawford Lake - Pay fees
@@ -56,14 +56,14 @@ export default function DashboardPage() {
               <ChevronButton />
             </ChildCard>
             <ChildCard>
-              <p className="text-xl text-darkblue-104">
+              <p className="inline-flex text-xl font-bold text-darkblue-104">
                 <Image
                   src={johnAvatar}
                   alt="Child Avatar"
                 />
                 &nbsp;&nbsp;John
               </p>
-              <ul className="text-sm text-black">
+              <ul className="mt-4 text-sm text-black">
                 <li className="text-sm text-black">5pm Coding class-online</li>
               </ul>
             </ChildCard>
@@ -77,14 +77,18 @@ export default function DashboardPage() {
 
 const FilterBadge = ({ children }) => {
   return (
-    <Badge className="bg-offwhite-300 text-darkblue-102 outline-darkblue-104">
+    <Badge className="bg-offwhite-300 text-darkblue-102 outline-1 outline-darkblue-104">
       {children}
     </Badge>
   );
 };
 
 const ChildCard = ({ children }) => {
-  return <div className="bg-grey-200 flex h-36 w-80 flex-col">{children}</div>;
+  return (
+    <div className="mx-4 flex h-36 w-80 flex-col rounded-lg bg-gray-300 px-3 py-4">
+      {children}
+    </div>
+  );
 };
 
 function ChevronButton() {
@@ -92,6 +96,7 @@ function ChevronButton() {
     <svg
       fill="none"
       viewBox="0 0 24 24"
+      className="size-6"
       xmlns="http://www.w3.org/2000/svg"
     >
       <rect
