@@ -15,5 +15,6 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/dashboard"], // Specify the routes the middleware applies to
+  // Disabling the dashboard middleware during development
+  matcher: ["/admin"], // Specify the routes the middleware applies to
 };

@@ -1,7 +1,6 @@
 // src/app/dashboard/layout.tsx
 import React from "react";
 import { headers } from "next/headers";
-import { redirect } from "next/navigation";
 
 import { auth } from "@/lib/auth";
 import type { Session } from "@/lib/auth-types";
@@ -17,8 +16,11 @@ export default async function DashboardLayout({
     headers: await headers(),
   });
 
+  // Disabling session check during development
   if (!session) {
-    throw redirect("/signin");
+    // eslint-disable-next-line no-console
+    console.log("No session found");
+    // throw redirect("/signin");
   }
 
   return (
@@ -30,7 +32,7 @@ export default async function DashboardLayout({
 
       <div className="flex flex-1 flex-col bg-white">
         {/* Top Header Bar */}
-        <TopHeaderBar userName={session.user.name} />
+        <TopHeaderBar userName={session?.user.name || "Ashley"} />
 
         <main className="flex-1">{children}</main>
       </div>

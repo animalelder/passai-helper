@@ -6,6 +6,7 @@ function Overview(props: SVGProps<SVGSVGElement>) {
       fill="none"
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
+      className="size-6"
       {...props}
     >
       <path
@@ -27,6 +28,7 @@ function Calendar(props: SVGProps<SVGSVGElement>) {
     <svg
       fill="none"
       viewBox="0 0 24 24"
+      className="size-6"
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
@@ -47,6 +49,7 @@ function Updates(props: SVGProps<SVGSVGElement>) {
     <svg
       fill="none"
       viewBox="0 0 24 24"
+      className="size-6"
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
@@ -76,6 +79,7 @@ function Settings(props: SVGProps<SVGSVGElement>) {
     <svg
       fill="none"
       viewBox="0 0 22 22"
+      className="size-6"
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
@@ -108,6 +112,7 @@ function Account(props: SVGProps<SVGSVGElement>) {
     <svg
       fill="none"
       viewBox="0 0 24 24"
+      className="size-6"
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
@@ -131,6 +136,7 @@ function ChildAccount(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       fill="none"
+      className="size-6"
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
       {...props}
