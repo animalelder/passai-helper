@@ -18,7 +18,7 @@ export default async function DashboardLayout({
 
       <div className="flex flex-1 flex-col bg-white">
         {/* Top Header Bar */}
-        <TopHeaderBar userName={"Ashley"} />
+        <TopHeaderBar userName={"Ashley Vee"} />
 
         <main className="flex-1">{children}</main>
       </div>
