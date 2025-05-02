@@ -10,8 +10,8 @@ import johnAvatar from "@/assets/dashboard/john-avatar.png";
 
 export default function DashboardPage() {
   return (
-    <main className="flex min-h-screen flex-col items-start justify-evenly bg-white p-4">
-      <div className="flex flex-1 flex-col gap-4 bg-white px-4 py-10">
+    <main className="flex min-h-full flex-col items-start justify-evenly bg-white p-4">
+      <div className="flex flex-1 flex-col self-stretch bg-white px-4 py-10 outline-1 outline-alert-102">
         <div className="mx-auto h-72 rounded-xl">
           <h3 className="text-xl text-black">Overview</h3>
           <div className="my-4 flex max-w-lg items-center justify-evenly">
