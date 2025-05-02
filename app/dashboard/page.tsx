@@ -13,7 +13,7 @@ import johnAvatar from "@/assets/dashboard/john-avatar.png";
 export default function DashboardPage() {
   return (
     <main className="flex min-h-full flex-col items-start justify-start bg-white pt-6">
-      <div className="mx-auto h-72">
+      <div className="mx-auto mt-20 h-72">
         <h3 className="text-2xl font-bold text-darkblue">Overview</h3>
         <div className="my-4 flex max-w-lg items-center justify-evenly">
           <FilterBadge>All</FilterBadge>
@@ -70,7 +70,7 @@ export default function DashboardPage() {
           </ChildCard>
         </div>
       </div>
-      <div className="mx-auto flex h-[600px] w-[1100px] items-start justify-around outline-1 outline-alert-105">
+      <div className="mx-auto flex h-[600px] w-[1100px] items-start justify-around">
         <QuickActions />
         <UpcomingEvents />
       </div>
