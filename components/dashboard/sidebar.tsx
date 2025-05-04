@@ -59,19 +59,17 @@ export default function Sidebar() {
 
   return (
     <div
-      className={`flex flex-col bg-darkblue-103 text-white transition-all duration-200 ${isOpen ? "w-[225px]" : "w-20"} relative h-screen`}
+      className={`flex flex-col bg-darkblue-103 text-white duration-200 ease-in-out *:transition-discrete **:transition **:duration-200 **:ease-in-out ${isOpen ? "w-[250px]" : "w-24"} relative h-screen`}
     >
       <div className="mt-4 mb-20 flex items-center justify-center">
-        {isOpen ? (
-          <div className="flex items-center gap-2">
-            <LogoAlt />
-            <p className="flex justify-center font-logo text-xl font-bold text-paleyellow-101">
-              pass.ai
-            </p>
-          </div>
-        ) : (
+        <div className="flex items-center gap-2">
           <LogoAlt />
-        )}
+          <p
+            className={`flex justify-center font-logo text-xl font-bold text-paleyellow-101 transition-all ${isOpen ? "block opacity-100 duration-1000" : "hidden w-0 opacity-0 duration-200"}`}
+          >
+            PASS.AI
+          </p>
+        </div>
       </div>
 
       <div className="flex flex-1 flex-col space-y-4">
@@ -95,7 +93,7 @@ export default function Sidebar() {
               <Link
                 key={index}
                 href={item.href}
-                className={`group mx-auto flex w-fit flex-col items-center justify-center gap-y-2 transition-colors text-shadow-amber-50`}
+                className={`group mx-auto flex min-h-14 w-fit flex-col items-center justify-center gap-y-2 text-shadow-amber-50`}
               >
                 <span
                   className={`rounded-xl px-3 py-1 ${
@@ -123,21 +121,26 @@ export default function Sidebar() {
         onClick={toggleSidebar}
         type="button"
         aria-label="Toggle Sidebar"
-        className={`absolute top-6 -right-10 size-6 ${isOpen ? "cursor-w-resize" : "cursor-e-resize"}`}
+        className={`absolute top-6 -right-10 size-6 cursor-pointer`}
       >
-        <SidebarButton />
+        <SidebarButton open={isOpen} />
       </button>
     </div>
   );
 }
 
-function SidebarButton() {
+type SidebarButtonProps = {
+  open: boolean;
+};
+
+function SidebarButton(props: SidebarButtonProps) {
+  const { open } = props;
   return (
     <svg
       fill="none"
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
-      className="size-6"
+      className={`size-6 transition duration-700 ease-in-out ${!open ? "rotate-180" : ""} hover:stroke-[2.5]`}
     >
       <path
         d="M9 3v18M3 4v16a1 1 0 001 1h16a1 1 0 001-1V4a1 1 0 00-1-1H4a1 1 0 00-1 1z"

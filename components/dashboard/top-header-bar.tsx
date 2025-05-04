@@ -3,6 +3,8 @@
 
 import Image from "next/image";
 
+import { Button } from "@/components/ui/button";
+
 import AshleyAvatar from "@/assets/dashboard/ashley-avatar.png";
 
 interface TopHeaderBarProps {
@@ -26,7 +28,7 @@ const finalDate =
 
 export default function TopHeaderBar({ userName }: TopHeaderBarProps) {
   return (
-    <div className="flex w-full justify-between bg-lightblue-101 pt-2 pb-2 pl-14 shadow-xl">
+    <div className="flex w-full justify-between bg-lightblue-101 pt-2 pr-4 pb-2 pl-14 shadow-xl">
       <div>
         <p className="font-heading text-2xl font-bold text-darkblue-104">
           Good morning, {userName}
@@ -36,17 +38,21 @@ export default function TopHeaderBar({ userName }: TopHeaderBarProps) {
         </p>
       </div>
 
-      <div className="flex items-center space-x-4">
-        <button className="rounded-full p-2 hover:bg-amber-100">
+      <div className="mr-6 block self-center">
+        <Button
+          size="icon"
+          variant="link"
+          className="group max-w-fit rounded-full"
+        >
           <Image
             src={AshleyAvatar}
-            width={36}
-            height={36}
+            width={48}
+            height={48}
             alt="User avatar"
-            className="size-9 rounded-full border-3 border-secondary"
+            className="m-auto size-11 rounded-full border-2 border-secondary transition-all duration-300 ease-in-out group-hover:size-12 group-hover:border-primary"
           />
           <span className="sr-only">User Avatar</span>
-        </button>
+        </Button>
         {/* Additional header actions can go here */}
       </div>
     </div>
