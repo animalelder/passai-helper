@@ -99,7 +99,9 @@ export default function Sidebar() {
               >
                 <span
                   className={`rounded-xl px-3 py-1 ${
-                    isActive ? "bg-[#759EAB] font-extrabold" : "hover:bg-darkblue"
+                    isActive
+                      ? "bg-[#759EAB] font-extrabold hover:bg-darkblue"
+                      : "hover:bg-darkblue"
                   }`}
                 >
                   <item.icon
