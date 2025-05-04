@@ -1,5 +1,5 @@
 // src/app/dashboard/layout.tsx
-import React from "react";
+import type { ReactNode } from "react";
 
 import Sidebar from "@/components/dashboard/sidebar";
 import TopHeaderBar from "@/components/dashboard/top-header-bar";
@@ -7,7 +7,7 @@ import TopHeaderBar from "@/components/dashboard/top-header-bar";
 export default async function DashboardLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return (
     <div className="flex min-h-screen w-screen bg-gradient-to-br from-amber-50 to-emerald-700">

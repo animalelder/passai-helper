@@ -8,8 +8,6 @@ import alexAvatar from "@/assets/dashboard/alex-avatar.png";
 import benAvatar from "@/assets/dashboard/ben-avatar.png";
 import johnAvatar from "@/assets/dashboard/john-avatar.png";
 
-// I wrote all of this without running the dev server, so there might be some errors.
-
 export default function DashboardPage() {
   return (
     <main className="flex min-h-full flex-col items-start justify-start bg-white pt-6">
