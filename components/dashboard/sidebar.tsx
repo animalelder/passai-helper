@@ -4,8 +4,6 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-
 import LogoAlt from "@/components/logo-alt";
 
 import {
@@ -76,16 +74,19 @@ export default function Sidebar() {
         )}
       </div>
 
-      <div className="flex-1 space-y-4">
+      <div className="flex flex-1 flex-col space-y-4">
         {menuItems.map((item, index) => {
           const isActive = pathname === item.href;
 
           return (
-            <>
+            <div
+              className="flex-flex-col items-center justify-center space-y-2"
+              key={index}
+            >
               {item.heading && (
                 <h3
-                  className={`px-4 py-2 font-heading text-base font-bold ${
-                    isOpen ? "text-white" : "hidden"
+                  className={`px-4 py-2 indent-3 font-heading text-xl font-semibold text-[#fefcf7] ${
+                    isOpen ? "block" : "hidden"
                   }`}
                 >
                   {item.heading}
@@ -94,14 +95,24 @@ export default function Sidebar() {
               <Link
                 key={index}
                 href={item.href}
-                className={`flex items-center gap-4 px-4 py-2 transition-colors ${
-                  isActive ? "bg-[#3d5055] font-bold" : "hover:bg-[#4a656b]"
-                }`}
+                className={`group mx-auto flex w-fit flex-col items-center justify-center gap-y-2 transition-colors text-shadow-amber-50`}
               >
-                <item.icon />
-                {isOpen && <span className="text-sm font-[600]">{item.label}</span>}
+                <span
+                  className={`rounded-xl px-3 py-1 ${
+                    isActive ? "bg-[#759EAB] font-extrabold" : "hover:bg-darkblue"
+                  }`}
+                >
+                  <item.icon
+                    className={`mx-auto size-7 group-hover:stroke-white/50`}
+                  />
+                </span>
+                {isOpen && (
+                  <span className={`${isActive ? "font-bold" : "font-semibold"}`}>
+                    {item.label}
+                  </span>
+                )}
               </Link>
-            </>
+            </div>
           );
         })}
       </div>
@@ -110,10 +121,33 @@ export default function Sidebar() {
         onClick={toggleSidebar}
         type="button"
         aria-label="Toggle Sidebar"
-        className="absolute top-6 -right-10 rounded-full bg-yellow-400 p-1 text-black"
+        className={`absolute top-6 -right-10 size-6 ${isOpen ? "cursor-w-resize" : "cursor-e-resize"}`}
       >
-        {isOpen ? <IoIosArrowBack size={20} /> : <IoIosArrowForward size={20} />}
+        <SidebarButton />
       </button>
     </div>
+  );
+}
+
+function SidebarButton() {
+  return (
+    <svg
+      fill="none"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      className="size-6"
+    >
+      <path
+        d="M9 3v18M3 4v16a1 1 0 001 1h16a1 1 0 001-1V4a1 1 0 00-1-1H4a1 1 0 00-1 1z"
+        stroke="#3D545B"
+        strokeLinecap="round"
+        strokeWidth="2"
+      />
+      <path
+        d="M17.917 12h-5.833M15 14.917l-2.916-2.916 2.917-2.917"
+        stroke="#3D545B"
+        strokeLinecap="round"
+      />
+    </svg>
   );
 }
