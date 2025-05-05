@@ -3,8 +3,8 @@
 import { useState } from "react";
 import Image from "next/image";
 
-import quickActions from "@/assets/dashboard/quick-actions.png";
-import quickTodoTasks from "@/assets/dashboard/quick-todo-task.png";
+import quickTodoTasks from "@/assets/dashboard/quick-actions-todo.png";
+import quickActions from "@/assets/dashboard/quick-actions-urgent.png";
 
 const QuickActions = () => {
   const [image, setImage] = useState(quickActions);
