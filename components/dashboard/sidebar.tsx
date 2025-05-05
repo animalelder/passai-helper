@@ -66,7 +66,7 @@ export default function Sidebar() {
         <div className="flex items-center gap-2">
           <LogoAlt />
           <p
-            className={`flex justify-center font-logo text-xl font-bold text-paleyellow-101 transition-all ${isOpen ? "block opacity-100 duration-1000" : "hidden w-0 opacity-0 duration-200"}`}
+            className={`flex justify-center font-logo text-xl font-bold tracking-wide text-paleyellow-101 transition-all ${isOpen ? "block opacity-100 duration-1000" : "hidden w-0 opacity-0 duration-200"}`}
           >
             PASS.AI
           </p>
@@ -82,14 +82,14 @@ export default function Sidebar() {
               className={cn(
                 "flex min-h-12 flex-col items-center justify-center space-y-2",
 
-                isActive && isOpen && "bg-darkblue-102"
+                isActive && isOpen && "bg-darkblue-102 has-[h3]:pb-2"
               )}
               key={index}
             >
               {item.heading && (
                 <h3
-                  className={`mr-8 w-full px-4 py-2 text-left indent-2 font-heading text-2xl font-semibold text-[#fefcf7] ${
-                    isOpen ? "mb-4 block" : "hidden"
+                  className={`w-full bg-darkblue-103 px-4 py-2 pl-5 text-left indent-2 font-heading text-2xl font-extrabold text-white ${
+                    isOpen ? "block pb-4" : "hidden"
                   }`}
                 >
                   {item.heading}
