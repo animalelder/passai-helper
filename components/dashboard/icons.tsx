@@ -1,5 +1,9 @@
 import type { SVGProps } from "react";
 
+
+
+
+
 function Overview(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
@@ -79,6 +83,7 @@ function Updates(props: SVGProps<SVGSVGElement>) {
         cy="3.375"
         r="3.375"
         fill="#F57D62"
+        className="animate-pulse duration-[5s]"
       />
     </svg>
   );

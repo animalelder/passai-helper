@@ -153,6 +153,7 @@
   --radius-xl: calc(var(--radius) + 4px);
   --animate-accordion-down: accordion-down 0.2s ease-out;
   --animate-accordion-up: accordion-up 0.2s ease-out;
+  --animate-blink-slow: caret-blink 4.25s ease-out infinite;
 
   @keyframes accordion-down {
     from {
