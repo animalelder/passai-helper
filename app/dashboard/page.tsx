@@ -4,16 +4,19 @@ import { Badge } from "@/components/ui/badge";
 import QuickActions from "@/components/dashboard/quick-actions";
 import UpcomingEvents from "@/components/dashboard/upcoming-events";
 
-import alexAvatar from "@/assets/dashboard/alex-avatar.png";
-import benAvatar from "@/assets/dashboard/ben-avatar.png";
-import johnAvatar from "@/assets/dashboard/john-avatar.png";
+import alexaCard from "@/assets/dashboard/alexa-card.png";
+import ashleyCard from "@/assets/dashboard/ashley-card.png";
+import benCard from "@/assets/dashboard/ben-card.png";
+import johnCard from "@/assets/dashboard/john-card.png";
 
 export default function DashboardPage() {
   return (
     <main className="flex min-h-full flex-col items-start justify-start bg-white pt-6">
-      <div className="mx-auto mt-20 h-72">
-        <h3 className="text-2xl font-bold text-darkblue">Overview</h3>
-        <div className="my-4 flex max-w-lg items-center justify-evenly">
+      <div className="mx-6 h-80 w-full space-y-4">
+        <h3 className="mb-5 text-2xl font-bold text-[#233237]">
+          Summary of the Day
+        </h3>
+        <div className="my-4 flex max-w-lg items-center justify-evenly opacity-0">
           <FilterBadge>All</FilterBadge>
           <FilterBadge>Ben</FilterBadge>
           <FilterBadge>Alex</FilterBadge>
@@ -21,54 +24,31 @@ export default function DashboardPage() {
           <FilterBadge>Mom</FilterBadge>
           <FilterBadge>Dad</FilterBadge>
         </div>
-        <div className="flex items-center justify-evenly gap-3">
-          <ChildCard>
-            <p className="inline-flex text-xl font-bold text-darkblue-104">
-              <Image
-                src={benAvatar}
-                alt="Child Avatar"
-              />
-              &nbsp;&nbsp;Ben
-            </p>
-            <ul className="mt-4 text-sm text-black">
-              <li className="text-sm text-black">7:30 Medicine time</li>
-              <li className="text-sm text-black">6pm Soccer practice</li>
-              <li className="text-sm text-black">
-                8pm Math Homework-Algebra exercise
-              </li>
-            </ul>
-          </ChildCard>
-          <ChildCard>
-            <p className="inline-flex text-xl font-bold text-darkblue-104">
-              <Image
-                src={alexAvatar}
-                alt="Child Avatar"
-              />
-              &nbsp;&nbsp;Alex
-            </p>
-            <ul className="mt-4 text-sm text-black">
-              <li className="text-sm text-black">Science Project Due Tomorrow</li>
-              <li className="text-sm text-black">
-                Trip to Crawford Lake - Pay fees
-              </li>
-            </ul>
-            <ChevronButton />
-          </ChildCard>
-          <ChildCard>
-            <p className="inline-flex text-xl font-bold text-darkblue-104">
-              <Image
-                src={johnAvatar}
-                alt="Child Avatar"
-              />
-              &nbsp;&nbsp;John
-            </p>
-            <ul className="mt-4 text-sm text-black">
-              <li className="text-sm text-black">5pm Coding class-online</li>
-            </ul>
-          </ChildCard>
+
+        <div className="mt-5 mb-8 flex items-center justify-start gap-3 overflow-x-scroll">
+          <Image
+            src={benCard}
+            alt="Ben Card"
+            className="cursor-pointer rounded-lg"
+          />
+          <Image
+            src={alexaCard}
+            alt="Alexa Card"
+            className="cursor-pointer rounded-lg"
+          />
+          <Image
+            src={johnCard}
+            alt="John Card"
+            className="cursor-pointer rounded-lg"
+          />
+          <Image
+            src={ashleyCard}
+            alt="Ashley Card"
+            className="cursor-pointer rounded-lg"
+          />
         </div>
       </div>
-      <div className="mx-auto flex h-[600px] w-[1100px] items-start justify-around">
+      <div className="mx-10 flex h-[600px] w-full items-start gap-x-5">
         <QuickActions />
         <UpcomingEvents />
       </div>

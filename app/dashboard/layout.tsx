@@ -10,7 +10,7 @@ export default async function DashboardLayout({
   children: ReactNode;
 }) {
   return (
-    <div className="flex min-h-screen w-screen bg-gradient-to-br from-amber-50 to-emerald-700">
+    <div className="flex min-h-screen w-screen">
       {/* Sidebar fixed width */}
       <Sidebar />
 
