@@ -107,8 +107,8 @@ export default function Sidebar() {
                 <span
                   className={`rounded-xl px-3 py-1 ${
                     isActive
-                      ? "bg-darkblue-102 font-extrabold hover:bg-darkblue"
-                      : "hover:bg-darkblue"
+                      ? "bg-darkblue-102 font-extrabold group-hover:bg-darkblue"
+                      : "group-hover:bg-darkblue"
                   }`}
                 >
                   <item.icon
