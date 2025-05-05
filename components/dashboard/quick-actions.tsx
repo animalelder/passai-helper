@@ -1,8 +1,17 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 
 import quickActions from "@/assets/dashboard/quick-actions.png";
+import quickTodoTasks from "@/assets/dashboard/quick-todo-task.png";
 
 const QuickActions = () => {
+  const [image, setImage] = useState(quickActions);
+
+  const handleChangeImage = () => {
+    setImage((prev) => (prev === quickActions ? quickTodoTasks : quickActions));
+  };
   return (
     <div className="flex min-h-[350px] min-w-[480px] flex-col items-start justify-start">
       <h2 className="mb-4 font-heading text-xl font-bold text-[#233327]">
@@ -10,8 +19,9 @@ const QuickActions = () => {
       </h2>
 
       <Image
-        src={quickActions}
+        src={image}
         alt="Urgent Button"
+        onClick={handleChangeImage}
         className="m-2 cursor-pointer"
       />
     </div>

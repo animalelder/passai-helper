@@ -60,7 +60,7 @@ export default function Sidebar() {
 
   return (
     <div
-      className={`flex flex-col bg-darkblue-103 text-white duration-200 ease-in-out *:transition-discrete **:transition **:duration-200 **:ease-in-out ${isOpen ? "w-[250px]" : "w-[100px]"} relative h-screen`}
+      className={`flex flex-col bg-darkblue-103 font-heading text-white duration-200 ease-in-out *:transition-discrete **:transition **:duration-200 **:ease-in-out ${isOpen ? "w-[250px]" : "w-[100px]"} relative h-screen`}
     >
       <div className="mt-4 mb-20 flex items-center justify-center">
         <div className="flex items-center gap-2">
@@ -108,7 +108,7 @@ export default function Sidebar() {
                   className={`rounded-xl px-3 py-1 ${
                     isActive
                       ? "bg-darkblue-102 font-extrabold group-hover:bg-darkblue"
-                      : "group-hover:bg-darkblue"
+                      : "group-hover:bg-darkblue-101"
                   }`}
                 >
                   <item.icon

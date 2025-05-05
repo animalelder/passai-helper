@@ -58,7 +58,7 @@ export default function DashboardPage() {
 
 const FilterBadge = ({ children }) => {
   return (
-    <Badge className="bg-offwhite-300 text-darkblue-102 outline-1 outline-darkblue-104">
+    <Badge className="bg-offwhite-300 h-6 w-14 text-darkblue-102 outline-1 outline-darkblue-104">
       {children}
     </Badge>
   );
