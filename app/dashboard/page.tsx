@@ -11,7 +11,7 @@ import johnCard from "@/assets/dashboard/john-card.png";
 
 export default function DashboardPage() {
   return (
-    <main className="flex min-h-full flex-col items-start justify-start bg-white pt-6">
+    <section className="flex h-full flex-col items-start justify-start bg-white pt-6">
       <div className="mx-6 h-80 w-full space-y-4">
         <h3 className="mb-5 text-2xl font-bold text-[#233237]">
           Summary of the Day
@@ -52,7 +52,7 @@ export default function DashboardPage() {
         <QuickActions />
         <UpcomingEvents />
       </div>
-    </main>
+    </section>
   );
 }
 

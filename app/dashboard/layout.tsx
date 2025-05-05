@@ -10,17 +10,19 @@ export default async function DashboardLayout({
   children: ReactNode;
 }) {
   return (
-    <div className="flex min-h-screen w-screen">
+    <div className="flex h-full flex-1">
       {/* Sidebar fixed width */}
       <Sidebar />
 
       {/* Main content grows */}
 
-      <div className="flex flex-1 flex-col bg-white">
+      <div className="flex-1">
         {/* Top Header Bar */}
         <TopHeaderBar userName={"Ashley Vee"} />
 
-        <main className="flex-1">{children}</main>
+        <section className="flex h-full flex-1 flex-col bg-alert-100/50">
+          {children}
+        </section>
       </div>
     </div>
   );

@@ -69,7 +69,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <main className="h-screen w-screen overflow-y-clip">{children}</main>
           <Toaster
             richColors
             closeButton

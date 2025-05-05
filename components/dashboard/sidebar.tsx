@@ -60,7 +60,7 @@ export default function Sidebar() {
 
   return (
     <div
-      className={`flex flex-col bg-darkblue-103 font-heading text-white duration-200 ease-in-out *:transition-discrete **:transition **:duration-200 **:ease-in-out ${isOpen ? "w-[250px]" : "w-[100px]"} relative h-screen`}
+      className={`flex flex-col bg-darkblue-103 font-heading text-white duration-200 ease-in-out *:transition-discrete **:transition **:duration-200 **:ease-in-out ${isOpen ? "w-[250px]" : "w-[100px]"} relative h-full`}
     >
       <div className="mt-4 mb-20 flex items-center justify-center">
         <div className="flex items-center gap-2">
