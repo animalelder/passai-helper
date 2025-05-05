@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+import { cn } from "@/lib/utils";
 import LogoAlt from "@/components/logo-alt";
 
 import {
@@ -59,7 +60,7 @@ export default function Sidebar() {
 
   return (
     <div
-      className={`flex flex-col bg-darkblue-103 text-white duration-200 ease-in-out *:transition-discrete **:transition **:duration-200 **:ease-in-out ${isOpen ? "w-[250px]" : "w-24"} relative h-screen`}
+      className={`flex flex-col bg-darkblue-103 text-white duration-200 ease-in-out *:transition-discrete **:transition **:duration-200 **:ease-in-out ${isOpen ? "w-[250px]" : "w-[100px]"} relative h-screen`}
     >
       <div className="mt-4 mb-20 flex items-center justify-center">
         <div className="flex items-center gap-2">
@@ -78,13 +79,17 @@ export default function Sidebar() {
 
           return (
             <div
-              className="flex-flex-col items-center justify-center space-y-2"
+              className={cn(
+                "flex min-h-12 flex-col items-center justify-center space-y-2",
+
+                isActive && isOpen && "bg-darkblue-102"
+              )}
               key={index}
             >
               {item.heading && (
                 <h3
-                  className={`px-4 py-2 indent-3 font-heading text-xl font-semibold text-[#fefcf7] ${
-                    isOpen ? "block" : "hidden"
+                  className={`mr-8 w-full px-4 py-2 text-left indent-2 font-heading text-2xl font-semibold text-[#fefcf7] ${
+                    isOpen ? "mb-4 block" : "hidden"
                   }`}
                 >
                   {item.heading}
@@ -93,12 +98,16 @@ export default function Sidebar() {
               <Link
                 key={index}
                 href={item.href}
-                className={`group mx-auto flex min-h-14 w-fit flex-col items-center justify-center gap-y-2 text-shadow-amber-50`}
+                className={cn(
+                  "group mx-auto flex w-fit flex-col items-center justify-center gap-y-2 text-shadow-amber-50",
+                  isOpen &&
+                    "ml-2 flex-row justify-start justify-items-start gap-x-2 justify-self-start"
+                )}
               >
                 <span
                   className={`rounded-xl px-3 py-1 ${
                     isActive
-                      ? "bg-[#759EAB] font-extrabold hover:bg-darkblue"
+                      ? "bg-darkblue-102 font-extrabold hover:bg-darkblue"
                       : "hover:bg-darkblue"
                   }`}
                 >
@@ -106,8 +115,14 @@ export default function Sidebar() {
                     className={`mx-auto size-7 group-hover:stroke-white/50`}
                   />
                 </span>
-                {isOpen && (
+                {isOpen ? (
                   <span className={`${isActive ? "font-bold" : "font-semibold"}`}>
+                    {item.label}
+                  </span>
+                ) : (
+                  <span
+                    className={`text-xs font-stretch-condensed ${isActive ? "font-bold" : "font-semibold"}`}
+                  >
                     {item.label}
                   </span>
                 )}
