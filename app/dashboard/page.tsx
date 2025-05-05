@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+
+
 import { Badge } from "@/components/ui/badge";
 import QuickActions from "@/components/dashboard/quick-actions";
 import UpcomingEvents from "@/components/dashboard/upcoming-events";
@@ -13,7 +15,7 @@ export default function DashboardPage() {
   return (
     <section className="flex h-full flex-col items-start justify-start bg-white pt-6">
       <div className="mx-6 h-80 w-full space-y-4">
-        <h3 className="mb-5 text-2xl font-bold text-[#233237]">
+        <h3 className="mb-5 text-2xl font-bold text-darkgreen-105">
           Summary of the Day
         </h3>
         <div className="my-4 flex max-w-lg items-center justify-evenly opacity-0">

@@ -1,16 +1,22 @@
 import Image from "next/image";
 
+
+
 import alexaCard from "@/assets/calendar/alexa-card.png";
 import ashleyCard from "@/assets/calendar/ashley-card.png";
 import benCard from "@/assets/calendar/ben-card.png";
 import johnCard from "@/assets/calendar/john-card.png";
 import robertCard from "@/assets/calendar/robert-card.png";
 
+
+
+
+
 export default function Page() {
   return (
     <div className="flex min-h-full w-full flex-wrap pt-6">
       <div className="mb-4 w-full">
-        <h1 className="block font-heading text-3xl font-semibold text-[#233237]">
+        <h1 className="block font-heading text-3xl font-semibold text-darkgreen-105">
           Calendar Page
         </h1>
       </div>
