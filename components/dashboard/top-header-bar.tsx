@@ -3,9 +3,15 @@
 
 import Image from "next/image";
 
+
+
 import { Button } from "@/components/ui/button";
 
 import AshleyAvatar from "@/assets/dashboard/ashley-avatar.png";
+
+
+
+
 
 interface TopHeaderBarProps {
   userName: string;
@@ -28,12 +34,12 @@ const finalDate =
 
 export default function TopHeaderBar({ userName }: TopHeaderBarProps) {
   return (
-    <div className="flex w-full justify-between bg-lightblue-101 pt-2 pr-4 pb-2 pl-14 shadow-xl">
-      <div>
-        <p className="font-heading text-2xl font-bold text-darkblue-104">
-          Good morning, {userName}
+    <div className="flex h-[101px] w-full justify-between bg-lightblue-101 pt-2 pr-4 pb-2 pl-14 shadow-md">
+      <div className="space-y-2">
+        <p className="font-heading text-3xl font-bold text-darkblue-104">
+          Good morning, {userName}!
         </p>
-        <p className="font-heading text-lg font-bold text-darkblue-103 underline underline-offset-5">
+        <p className="font-heading text-2xl font-bold text-darkblue-103 underline underline-offset-5">
           Today is {finalDate}
         </p>
       </div>

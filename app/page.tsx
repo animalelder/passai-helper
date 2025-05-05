@@ -2,6 +2,8 @@ import { type NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
+
+
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import Logo_elepehant from "@/components/logo";
@@ -16,7 +18,6 @@ import herobg from "@/assets/landing/hero-bg.png";
 import history from "@/assets/landing/history.png";
 import lock from "@/assets/landing/lock.png";
 import monitor from "@/assets/landing/monitor.png";
-import logo from "@/assets/landing/pass-logo-footer.png";
 import schoolAdminImg from "@/assets/landing/school-admin-img.png";
 import section from "@/assets/landing/section.png";
 import shield from "@/assets/landing/shield.png";
@@ -151,7 +152,7 @@ const Home: NextPage = () => {
                 height={287}
                 alt="caring 1"
               />
-              <Card className="-mt-24 flex h-[227px] w-[310px] flex-col items-center justify-between justify-self-center px-2 shadow-landcard duration-500 ease-in-out hover:drop-shadow-lg">
+              <Card className="-mt-24 flex h-[227px] w-[310px] flex-col items-center justify-between justify-self-center px-2 shadow-nour duration-500 ease-in-out hover:drop-shadow-lg">
                 <h1 className="mx-8 font-heading text-2xl font-bold text-pretty text-neutral-grey">
                   Smart Calendar Sync
                 </h1>
@@ -173,7 +174,7 @@ const Home: NextPage = () => {
                 height={283}
                 alt="caring 2"
               />
-              <Card className="-mt-24 flex h-[227px] w-[310px] flex-col items-center justify-between justify-self-center px-2 shadow-landcard duration-500 ease-in-out hover:drop-shadow-lg">
+              <Card className="-mt-24 flex h-[227px] w-[310px] flex-col items-center justify-between justify-self-center px-2 shadow-nour duration-500 ease-in-out hover:drop-shadow-lg">
                 <h1 className="mx-8 text-center font-heading text-2xl font-bold text-pretty text-neutral-grey">
                   Easy School Updates
                 </h1>
@@ -195,7 +196,7 @@ const Home: NextPage = () => {
                 height={287}
                 alt="caring 3"
               />
-              <Card className="-mt-24 flex h-[227px] w-[310px] flex-col items-center justify-between justify-self-center px-2 shadow-landcard duration-500 ease-in-out hover:drop-shadow-lg">
+              <Card className="-mt-24 flex h-[227px] w-[310px] flex-col items-center justify-between justify-self-center px-2 shadow-nour duration-500 ease-in-out hover:drop-shadow-lg">
                 <h1 className="mx-8 text-center font-heading text-2xl font-bold text-pretty text-neutral-grey">
                   Track Your Child&apos;s Progress
                 </h1>
@@ -380,7 +381,7 @@ const Home: NextPage = () => {
               {/* <Image
                 width={73}
                 height={96}
-                className="h-auto w-20"
+                className="w-20 h-auto"
                 src={logo}
                 alt="logo"
               /> */}
