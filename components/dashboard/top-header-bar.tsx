@@ -11,6 +11,10 @@ import { Button } from "@/components/ui/button";
 
 import AshleyAvatar from "@/assets/dashboard/ash-avatar-large.png";
 
+
+
+
+
 interface TopHeaderBarProps {
   userName: string;
 }
@@ -53,7 +57,7 @@ export default function TopHeaderBar({ userName }: TopHeaderBarProps) {
             alt="User avatar"
             className="m-auto size-12 rounded-full border-2 border-secondary transition-all duration-300 ease-in-out group-hover:size-12 group-hover:border-primary"
           />
-          <div className="absolute top-0.5 right-0.5 size-3 animate-blink-slow rounded-full bg-alert-102 delay-100"></div>
+          <div className="absolute top-0.5 right-0.5 size-3 animate-blink-slow rounded-full bg-alert-102"></div>
           <span className="sr-only">User Avatar</span>
         </Button>
         {/* Additional header actions can go here */}
