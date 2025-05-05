@@ -136,7 +136,7 @@ export default function Sidebar() {
         onClick={toggleSidebar}
         type="button"
         aria-label="Toggle Sidebar"
-        className={`absolute top-6 -right-10 size-6 cursor-pointer`}
+        className={`absolute top-4 -right-10 size-6 cursor-pointer`}
       >
         <SidebarButton open={isOpen} />
       </button>
@@ -155,17 +155,16 @@ function SidebarButton(props: SidebarButtonProps) {
       fill="none"
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
-      className={`size-6 transition duration-700 ease-in-out ${!open ? "rotate-180" : ""} hover:stroke-[2.5]`}
+      className={`size-7 transition duration-700 ease-in-out ${!open ? "rotate-180" : ""} stroke-darkblue-104 stroke-2 text-darkblue-104 hover:fill-darkblue-102/40 hover:stroke-[2.5] hover:text-darkblue-103`}
     >
       <path
         d="M9 3v18M3 4v16a1 1 0 001 1h16a1 1 0 001-1V4a1 1 0 00-1-1H4a1 1 0 00-1 1z"
-        stroke="#3D545B"
+        stroke="currentColor"
         strokeLinecap="round"
-        strokeWidth="2"
       />
       <path
         d="M17.917 12h-5.833M15 14.917l-2.916-2.916 2.917-2.917"
-        stroke="#3D545B"
+        stroke="currentColor"
         strokeLinecap="round"
       />
     </svg>

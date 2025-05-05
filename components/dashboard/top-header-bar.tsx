@@ -41,7 +41,7 @@ export default function TopHeaderBar({ userName }: TopHeaderBarProps) {
         <p className="font-heading text-3xl font-bold text-darkblue-104">
           Good morning, {userName}!
         </p>
-        <p className="font-heading text-2xl font-bold text-darkblue-103 underline underline-offset-5">
+        <p className="font-heading text-2xl font-bold text-darkblue-103 underline underline-offset-4">
           Today is {finalDate}
         </p>
       </div>
