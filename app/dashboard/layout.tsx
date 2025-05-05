@@ -1,8 +1,15 @@
+;
 // src/app/dashboard/layout.tsx
 import type { ReactNode } from "react";
 
+
+
 import Sidebar from "@/components/dashboard/sidebar";
 import TopHeaderBar from "@/components/dashboard/top-header-bar";
+
+
+
+
 
 export default async function DashboardLayout({
   children,
@@ -20,9 +27,7 @@ export default async function DashboardLayout({
         {/* Top Header Bar */}
         <TopHeaderBar userName={"Ashley Vee"} />
 
-        <section className="flex h-full flex-1 flex-col bg-alert-100/50">
-          {children}
-        </section>
+        <section className="flex h-full flex-1 flex-col">{children}</section>
       </div>
     </div>
   );
