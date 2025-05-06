@@ -14,14 +14,16 @@ const menuItems = [
   { name: "About Us", href: "/" },
 ];
 
+// Remove the catch-all transition and duration classes, as they are slowing down the webpage
+// and causing the menu to flicker when opening and closing.
 const NavBar = () => {
   const [menuState, setMenuState] = useState(false);
 
   return (
-    <header className="sticky inset-0 z-20 max-h-[82px] min-w-dvw basis-full *:transition-all *:duration-300 md:max-h-[92px]">
+    <header className="mx-w-[1440px] fixed inset-0 z-20 mx-auto max-h-[82px] w-dvw basis-full md:max-h-[92px]">
       <nav
         data-state={menuState && "active"}
-        className="inline-flex w-full grow items-center justify-between overflow-x-clip overflow-y-visible bg-lightblue px-[32px] py-2 data-[state=active]:bg-card"
+        className="inline-flex w-full grow items-center justify-between overflow-x-clip overflow-y-visible bg-lightblue px-[32px] py-2 shadow-2xl data-[state=active]:bg-card"
       >
         {/* <Link href="/">
           <Image
