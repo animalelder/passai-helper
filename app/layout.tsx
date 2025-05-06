@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Alatsi, Cinzel_Decorative, Inter, Open_Sans } from "next/font/google";
 
+
+
 import { Toaster } from "@/components/ui/sonner";
 import { ThemeProvider } from "@/components/theme-provider";
 
@@ -69,7 +71,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <main className="h-screen w-screen overflow-y-clip">{children}</main>
+          <main className="min-h-screen w-screen">{children}</main>
           <Toaster
             richColors
             closeButton

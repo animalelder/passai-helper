@@ -24,7 +24,7 @@ import shield from "@/assets/landing/shield.png";
 
 const Home: NextPage = () => {
   return (
-    <div className="relative flex min-h-screen w-dvw basis-full flex-col">
+    <div className="relative mx-auto flex min-h-screen w-[1440px] basis-full flex-col">
       <NavBar />
       <main className="flex flex-col gap-20">
         {/* Container 1 Overwhelmed? */}
@@ -36,15 +36,17 @@ const Home: NextPage = () => {
           />
           <div className="mx-auto flex min-h-[599px] min-w-fit flex-col items-center justify-center gap-y-6 bg-transparent bg-cover bg-center bg-no-repeat px-4 py-[96px] md:gap-x-14 md:px-6 lg:flex-row xl:justify-between xl:gap-x-24 xl:px-36">
             <div className="space-y-5 font-heading -tracking-tighter xl:tracking-normal">
-              <h1 className="text-6xl font-semibold text-paleyellow-100 md:text-5xl lg:text-7xl">
+              <h1 className="text-6xl font-bold text-paleyellow-100 text-shadow-lg md:text-5xl lg:text-7xl">
                 Smart Parenting,
-                <span className="block text-offwhite">Made Easy</span>
+                <span className="block font-extrabold text-offwhite text-shadow-lg">
+                  Made Easy
+                </span>
               </h1>
 
-              <p className="font-heading text-lg text-white md:text-xl lg:text-2xl">
+              <p className="font-heading text-lg font-semibold text-white text-shadow-lg md:text-xl lg:text-2xl">
                 Stay organized. Stay ahead. Stay connected.
               </p>
-              <Button className="cursor-pointer bg-alert-102 font-semibold lg:text-xl">
+              <Button className="cursor-pointer border-0 border-alert-104 bg-alert-102 px-2 tracking-wide hover:border-2 hover:shadow-lg lg:text-xl">
                 Sign up now
               </Button>
             </div>
@@ -52,15 +54,17 @@ const Home: NextPage = () => {
         </section>
 
         {/* Container 2 Manage your children  */}
-        <section className="mx-auto max-w-[542px] space-y-2 bg-white text-center">
-          <h1 className="font-heading text-2xl font-bold text-darkblue-102 xl:text-[32px]">
-            Built for busy parents, families, and schools who want life to run
-            smoother.
-          </h1>
+        <section className="items center flex w-full justify-center">
+          <div className="m-auto max-w-[542px] space-y-2 text-center">
+            <h1 className="font-heading text-2xl font-bold text-darkblue-103 xl:text-[32px]">
+              Built for busy parents, families, and schools who want life to run
+              smoother.
+            </h1>
+          </div>
         </section>
 
         {/* Container 3 Busy Parents and School Admins  */}
-        <section className="flex flex-col items-center justify-start bg-[#FFF] text-center">
+        <section className="flex flex-col items-center justify-start bg-white text-center">
           <div className="flex h-[597px] w-full">
             <Image
               src={builtForImg}
