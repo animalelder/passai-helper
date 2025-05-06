@@ -26,7 +26,7 @@ const Home: NextPage = () => {
   return (
     <div className="relative mx-auto flex min-h-screen w-[1440px] basis-full flex-col">
       <NavBar />
-      <main className="flex flex-col gap-20">
+      <main className="mt-20 flex flex-col gap-20">
         {/* Container 1 Overwhelmed? */}
         <section className="relative">
           <Image
