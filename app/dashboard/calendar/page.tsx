@@ -326,37 +326,3 @@ function FamMemberSelectorCard({
     </Button>
   );
 }
-
-function PlusIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      fill="none"
-      viewBox="0 0 19 19"
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}
-    >
-      <path
-        d="M7.75 14l3.97-3.97a.75.75 0 000-1.06L7.75 5"
-        stroke="#3D545B"
-      />
-    </svg>
-  );
-}
-
-function Chevron(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      fill="none"
-      viewBox="0 0 19 19"
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}
-    >
-      <path
-        d="M7.75 14l3.97-3.97a.75.75 0 000-1.06L7.75 5"
-        stroke="#3D545B"
-        strokeLinecap="round"
-        strokeWidth="1.5"
-      />
-    </svg>
-  );
-};
