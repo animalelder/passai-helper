@@ -17,9 +17,47 @@ import iconAshley from "@/assets/calendar/icon-ashley.png";
 import iconBen from "@/assets/calendar/icon-ben.png";
 import iconJohn from "@/assets/calendar/icon-john.png";
 import iconRob from "@/assets/calendar/icon-rob.png";
+import alexaMonth from "@/assets/calendar/month-alexa.png";
+import allMonth from "@/assets/calendar/month-all.png";
+import ashleyMonth from "@/assets/calendar/month-ashley.png";
+import benMonth from "@/assets/calendar/month-ben.png";
+import monthFallback from "@/assets/calendar/month-fallback.png";
+import johnMonth from "@/assets/calendar/month-john.png";
+import robertMonth from "@/assets/calendar/month-rob.png";
+import alexaWeek from "@/assets/calendar/week-alexa.png";
+import allWeek from "@/assets/calendar/week-all.png";
+import ashleyWeek from "@/assets/calendar/week-ashley.png";
+import benWeek from "@/assets/calendar/week-ben.png";
+import weekFallback from "@/assets/calendar/week-fallback.png";
+import johnWeek from "@/assets/calendar/week-john.png";
+import robertWeek from "@/assets/calendar/week-rob.png";
+
+type TFamMember = {
+  name: string;
+  icon: StaticImageData;
+  week?: StaticImageData;
+  month?: StaticImageData;
+};
+
+type TMember = Omit<TFamMember, "week" & "month">;
 
 export default function Page() {
-  const [activePerson, setActivePerson] = React.useState("All");
+  const famMembers: Array<TFamMember> = [
+    { name: "All", icon: iconAll, week: allWeek, month: allMonth },
+    { name: "Ben", icon: iconBen, week: benWeek, month: benMonth },
+    { name: "Alexa", icon: iconAlexa, week: alexaWeek, month: alexaMonth },
+    { name: "John", icon: iconJohn, week: johnWeek, month: johnMonth },
+    { name: "Ashley", icon: iconAshley, week: ashleyWeek, month: ashleyMonth },
+    { name: "Robert", icon: iconRob, month: robertMonth, week: robertWeek },
+  ];
+
+  type Name = (typeof famMembers)[number]["name"];
+  const [activePerson, setActivePerson] = React.useState<Name>("All");
+  const week =
+    famMembers!.find((member) => member.name === activePerson)?.week || weekFallback;
+  const month =
+    famMembers!.find((member) => member.name === activePerson)?.month ||
+    monthFallback;
 
   return (
     <div className="flex flex-col mt-4 pt-0.5 w-full min-h-full">
@@ -62,9 +100,9 @@ export default function Page() {
             className="min-h-[calc(100%-50px)]"
           >
             <div className="flex flex-row gap-4">
-              {famMembers.map((member: TFamMember) => {
+              {famMembers.map((member: TMember) => {
                 return (
-                  <FamMemberCard
+                  <FamMemberSelectorCard
                     key={member.name}
                     data-active={activePerson === member.name}
                     name={member.name}
@@ -76,12 +114,38 @@ export default function Page() {
                 );
               })}
             </div>
+            <Image
+              src={week || weekFallback}
+              alt={`${activePerson} Weekly`}
+              placeholder="blur"
+              className="w-auto h-auto cursor-pointer"
+            />
           </TabsContent>
           <TabsContent
             value="month"
             className="min-h-[calc(100%-50px)]"
           >
-            {/* Month View Content */}
+            <div className="flex flex-row gap-4">
+              {famMembers.map((member: TMember) => {
+                return (
+                  <FamMemberSelectorCard
+                    key={member.name}
+                    data-active={activePerson === member.name}
+                    name={member.name}
+                    icon={member.icon}
+                    onClick={() => {
+                      setActivePerson(member.name);
+                    }}
+                  />
+                );
+              })}
+            </div>
+            <Image
+              src={month || monthFallback}
+              alt={`${activePerson} Monthly`}
+              placeholder="blur"
+              className="w-auto h-auto cursor-pointer"
+            />
           </TabsContent>
         </Tabs>
       </div>
@@ -131,21 +195,7 @@ const DayCalendar = () => {
   );
 };
 
-type TFamMember = {
-  name: string;
-  icon: StaticImageData;
-};
-
-const famMembers: Array<TFamMember> = [
-  { name: "All", icon: iconAll },
-  { name: "Ben", icon: iconBen },
-  { name: "Alexa", icon: iconAlexa },
-  { name: "John", icon: iconJohn },
-  { name: "Ashley", icon: iconAshley },
-  { name: "Robert", icon: iconRob },
-];
-
-function FamMemberCard({
+function FamMemberSelectorCard({
   name,
   icon,
   ...buttonProps
