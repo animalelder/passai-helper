@@ -77,6 +77,12 @@
 
 @theme {
   --shadow-nour: box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  --color-ben: oklch(from #0B99FF l c h);
+  --color-alex: oklch(from #8D77FE l c h);
+  --color-john: oklch(from #1FB8A9 l c h);
+  --color-ashley: oklch(from #F7B34F l c h);
+  --color-rob: oklch(from #9C1E1E l c h);
+  --color-all: oklch(from #F57D62 l c h);
   --color-black-200: oklch(from #232423 l c h);
   --color-lightblue: oklch(from #c4dbd1 l c h);
   --color-lightblue-100: oklch(from #e8f3ee l c h);
@@ -111,6 +117,7 @@
 }
 
 @theme inline {
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-logo: var(--font-cinzel);
