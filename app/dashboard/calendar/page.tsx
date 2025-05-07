@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Image, { type StaticImageData } from "next/image";
 
 import { Button } from "@/components/ui/button";
@@ -19,7 +19,7 @@ import iconJohn from "@/assets/calendar/icon-john.png";
 import iconRob from "@/assets/calendar/icon-rob.png";
 
 export default function Page() {
-  const [activePerson, setActivePerson] = useState("All");
+  const [activePerson, setActivePerson] = React.useState("All");
 
   return (
     <div className="flex flex-col mt-4 pt-0.5 w-full min-h-full">
@@ -160,7 +160,7 @@ function FamMemberCard({
         alt={`${name} Icon`}
         className="w-6 h-6"
       />
-      <span className="font-semibold text-[9px] text-darkblue-104 text-center">
+      <span className="font-semibold text-[9px] text-darkblue-104 text-center capitalize">
         {name}
       </span>
     </Button>
