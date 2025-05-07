@@ -1,8 +1,9 @@
 "use client";
 
-import { type ReactNode } from "react";
-import Image from "next/image";
+import React, { useState } from "react";
+import Image, { type StaticImageData } from "next/image";
 
+import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 import alexaCard from "@/assets/calendar/day-alexa.png";
@@ -10,12 +11,16 @@ import ashleyCard from "@/assets/calendar/day-ashley.png";
 import benCard from "@/assets/calendar/day-ben.png";
 import johnCard from "@/assets/calendar/day-john.png";
 import robertCard from "@/assets/calendar/day-rob.png";
-
-
-
-
+import iconAlexa from "@/assets/calendar/icon-alexa.png";
+import iconAll from "@/assets/calendar/icon-all.png";
+import iconAshley from "@/assets/calendar/icon-ashley.png";
+import iconBen from "@/assets/calendar/icon-ben.png";
+import iconJohn from "@/assets/calendar/icon-john.png";
+import iconRob from "@/assets/calendar/icon-rob.png";
 
 export default function Page() {
+  const [activePerson, setActivePerson] = useState("All");
+
   return (
     <div className="flex flex-col mt-4 pt-0.5 w-full min-h-full">
       <div className="mb-4 w-full">
@@ -56,7 +61,21 @@ export default function Page() {
             value="week"
             className="min-h-[calc(100%-50px)]"
           >
-            {/* Week View Content */}
+            <div className="flex flex-row gap-4">
+              {famMembers.map((member: TFamMember) => {
+                return (
+                  <FamMemberCard
+                    key={member.name}
+                    data-active={activePerson === member.name}
+                    name={member.name}
+                    icon={member.icon}
+                    onClick={() => {
+                      setActivePerson(member.name);
+                    }}
+                  />
+                );
+              })}
+            </div>
           </TabsContent>
           <TabsContent
             value="month"
@@ -80,17 +99,17 @@ const DayCalendar = () => {
         <Image
           src={benCard}
           alt="Ben Card"
-          className="w-[447px] h-[201px] cursor-pointer"
+          className="w-[336px] h-auto cursor-pointer"
         />
         <Image
           src={alexaCard}
           alt="Alexa Card"
-          className="w-[447px] h-[201px] cursor-pointer"
+          className="w-[336px] h-auto cursor-pointer"
         />
         <Image
           src={johnCard}
           alt="John Card"
-          className="w-[447px] h-[201px] cursor-pointer"
+          className="w-[336px] h-auto cursor-pointer"
         />
       </div>
       <div className="flex flex-row justify-start items-center gap-7">
@@ -100,22 +119,50 @@ const DayCalendar = () => {
         <Image
           src={ashleyCard}
           alt="Ashley Card"
-          className="w-[447px] h-[201px] cursor-pointer"
+          className="w-[336px] h-auto cursor-pointer"
         />
         <Image
           src={robertCard}
           alt="Robert Card"
-          className="w-[447px] h-[201px] cursor-pointer"
+          className="w-[336px] h-auto cursor-pointer"
         />
       </div>
     </div>
   );
 };
 
-function UserCard({ children }: { children: ReactNode }) {
+type TFamMember = {
+  name: string;
+  icon: StaticImageData;
+};
+
+const famMembers: Array<TFamMember> = [
+  { name: "All", icon: iconAll },
+  { name: "Ben", icon: iconBen },
+  { name: "Alexa", icon: iconAlexa },
+  { name: "John", icon: iconJohn },
+  { name: "Ashley", icon: iconAshley },
+  { name: "Robert", icon: iconRob },
+];
+
+function FamMemberCard({
+  name,
+  icon,
+  ...buttonProps
+}: TFamMember & React.ComponentPropsWithRef<"button">) {
   return (
-    <div className="flex-col justify-center items-center gap-1.5 px-4 py-3 rounded-[12px] w-[65px] h-[60px] font-semibold text-[9px] text-darkblue-104">
-      {children}
-    </div>
+    <Button
+      {...buttonProps}
+      className="flex-col justify-center items-center gap-1.5 data-[active]:bg-darkgreen-100 px-4 py-3 border-2 data-[active]:border-primary border-transparent rounded-[12px] w-[65px] h-[60px]"
+    >
+      <Image
+        src={icon}
+        alt={`${name} Icon`}
+        className="w-6 h-6"
+      />
+      <span className="font-semibold text-[9px] text-darkblue-104 text-center">
+        {name}
+      </span>
+    </Button>
   );
 }
