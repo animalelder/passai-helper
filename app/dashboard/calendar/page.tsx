@@ -33,11 +33,12 @@ import johnWeek from "@/assets/calendar/week-john.png";
 import robertWeek from "@/assets/calendar/week-rob.png";
 
 type TFamMember = {
-  name: string;
+  name: TName;
   icon: StaticImageData;
   week?: StaticImageData;
   month?: StaticImageData;
 };
+type TName = "All" | "Ben" | "Alexa" | "John" | "Ashley" | "Robert";
 
 type TMember = Omit<TFamMember, "week" & "month">;
 
@@ -49,15 +50,15 @@ export default function Page() {
     { name: "John", icon: iconJohn, week: johnWeek, month: johnMonth },
     { name: "Ashley", icon: iconAshley, week: ashleyWeek, month: ashleyMonth },
     { name: "Robert", icon: iconRob, month: robertMonth, week: robertWeek },
-  ];
+  ] as const;
 
-  type Name = (typeof famMembers)[number]["name"];
-  const [activePerson, setActivePerson] = React.useState<Name>("All");
-  const week =
-    famMembers!.find((member) => member.name === activePerson)?.week || weekFallback;
-  const month =
-    famMembers!.find((member) => member.name === activePerson)?.month ||
-    monthFallback;
+  type FamName = (typeof famMembers)[number]["name"];
+
+  const [activePerson, setActivePerson] = React.useState<TName | FamName>("All");
+  const week = famMembers.find((member) => member.name === activePerson)
+    ?.week as StaticImageData;
+  const month = famMembers.find((member) => member.name === activePerson)
+    ?.month as StaticImageData;
 
   return (
     <div className="flex flex-col mt-4 pt-0.5 w-full min-h-full">
@@ -199,7 +200,7 @@ function FamMemberSelectorCard({
   name,
   icon,
   ...buttonProps
-}: TFamMember & React.ComponentPropsWithRef<"button">) {
+}: TFamMember & React.ComponentPropsWithRef<typeof Button>) {
   return (
     <Button
       {...buttonProps}
