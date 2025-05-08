@@ -3,6 +3,10 @@
 
 import { Bell } from "@/components/dashboard/icons";
 
+
+
+
+
 interface TopHeaderBarProps {
   userName: string;
 }
@@ -30,8 +34,9 @@ export default function TopHeaderBar({ userName }: TopHeaderBarProps) {
           Good morning, {userName}!
         </p>
         <p className="font-heading font-bold text-darkblue-103 text-2xl underline underline-offset-4">
-          Today is {finalDate}
+          Today is Thursday, May 8, 2025
         </p>
+        <span className="sr-only">{finalDate}</span>
       </div>
 
       <div className="block self-center mr-6">
