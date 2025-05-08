@@ -2,12 +2,16 @@
 
 import Link from "next/link";
 
+
+
+
+
 export default function SvgComponent() {
   return (
     <button>
       <div className="flex justify-center">
         <Link href="/">
-          <div className="h-16 w-16">
+          <div className="h-16 w-16 group-hover:animate-spin-once">
             <svg
               fill="none"
               viewBox="0 0 60 60"

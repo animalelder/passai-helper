@@ -116,7 +116,7 @@
 }
 
 @theme {
-  --shadow-landcard: box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  --shadow-nour: box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   --color-black-200: oklch(from #232423 l c h);
   --color-lightblue: oklch(from #c4dbd1 l c h);
   --color-lightblue-100: oklch(from #e8f3ee l c h);

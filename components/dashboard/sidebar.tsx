@@ -1,87 +1,227 @@
 "use client";
 
-import { useState } from "react";
+import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import { FaCalendar, FaHome, FaUser, FaUserFriends } from "react-icons/fa";
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-
+import { signOut } from "@/lib/auth-client";
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 import LogoAlt from "@/components/logo-alt";
 
+import navTabAsh from "@/assets/dashboard/nav-tab-ash.png";
+import navTabCollapsed from "@/assets/dashboard/nav-tab-collapsed.png";
+
+import {
+  Account,
+  Calendar,
+  ChildAccount,
+  LogOut,
+  Overview,
+  Settings,
+  Updates,
+} from "./icons";
+
 export default function Sidebar() {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = React.useState(true);
   const pathname = usePathname();
 
   const toggleSidebar = () => {
-    setIsOpen(!isOpen);
+    setIsOpen((prev) => !prev);
   };
 
   const menuItems = [
     {
-      icon: <FaUserFriends size={20} />,
-      label: "Add Children",
-      href: "/dashboard/add-children",
+      icon: Overview,
+      label: "Dashboard",
+      href: "/dashboard",
     },
     {
-      icon: <FaCalendar size={20} />,
-      label: "Connect Calendar",
-      href: "/dashboard/connect-calendar",
+      icon: Calendar,
+      label: "Family Calendar",
+      href: "/dashboard/calendar",
     },
     {
-      icon: <FaUser size={20} />,
-      label: "Add Parent/Gaurdian",
-      href: "/dashboard/add-parent",
+      icon: Updates,
+      label: "My Updates",
+      href: "/dashboard/updates",
     },
     {
-      icon: <FaHome size={20} />,
-      label: "Connect School Accounts",
-      href: "/dashboard/connect-school-accounts",
+      icon: Settings,
+      label: "Settings",
+      href: "/dashboard/settings",
+    },
+    {
+      heading: "Account",
+      icon: Account,
+      label: "My Profile",
+      href: "/dashboard/account",
+    },
+    {
+      icon: ChildAccount,
+      label: "Kids Profile",
+      href: "/dashboard/account/kids",
     },
   ];
 
   return (
     <div
-      className={`flex flex-col bg-[#5e8189] text-white transition-all duration-200 ${isOpen ? "w-100" : "w-20"} relative h-screen`}
+      className={`flex min-h-dvh flex-col bg-darkblue-103 font-heading text-white duration-200 ease-in-out *:transition-discrete **:transition **:duration-200 **:ease-in-out ${isOpen ? "w-[250px]" : "w-[110px]"} relative`}
     >
       <div className="mt-4 mb-20 flex items-center justify-center">
-        {isOpen ? (
-          <div className="flex items-center gap-2">
-            <LogoAlt />
-            <p className="flex justify-center font-logo text-xl font-bold text-paleyellow-101">
-              pass.ai
-            </p>
-          </div>
-        ) : (
+        <div className="flex items-center gap-2">
           <LogoAlt />
-        )}
+          <p
+            className={`flex justify-center font-logo text-xl font-bold tracking-wide text-paleyellow-101 transition-all ${isOpen ? "block opacity-100 duration-1000" : "hidden w-0 opacity-0 duration-200"}`}
+          >
+            PASS.AI
+          </p>
+        </div>
       </div>
 
-      <div className="flex-1 space-y-4">
+      <div className="flex flex-1 flex-col space-y-4">
         {menuItems.map((item, index) => {
           const isActive = pathname === item.href;
 
           return (
-            <Link
+            <div
+              className={cn(
+                "flex min-h-12 flex-col items-center justify-center space-y-2",
+
+                isActive && isOpen && "bg-darkblue-102 has-[h3]:pb-2"
+              )}
               key={index}
-              href={item.href}
-              className={`flex items-center gap-4 px-4 py-2 transition ${
-                isActive ? "bg-[#3d5055] font-bold" : "hover:bg-[#4a656b]"
-              }`}
             >
-              {item.icon}
-              {isOpen && <span className="text-sm font-[600]">{item.label}</span>}
-            </Link>
+              {item.heading && (
+                <h3
+                  className={`w-full bg-darkblue-103 px-4 py-2 pl-5 text-left indent-2 font-heading text-2xl font-extrabold text-white ${
+                    isOpen ? "block pb-4" : "hidden"
+                  }`}
+                >
+                  {item.heading}
+                </h3>
+              )}
+              <Link
+                key={index}
+                href={item.href}
+                className={cn(
+                  "group mx-auto flex w-fit flex-col items-center justify-center gap-y-2 text-shadow-amber-50",
+                  isOpen &&
+                    "ml-2 flex-row justify-start justify-items-start gap-x-2 justify-self-start"
+                )}
+              >
+                <span
+                  className={`rounded-xl px-3 py-1 ${
+                    isActive
+                      ? "bg-darkblue-102 font-extrabold group-hover:bg-darkblue"
+                      : "group-hover:bg-darkblue-101"
+                  }`}
+                >
+                  <item.icon
+                    className={`mx-auto size-7 group-hover:stroke-white/50`}
+                  />
+                </span>
+                {isOpen ? (
+                  <span className={`${isActive ? "font-bold" : "font-semibold"}`}>
+                    {item.label}
+                  </span>
+                ) : (
+                  <span
+                    className={`text-xs font-stretch-condensed ${isActive ? "font-bold" : "font-semibold"}`}
+                  >
+                    {item.label}
+                  </span>
+                )}
+              </Link>
+            </div>
           );
         })}
+        <div className="mt-56 flex flex-col gap-y-5">
+          <Image
+            src={isOpen ? navTabAsh : navTabCollapsed}
+            alt="nav-tab-ash"
+            unoptimized
+            className={`mx-auto h-auto ${isOpen ? "w-[120px]" : "w-10"} cursor-pointer hover:scale-95`}
+          />
+
+          {isOpen ? (
+            <LogOutButton
+              size="lg"
+              variant="ghost"
+              className="inline-flex justify-center gap-3 font-heading text-xl font-bold text-offwhite"
+            >
+              <LogOut />
+              Logout
+            </LogOutButton>
+          ) : (
+            <LogOutButton
+              variant="ghost"
+              size="icon"
+              className="max-w-5"
+            >
+              <LogOut className="-ml-2 size-7 hover:bg-transparent" />
+            </LogOutButton>
+          )}
+        </div>
       </div>
 
       <button
         onClick={toggleSidebar}
-        className="absolute top-6 -right-10 rounded-full bg-yellow-400 p-1 text-black"
+        type="button"
+        aria-label="Toggle Sidebar"
+        className={`absolute top-4 -right-10 size-6 cursor-pointer`}
       >
-        {isOpen ? <IoIosArrowBack size={20} /> : <IoIosArrowForward size={20} />}
+        <SidebarButton open={isOpen} />
       </button>
     </div>
+  );
+}
+
+type SidebarButtonProps = {
+  open: boolean;
+};
+
+function SidebarButton(props: SidebarButtonProps) {
+  const { open } = props;
+  return (
+    <svg
+      fill="none"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      className={`size-7 transition duration-700 ease-in-out ${!open ? "rotate-180" : ""} stroke-darkblue-104 stroke-2 text-darkblue-104 hover:fill-darkblue-102/40 hover:stroke-[2.5] hover:text-darkblue-103`}
+    >
+      <path
+        d="M9 3v18M3 4v16a1 1 0 001 1h16a1 1 0 001-1V4a1 1 0 00-1-1H4a1 1 0 00-1 1z"
+        stroke="currentColor"
+        strokeLinecap="round"
+      />
+      <path
+        d="M17.917 12h-5.833M15 14.917l-2.916-2.916 2.917-2.917"
+        stroke="currentColor"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+function LogOutButton({
+  className,
+  children,
+  size = "icon",
+  ...props
+}: React.ComponentProps<typeof Button>) {
+  return (
+    <Button
+      variant="ghost"
+      size={size}
+      className={cn(
+        "group mx-auto inline-flex justify-center gap-2 font-heading text-xl font-bold text-offwhite hover:stroke-darkgreen-105 hover:text-darkblue-106",
+        className
+      )}
+      onClick={() => signOut()}
+      {...props}
+    >
+      {children}
+    </Button>
   );
 }

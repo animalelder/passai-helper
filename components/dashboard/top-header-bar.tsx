@@ -1,26 +1,65 @@
 // components/dashboard/TopHeaderBar.tsx
 "use client";
 
+import Image from "next/image";
+
+
+
+import { Button } from "@/components/ui/button";
+
+
+
+import AshleyAvatar from "@/assets/dashboard/ash-avatar-large.png";
+
+
+
+
+
 interface TopHeaderBarProps {
   userName: string;
 }
 
+const date = new Date().toString();
+const day = new Date().getDay();
+const days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+const splitDate = date.split(" ").slice(1, 4);
+const finalDate =
+  days[day] + ", " + splitDate[0] + splitDate[1] + ", " + splitDate[2];
+
 export default function TopHeaderBar({ userName }: TopHeaderBarProps) {
   return (
-    <div className="flex w-full justify-between bg-lightblue-101 pt-2 pb-2 pl-14 shadow-xl">
-      <div>
-        <p className="font-heading text-[2rem] font-bold text-darkblue-104">
-          Good morning, {userName}
+    <div className="flex h-[101px] w-full justify-between bg-lightblue-101 pt-2 pr-4 pb-2 pl-14 shadow-md">
+      <div className="space-y-2">
+        <p className="font-heading text-3xl font-bold text-darkblue-104">
+          Good morning, {userName}!
         </p>
-        <p className="font-heading text-2xl font-bold text-darkblue-103 underline">
-          Today is {new Date().toDateString()}
+        <p className="font-heading text-2xl font-bold text-darkblue-103 underline underline-offset-4">
+          Today is {finalDate}
         </p>
       </div>
 
-      <div className="flex items-center space-x-4">
-        <button className="rounded-full p-2 hover:bg-amber-100">
-          <span className="text-xl">🏠</span>
-        </button>
+      <div className="mr-6 block self-center">
+        <Button
+          size="icon"
+          variant="link"
+          className="group relative max-w-fit rounded-full"
+        >
+          <Image
+            src={AshleyAvatar}
+            alt="User avatar"
+            className="m-auto size-12 rounded-full border-2 border-secondary transition-all duration-300 ease-in-out group-hover:size-12 group-hover:border-primary"
+          />
+          <div className="absolute top-0.5 right-0.5 size-3 animate-blink-slow rounded-full bg-alert-102"></div>
+          <span className="sr-only">User Avatar</span>
+        </Button>
         {/* Additional header actions can go here */}
       </div>
     </div>
