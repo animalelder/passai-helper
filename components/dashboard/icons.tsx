@@ -26,6 +26,36 @@ function Overview(props: SVGProps<SVGSVGElement>) {
     </svg>
   );
 }
+function Bell(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      fill="currentColor"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      className="size-4"
+      {...props}
+    >
+      <path
+        d="M12 4a6 6 0 016 6v5c0 3 2 4 2 4H4s2-1 2-4v-5a6 6 0 016-6z"
+        fill="#587882"
+        fillRule="evenodd"
+        stroke="#587882"
+        strokeWidth="2"
+      />
+      <path
+        d="M12 4V3"
+        stroke="#587882"
+        strokeLinecap="round"
+        strokeWidth="2"
+      />
+      <path
+        d="M10 19a2 2 0 104 0"
+        stroke="#587882"
+        strokeWidth="2"
+      />
+    </svg>
+  );
+}
 
 function Calendar(props: SVGProps<SVGSVGElement>) {
   return (
@@ -182,4 +212,4 @@ function LogOut(props: SVGProps<SVGSVGElement>) {
   );
 }
 
-export { Account, Calendar, ChildAccount, LogOut, Overview, Settings, Updates };
+export { Account, Bell, Calendar, ChildAccount, LogOut, Overview, Settings, Updates };
