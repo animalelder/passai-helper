@@ -3,13 +3,9 @@
 import React from "react";
 import Image, { type StaticImageData } from "next/image";
 
-
-
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-
-
 
 import alexaCard from "@/assets/calendar/day-alexa.png";
 import ashleyCard from "@/assets/calendar/day-ashley.png";
@@ -39,10 +35,6 @@ import weekButton from "@/assets/calendar/week-button.png";
 import weekFallback from "@/assets/calendar/week-fallback.png";
 import johnWeek from "@/assets/calendar/week-john.png";
 import robertWeek from "@/assets/calendar/week-rob.png";
-
-
-
-
 
 type TFamMember = {
   name: TName;
@@ -118,9 +110,9 @@ export default function Page() {
     ?.month as StaticImageData;
 
   return (
-    <div className="flex flex-col mt-4 pt-0.5 w-full min-h-full">
+    <div className="mt-4 flex min-h-full w-full flex-col pt-0.5">
       <div className="mb-4 ml-8 w-full">
-        <h1 className="block font-heading font-bold text-darkgreen-105 text-xl">
+        <h1 className="block font-heading text-xl font-bold text-darkgreen-105">
           My Family Calendar
         </h1>
         <Tabs
@@ -130,19 +122,19 @@ export default function Page() {
           <TabsList className="my-2 w-fit">
             <TabsTrigger
               value="day"
-              className="px-3 py-1 h-6 text-darkgreen-105 text-xs text-center"
+              className="h-6 px-3 py-1 text-center text-xs text-darkgreen-105"
             >
               Day
             </TabsTrigger>
             <TabsTrigger
               value="week"
-              className="px-3 py-1 h-6 text-darkgreen-105 text-xs text-center"
+              className="h-6 px-3 py-1 text-center text-xs text-darkgreen-105"
             >
               Week
             </TabsTrigger>
             <TabsTrigger
               value="month"
-              className="px-3 py-1 h-6 text-darkgreen-105 text-xs text-center"
+              className="h-6 px-3 py-1 text-center text-xs text-darkgreen-105"
             >
               Month
             </TabsTrigger>
@@ -157,7 +149,7 @@ export default function Page() {
             value="week"
             className="relative min-h-full overflow-y-scroll"
           >
-            <div className="flex flex-row justify-between w-[800px]">
+            <div className="flex w-[1050px] flex-row justify-between">
               <div className="flex flex-row gap-0.5">
                 {famMembers.map((member: TFamMember) => {
                   return (
@@ -176,7 +168,7 @@ export default function Page() {
                   );
                 })}
               </div>
-              <div className="inline-flex justify-center items-center gap-4">
+              <div className="inline-flex items-center justify-center gap-4">
                 <Image
                   src={plusButton}
                   alt="Plus Button"
@@ -198,14 +190,14 @@ export default function Page() {
               src={week || weekFallback}
               alt={`${activePerson} Weekly`}
               placeholder="blur"
-              className="w-auto h-auto cursor-pointer"
+              className="h-auto w-auto cursor-pointer"
             />
           </TabsContent>
           <TabsContent
             value="month"
             className="min-h-full overflow-y-scroll"
           >
-            <div className="flex justify-between w-[1050px]">
+            <div className="flex w-[1050px] justify-between">
               <div className="flex flex-row gap-0.5">
                 {famMembers.map((member: TMember) => {
                   return (
@@ -221,10 +213,10 @@ export default function Page() {
                   );
                 })}
               </div>
-              <h2 className="mx-auto font-heading font-bold text-darkblue text-2xl">
+              <h2 className="mx-auto font-heading text-2xl font-bold text-darkblue">
                 April 2025
               </h2>
-              <div className="inline-flex justify-center items-center gap-4">
+              <div className="inline-flex items-center justify-center gap-4">
                 <Image
                   src={plusButton}
                   alt="Plus Button"
@@ -246,7 +238,7 @@ export default function Page() {
               src={month || monthFallback}
               alt={`${activePerson} Monthly`}
               placeholder="blur"
-              className="w-auto h-auto cursor-pointer"
+              className="h-auto w-auto cursor-pointer"
             />
           </TabsContent>
         </Tabs>
