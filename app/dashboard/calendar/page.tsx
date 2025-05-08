@@ -110,9 +110,9 @@ export default function Page() {
     ?.month as StaticImageData;
 
   return (
-    <div className="mt-4 flex min-h-full w-full flex-col pt-0.5">
+    <div className="flex flex-col mt-4 pt-0.5 w-full min-h-full">
       <div className="mb-4 ml-8 w-full">
-        <h1 className="block font-heading text-xl font-bold text-darkgreen-105">
+        <h1 className="block font-heading font-bold text-darkgreen-105 text-xl">
           My Family Calendar
         </h1>
         <Tabs
@@ -122,19 +122,19 @@ export default function Page() {
           <TabsList className="my-2 w-fit">
             <TabsTrigger
               value="day"
-              className="h-6 px-3 py-1 text-center text-xs text-darkgreen-105"
+              className="px-3 py-1 h-6 text-darkgreen-105 text-xs text-center"
             >
               Day
             </TabsTrigger>
             <TabsTrigger
               value="week"
-              className="h-6 px-3 py-1 text-center text-xs text-darkgreen-105"
+              className="px-3 py-1 h-6 text-darkgreen-105 text-xs text-center"
             >
               Week
             </TabsTrigger>
             <TabsTrigger
               value="month"
-              className="h-6 px-3 py-1 text-center text-xs text-darkgreen-105"
+              className="px-3 py-1 h-6 text-darkgreen-105 text-xs text-center"
             >
               Month
             </TabsTrigger>
@@ -149,7 +149,7 @@ export default function Page() {
             value="week"
             className="relative min-h-full overflow-y-scroll"
           >
-            <div className="flex w-[1050px] flex-row justify-between">
+            <div className="flex flex-row justify-between w-[1050px]">
               <div className="flex flex-row gap-0.5">
                 {famMembers.map((member: TFamMember) => {
                   return (
@@ -168,7 +168,7 @@ export default function Page() {
                   );
                 })}
               </div>
-              <div className="inline-flex items-center justify-center gap-4">
+              <div className="inline-flex justify-center items-center gap-4">
                 <Image
                   src={plusButton}
                   alt="Plus Button"
@@ -190,14 +190,14 @@ export default function Page() {
               src={week || weekFallback}
               alt={`${activePerson} Weekly`}
               placeholder="blur"
-              className="h-auto w-auto cursor-pointer"
+              className="w-auto h-auto cursor-pointer"
             />
           </TabsContent>
           <TabsContent
             value="month"
             className="min-h-full overflow-y-scroll"
           >
-            <div className="flex w-[1050px] justify-between">
+            <div className="flex justify-between w-[1050px]">
               <div className="flex flex-row gap-0.5">
                 {famMembers.map((member: TMember) => {
                   return (
@@ -205,7 +205,10 @@ export default function Page() {
                       key={member.name}
                       name={member.name}
                       icon={member.icon}
-                      className={`${activePerson === member.name && "border-primary bg-darkgreen-100 *:text-darkgreen-106"}`}
+                      className={cn(
+                        `${activeOne === member.name && "border-primary bg-darkgreen-100 *:text-darkgreen-106"}`,
+                        activeOne === member.name && `${member.border}`
+                      )}
                       onClick={() => {
                         setActivePerson(member.name);
                       }}
@@ -213,10 +216,10 @@ export default function Page() {
                   );
                 })}
               </div>
-              <h2 className="mx-auto font-heading text-2xl font-bold text-darkblue">
+              <h2 className="mx-auto font-heading font-bold text-darkblue text-2xl">
                 April 2025
               </h2>
-              <div className="inline-flex items-center justify-center gap-4">
+              <div className="inline-flex justify-center items-center gap-4">
                 <Image
                   src={plusButton}
                   alt="Plus Button"
@@ -238,7 +241,7 @@ export default function Page() {
               src={month || monthFallback}
               alt={`${activePerson} Monthly`}
               placeholder="blur"
-              className="h-auto w-auto cursor-pointer"
+              className="w-auto h-auto cursor-pointer"
             />
           </TabsContent>
         </Tabs>
