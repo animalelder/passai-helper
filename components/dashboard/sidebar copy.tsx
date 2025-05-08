@@ -5,23 +5,21 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+
+
 import { signOut } from "@/lib/auth-client";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import LogoAlt from "@/components/logo-alt";
 
-import navTabAsh from "@/assets/dashboard/nav-tab-ash.png";
-import navTabCollapsed from "@/assets/dashboard/nav-tab-collapsed.png";
 
-import {
-  Account,
-  Calendar,
-  ChildAccount,
-  LogOut,
-  Overview,
-  Settings,
-  Updates,
-} from "./icons";
+
+import navTabAsh from "@/assets/dashboard/nav-tab-ash.png";
+
+
+
+import { Account, Calendar, ChildAccount, LogOut, Overview, Settings, Updates } from "./icons";
+
 
 export default function Sidebar() {
   const [isOpen, setIsOpen] = React.useState(true);
@@ -69,7 +67,7 @@ export default function Sidebar() {
     <div
       className={`flex min-h-dvh flex-col bg-darkblue-103 font-heading text-white duration-200 ease-in-out *:transition-discrete **:transition **:duration-200 **:ease-in-out ${isOpen ? "w-[250px]" : "w-[110px]"} relative`}
     >
-      <div className="mt-4 mb-20 flex items-center justify-center">
+      <div className="flex justify-center items-center mt-4 mb-20">
         <div className="flex items-center gap-2">
           <LogoAlt />
           <p
@@ -80,7 +78,7 @@ export default function Sidebar() {
         </div>
       </div>
 
-      <div className="flex flex-1 flex-col space-y-4">
+      <div className="flex flex-col flex-1 space-y-4">
         {menuItems.map((item, index) => {
           const isActive = pathname === item.href;
 
@@ -137,32 +135,26 @@ export default function Sidebar() {
             </div>
           );
         })}
-        <div className="mt-56 flex flex-col gap-y-5">
-          <Image
-            src={isOpen ? navTabAsh : navTabCollapsed}
-            alt="nav-tab-ash"
-            unoptimized
-            className={`mx-auto h-auto ${isOpen ? "w-[120px]" : "w-10"} cursor-pointer hover:scale-95`}
-          />
-
-          {isOpen ? (
-            <LogOutButton
-              size="lg"
-              variant="ghost"
-              className="inline-flex justify-center gap-3 font-heading text-xl font-bold text-offwhite"
-            >
-              <LogOut />
-              Logout
-            </LogOutButton>
-          ) : (
-            <LogOutButton
-              variant="ghost"
-              size="icon"
-              className="max-w-5"
-            >
-              <LogOut className="-ml-2 size-7 hover:bg-transparent" />
-            </LogOutButton>
+        <div className="flex flex-col justify-center items-center gap-y-5 mt-56">
+          {isOpen && (
+            <Image
+              src={navTabAsh}
+              alt="nav-tab-ash"
+              unoptimized
+              className={`mx-auto h-auto w-[120px] cursor-pointer hover:scale-95`}
+            />
           )}
+
+          <LogOutButton
+            className={cn(
+              "mx-auto inline-flex w-fit items-center justify-center text-center font-heading text-xl font-bold text-offwhite",
+              isOpen && "gap-3"
+            )}
+            size={isOpen ? "lg" : "icon"}
+          >
+            <LogOut className={cn(!isOpen && "size-6 max-w-5")} />{" "}
+            {isOpen && <span className={cn("text-offwhite")}>Logout</span>}
+          </LogOutButton>
         </div>
       </div>
 
@@ -207,13 +199,12 @@ function SidebarButton(props: SidebarButtonProps) {
 function LogOutButton({
   className,
   children,
-  size = "icon",
   ...props
 }: React.ComponentProps<typeof Button>) {
   return (
     <Button
       variant="ghost"
-      size={size}
+      size="lg"
       className={cn(
         "group mx-auto inline-flex justify-center gap-2 font-heading text-xl font-bold text-offwhite hover:stroke-darkgreen-105 hover:text-darkblue-106",
         className
