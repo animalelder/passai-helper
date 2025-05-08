@@ -205,7 +205,10 @@ export default function Page() {
                       key={member.name}
                       name={member.name}
                       icon={member.icon}
-                      className={`${activePerson === member.name && "border-primary bg-darkgreen-100 *:text-darkgreen-106"}`}
+                      className={cn(
+                        `${activeOne === member.name && "border-primary bg-darkgreen-100 *:text-darkgreen-106"}`,
+                        activeOne === member.name && `${member.border}`
+                      )}
                       onClick={() => {
                         setActivePerson(member.name);
                       }}
