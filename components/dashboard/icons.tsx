@@ -163,4 +163,23 @@ function ChildAccount(props: SVGProps<SVGSVGElement>) {
   );
 }
 
-export { Account, Calendar, ChildAccount, Overview, Settings, Updates };
+function LogOut(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      fill="none"
+      className="stroke-offwhite group-hover:stroke-darkgreen-105 rounded-full outline-darkblue-106 group-hover:outline-2 outline-offset-4 size-5"
+      viewBox="0 0 19 19"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path
+        d="M6.5 16H4c-.332 0-.65-.158-.884-.44a1.665 1.665 0 01-.366-1.06V4c0-.398.132-.78.366-1.06.235-.282.552-.44.884-.44h2.5m6 10.5l3.75-3.75m0 0L12.5 5.5m3.75 3.75h-9"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeWidth="1.5"
+      />
+    </svg>
+  );
+}
+
+export { Account, Calendar, ChildAccount, LogOut, Overview, Settings, Updates };

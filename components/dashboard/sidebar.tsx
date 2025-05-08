@@ -1,23 +1,29 @@
 "use client";
 
-import { useState } from "react";
+import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+import { signOut } from "@/lib/auth-client";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 import LogoAlt from "@/components/logo-alt";
+
+import navTabAsh from "@/assets/dashboard/nav-tab-ash.png";
 
 import {
   Account,
   Calendar,
   ChildAccount,
+  LogOut,
   Overview,
   Settings,
   Updates,
 } from "./icons";
 
 export default function Sidebar() {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = React.useState(true);
   const pathname = usePathname();
 
   const toggleSidebar = () => {
@@ -130,6 +136,18 @@ export default function Sidebar() {
             </div>
           );
         })}
+        <div className="mt-56 flex flex-col gap-y-5">
+          <Image
+            src={navTabAsh}
+            alt="nav-tab-ash"
+            unoptimized
+            className={`mx-auto h-auto w-[120px] cursor-pointer hover:scale-95`}
+          />
+
+          <LogOutButton className="inline-flex justify-center gap-3 font-heading text-xl font-bold text-offwhite">
+            <LogOut /> Logout
+          </LogOutButton>
+        </div>
       </div>
 
       <button
@@ -168,5 +186,21 @@ function SidebarButton(props: SidebarButtonProps) {
         strokeLinecap="round"
       />
     </svg>
+  );
+}
+function LogOutButton({ className, ...props }: React.ComponentProps<typeof Button>) {
+  return (
+    <Button
+      variant="ghost"
+      size="lg"
+      className={cn(
+        "group mx-auto inline-flex justify-center gap-2 font-heading text-xl font-bold text-offwhite hover:stroke-darkgreen-105 hover:text-darkblue-106",
+        className
+      )}
+      onClick={() => signOut()}
+      {...props}
+    >
+      <LogOut /> Logout
+    </Button>
   );
 }
