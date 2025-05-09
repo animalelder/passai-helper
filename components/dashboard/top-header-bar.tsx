@@ -34,7 +34,8 @@ export default function TopHeaderBar({ userName }: TopHeaderBarProps) {
           Good morning, {userName}!
         </p>
         <p className="font-heading font-bold text-darkblue-103 text-2xl underline underline-offset-4">
-          {finalDate}
+          Today is Saturday, May 10th, 2025
+          <span className="sr-only">{finalDate}</span>
         </p>
       </div>
 
