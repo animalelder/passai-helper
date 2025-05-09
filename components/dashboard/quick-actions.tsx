@@ -18,8 +18,8 @@ const QuickActions = () => {
   // Look at the PLUS button in the bottom right corner. It shifts between the two images.
 
   return (
-    <div className="flex min-h-[350px] min-w-[480px] flex-col items-start justify-start">
-      <h2 className="mb-4 font-heading text-xl font-bold text-[#233327]">
+    <div className="flex flex-col justify-start items-start min-w-[480px] min-h-[350px]">
+      <h2 className="mb-4 font-heading font-bold text-[#233327] text-xl">
         Quick Actions
       </h2>
 
@@ -27,7 +27,8 @@ const QuickActions = () => {
         src={image}
         alt="Urgent Button"
         onClick={handleChangeImage}
-        className="m-2 cursor-pointer"
+        unoptimized
+        className="m-2 w-[420px] cursor-pointer"
       />
     </div>
   );

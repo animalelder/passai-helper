@@ -149,7 +149,7 @@ export default function Page() {
             value="week"
             className="relative min-h-full overflow-y-scroll"
           >
-            <div className="flex flex-row justify-between w-[1050px]">
+            <div className="flex flex-row justify-between w-[1080px]">
               <div className="flex flex-row gap-0.5">
                 {famMembers.map((member: TFamMember) => {
                   return (
@@ -168,6 +168,9 @@ export default function Page() {
                   );
                 })}
               </div>
+              <h2 className="mx-auto font-heading font-bold text-darkblue text-2xl">
+                Week of 5/4/2025 - 5/10/2025
+              </h2>
               <div className="inline-flex justify-center items-center gap-4">
                 <Image
                   src={plusButton}
@@ -190,14 +193,14 @@ export default function Page() {
               src={week || weekFallback}
               alt={`${activePerson} Weekly`}
               placeholder="blur"
-              className="w-auto h-auto cursor-pointer"
+              className="w-[1080px] h-auto cursor-pointer"
             />
           </TabsContent>
           <TabsContent
             value="month"
             className="min-h-full overflow-y-scroll"
           >
-            <div className="flex justify-between w-[1050px]">
+            <div className="flex justify-between w-[1080px]">
               <div className="flex flex-row gap-0.5">
                 {famMembers.map((member: TMember) => {
                   return (
@@ -217,7 +220,7 @@ export default function Page() {
                 })}
               </div>
               <h2 className="mx-auto font-heading font-bold text-darkblue text-2xl">
-                April 2025
+                May 2025
               </h2>
               <div className="inline-flex justify-center items-center gap-4">
                 <Image
@@ -241,7 +244,7 @@ export default function Page() {
               src={month || monthFallback}
               alt={`${activePerson} Monthly`}
               placeholder="blur"
-              className="w-auto h-auto cursor-pointer"
+              className="w-[1080px] h-auto cursor-pointer"
             />
           </TabsContent>
         </Tabs>

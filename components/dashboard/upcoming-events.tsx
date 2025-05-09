@@ -1,24 +1,28 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 
-
-
+import monthlyCalendar from "@/assets/dashboard/monthly-cal.png";
 import weeklyCalendar from "@/assets/dashboard/upcoming-events-week.png";
 
-
-
-
-
 export default function UpcomingEvents() {
+  const [image, setImage] = useState(weeklyCalendar);
+
+  const handleChangeImage = () => {
+    setImage((prev) => (prev === weeklyCalendar ? monthlyCalendar : weeklyCalendar));
+  };
   return (
-    <div className="h-[500px] w-[500px]">
-      <h2 className="mb-4 text-xl font-bold text-darkgreen-105">Upcoming Events</h2>
+    <div className="w-[500px] h-[500px]">
+      <h2 className="mb-4 font-bold text-darkgreen-105 text-xl">Upcoming Events</h2>
 
       <div className="mx-auto">
-        <div className="flex h-full w-full items-center justify-center">
+        <div className="flex justify-center items-center w-full h-full">
           <Image
-            src={weeklyCalendar}
+            src={image}
+            onClick={() => handleChangeImage()}
             alt="Weekly Calendar"
-            className="mx-auto cursor-pointer"
+            className="mx-auto w-[500px] cursor-pointer"
           />
         </div>
       </div>
