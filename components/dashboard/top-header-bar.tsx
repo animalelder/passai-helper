@@ -24,7 +24,7 @@ const days = [
 ];
 const splitDate = date.split(" ").slice(1, 4);
 const finalDate =
-  days[day] + ", " + splitDate[0] + splitDate[1] + ", " + splitDate[2];
+  days[day] + ", " + splitDate[0] + " " + splitDate[1] + ", " + splitDate[2];
 
 export default function TopHeaderBar({ userName }: TopHeaderBarProps) {
   return (
@@ -34,9 +34,8 @@ export default function TopHeaderBar({ userName }: TopHeaderBarProps) {
           Good morning, {userName}!
         </p>
         <p className="font-heading font-bold text-darkblue-103 text-2xl underline underline-offset-4">
-          Today is Thursday, May 8, 2025
+          {finalDate}
         </p>
-        <span className="sr-only">{finalDate}</span>
       </div>
 
       <div className="block self-center mr-6">
