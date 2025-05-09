@@ -270,11 +270,13 @@ const DayCalendar = () => {
         <Image
           src={alexaCard}
           alt="Alexa Card"
+          placeholder="blur"
           className="w-[425px] cursor-pointer"
         />
         <Image
           src={johnCard}
           alt="John Card"
+          placeholder="blur"
           className="w-[425px] cursor-pointer"
         />
       </div>
@@ -285,10 +287,12 @@ const DayCalendar = () => {
         <Image
           src={ashleyCard}
           alt="Ashley Card"
+          placeholder="blur"
           className="min-w-[336px] cursor-pointer"
         />
         <Image
           src={robertCard}
+          placeholder="blur"
           alt="Robert Card"
           className="min-w-[336px] cursor-pointer"
         />

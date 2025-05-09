@@ -67,9 +67,9 @@ export default function Sidebar() {
 
   return (
     <div
-      className={`flex min-h-dvh flex-col bg-darkblue-103 font-heading text-white duration-200 ease-in-out *:transition-discrete **:transition **:duration-200 **:ease-in-out ${isOpen ? "w-[250px]" : "w-[110px]"} relative`}
+      className={`flex min-h-dvh flex-col bg-darkblue-103 font-heading text-white duration-200 ease-in-out *:transition-discrete **:transition **:duration-200 **:ease-in-out ${isOpen ? "w-[300px]" : "w-[140px]"} relative`}
     >
-      <div className="mt-4 mb-20 flex items-center justify-center">
+      <div className="flex justify-center items-center mt-4 mb-20">
         <div className="flex items-center gap-2">
           <LogoAlt />
           <p
@@ -80,7 +80,7 @@ export default function Sidebar() {
         </div>
       </div>
 
-      <div className="flex flex-1 flex-col space-y-4">
+      <div className="flex flex-col flex-1 space-y-4">
         {menuItems.map((item, index) => {
           const isActive = pathname === item.href;
 
@@ -137,11 +137,11 @@ export default function Sidebar() {
             </div>
           );
         })}
-        <div className="mt-56 flex flex-col gap-y-5">
+        <div className="flex flex-col gap-y-5 mt-56">
           <Image
             src={isOpen ? navTabAsh : navTabCollapsed}
             alt="nav-tab-ash"
-            unoptimized
+            placeholder="blur"
             className={`mx-auto h-auto ${isOpen ? "w-[120px]" : "w-10"} cursor-pointer hover:scale-95`}
           />
 
@@ -149,7 +149,7 @@ export default function Sidebar() {
             <LogOutButton
               size="lg"
               variant="ghost"
-              className="inline-flex justify-center gap-3 font-heading text-xl font-bold text-offwhite"
+              className="inline-flex justify-center gap-3 font-heading font-bold text-offwhite text-xl"
             >
               <LogOut />
               Logout
@@ -160,7 +160,7 @@ export default function Sidebar() {
               size="icon"
               className="max-w-5"
             >
-              <LogOut className="-ml-2 size-7 hover:bg-transparent" />
+              <LogOut className="hover:bg-transparent -ml-2 size-7" />
             </LogOutButton>
           )}
         </div>
