@@ -259,21 +259,23 @@ const DayCalendar = () => {
       <h2 className="w-full font-heading font-bold text-darkblue-104 text-2xl">
         Kids&apos; Schedules
       </h2>
-      <div className="flex flex-row justify-start items-center gap-7 overflow-x-scroll">
+      <div className="flex flex-row justify-start items-center gap-x-7 h-auto">
         <Image
           src={benCard}
+          placeholder="blur"
+          blurDataURL={benCard.blurDataURL}
           alt="Ben Card"
-          className="w-[336px] h-auto cursor-pointer"
+          className="w-[425px] cursor-pointer"
         />
         <Image
           src={alexaCard}
           alt="Alexa Card"
-          className="w-[336px] h-auto cursor-pointer"
+          className="w-[425px] cursor-pointer"
         />
         <Image
           src={johnCard}
           alt="John Card"
-          className="w-[336px] h-auto cursor-pointer"
+          className="w-[425px] cursor-pointer"
         />
       </div>
       <h2 className="font-heading font-bold text-darkblue-104 text-2xl">
@@ -283,12 +285,12 @@ const DayCalendar = () => {
         <Image
           src={ashleyCard}
           alt="Ashley Card"
-          className="w-[336px] h-auto cursor-pointer"
+          className="min-w-[336px] cursor-pointer"
         />
         <Image
           src={robertCard}
           alt="Robert Card"
-          className="w-[336px] h-auto cursor-pointer"
+          className="min-w-[336px] cursor-pointer"
         />
       </div>
     </div>
