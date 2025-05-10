@@ -86,7 +86,7 @@ function Calendar(props: SVGProps<SVGSVGElement>) {
 function Updates(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
-      fill="none"
+      fill="#D4EAF1"
       viewBox="0 0 19 18"
       {...props}
       xmlns="http://www.w3.org/2000/svg"
@@ -108,13 +108,7 @@ function Updates(props: SVGProps<SVGSVGElement>) {
         stroke="#FEFCF7"
         strokeWidth="1.5"
       />
-      <circle
-        cx="14.125"
-        cy="3.375"
-        r="3.375"
-        fill="#F57D62"
-        className="animate-pulse duration-[5s]"
-      />
+
     </svg>
   );
 }
