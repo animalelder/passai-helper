@@ -60,7 +60,7 @@ export default function TopHeaderBar({ userName }: TopHeaderBarProps) {
             <button className="group relative size-12 rounded-full border-2 border-darkblue-103 transition-all duration-500 ease-linear hover:border-darkblue-102 hover:brightness-75 hover:saturate-50">
               <Bell className="m-auto size-6 rounded-full duration-300 group-hover:brightness-75" />
               {notifications.length !== 0 && (
-                <div className="absolute top-[-4px] right-[-4px] size-4 animate-blink-slow rounded-full bg-alert-102 group-hover:hidden"></div>
+                <div className="absolute top-[-4px] right-[-4px] size-4 rounded-full bg-alert-102 group-hover:hidden"></div>
               )}
             </button>
           </PopoverTrigger>
