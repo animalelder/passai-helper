@@ -68,7 +68,7 @@ export default function TopHeaderBar({ userName }: TopHeaderBarProps) {
             align="end"
             className={cn(
               "relative flex w-[456px] flex-col overflow-hidden rounded-lg bg-white shadow-xl outline-1 outline-zinc-400",
-              notifications.length === 0 && "h-[400px]"
+              notifications.length === 0 && "h-[400px] w-[350px] rounded-xl"
             )}
           >
             <div className="relative w-full justify-center text-center font-heading text-base font-semibold text-black">
@@ -99,18 +99,21 @@ export default function TopHeaderBar({ userName }: TopHeaderBarProps) {
             {notifications.length === 0 && (
               <>
                 <h2 className="mt-5 bg-transparent/15 px-4 text-center font-heading text-2xl font-black text-pretty text-darkblue-106 backdrop-blur-[1.5px] ease-out">
-                  <span className="font-sans text-green-950">
-                    Guess what?
+                  <div className="font-sans text-5xl text-green-900">
+                    Nice!
                     <br />
                     <br />
-                    You&apos;re all caught up
-                    <br /> for right now!
-                  </span>
+                    <span className="text-3xl leading-14">
+                      You can relax
+                      <br />a little bit
+                      <br /> for now!
+                    </span>
+                  </div>
                 </h2>
                 <Image
                   src={calendarBg}
                   alt="Calendar Background"
-                  className="absolute right-2 bottom-0 -z-10 w-1/2 object-scale-down"
+                  className="absolute right-2 bottom-0 -z-10 w-1/2 bg-white object-scale-down"
                 />
               </>
             )}
