@@ -68,12 +68,12 @@ export default function TopHeaderBar({ userName }: TopHeaderBarProps) {
             align="end"
             className={cn(
               "relative flex w-[456px] flex-col overflow-hidden rounded-lg bg-white shadow-xl outline-1 outline-zinc-400",
-              notifications.length === 0 && "h-[400px] w-[350px] rounded-xl"
+              notifications.length === 0 && "h-[450px] w-[350px] rounded-xl"
             )}
           >
             <div className="relative w-full justify-center text-center font-heading text-base font-semibold text-black">
               {notifications.length === 0 ? (
-                <span className="text-lg font-bold tracking-wider text-red-700">
+                <span className="text-lg font-semibold text-red-700">
                   There are no new notifications!
                 </span>
               ) : (
